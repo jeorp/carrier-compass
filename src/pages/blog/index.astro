@@ -10,6 +10,8 @@ const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 const categories = ['転職', 'スキルアップ', '副業', '働き方'] as const;
+const authors = ['syun', 'yuki', 'kz'] as const;
+const authorLabels: Record<string, string> = { syun: '💼 Syun', yuki: '☕ Yuki', kz: '🛠️ kz' };
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
@@ -173,7 +175,14 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 		<main>
 			<section>
 				<div class="feed-header">
-					<h2 class="feed-title">最新の記事</h2>
+					<h2 class="feed-title">ライター</h2>
+					<div class="category-filters">
+						<a href={`${base}/blog`} class="active">すべて</a>
+						{authors.map((a) => (
+							<a href={`${base}/blog/author/${a}`}>{authorLabels[a]}</a>
+						))}
+					</div>
+					<h2 class="feed-title" style="margin-top:1rem;">カテゴリ</h2>
 					<div class="category-filters">
 						<a href={`${base}/blog`} class="active">すべて</a>
 						{categories.map((cat) => (
