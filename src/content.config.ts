@@ -10,10 +10,12 @@ const blog = defineCollection({
 		z.object({
 			title: z.string(),
 			description: z.string(),
-			// Transform string to Date object
 			pubDate: z.coerce.date(),
 			updatedDate: z.coerce.date().optional(),
 			heroImage: z.optional(image()),
+			category: z.enum(['転職', 'スキルアップ', '副業', '働き方']),
+			tags: z.array(z.string()).optional(),
+			author: z.enum(['syun', 'yuki', 'kenta']).optional(),
 		}),
 });
 
