@@ -1,63 +1,124 @@
 ---
-import AboutHeroImage from '../assets/blog-placeholder-about.jpg';
 import Layout from '../layouts/BlogPost.astro';
 ---
 
 <Layout
-	title="About Me"
-	description="Lorem ipsum dolor sit amet"
-	pubDate={new Date('August 08 2021')}
-	heroImage={AboutHeroImage}
+	title="このサイトについて"
+	description="キャリアの羅針盤について"
+	pubDate={new Date('2026-03-15')}
+	category="働き方"
 >
 	<p>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-		labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo
-		viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam
-		adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus
-		et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus
-		vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque
-		sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
+		「キャリアの羅針盤」は、自分のキャリアに迷いや不安を抱えるすべての人に向けたブログです。完璧なルートなんてない。迷って、修正して、また進む——そのプロセスこそがキャリアだと私たちは考えています。
+	</p>
+	<p>
+		現役のキャリアコンサルタントや営業職など、実際にキャリアと向き合ってきたライター陣が、現場のリアルな視点でお届けしています。
 	</p>
 
-	<p>
-		Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non
-		tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non
-		blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna
-		porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis
-		massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc.
-		Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis
-		bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra
-		massa massa ultricies mi.
-	</p>
+	<h2>ライター紹介</h2>
 
-	<p>
-		Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl
-		suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet
-		nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae
-		turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem
-		dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat
-		semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus
-		vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum
-		facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam
-		vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla
-		urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
-	</p>
+	<div class="writers">
+		<div class="writer-card">
+			<div class="writer-icon">💼</div>
+			<div class="writer-body">
+				<div class="writer-name">Syun</div>
+				<div class="writer-tags">
+					<span>キャリアコンサルタント</span>
+					<span>32歳</span>
+					<span>サウナ好き</span>
+				</div>
+				<p>早稲田大学ラグビー部出身。大手外資系コンサルを経て、「誰かの人生の転機に関わりたい」という思いからキャリアコンサルタントとして独立。習慣化が得意で、読者を応援することに全力を注ぐ。</p>
+			</div>
+		</div>
 
-	<p>
-		Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper
-		viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc
-		scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur
-		gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus
-		pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim
-		blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id
-		cursus metus aliquam eleifend mi.
-	</p>
+		<div class="writer-card">
+			<div class="writer-icon">☕</div>
+			<div class="writer-body">
+				<div class="writer-name">Yuki</div>
+				<div class="writer-tags">
+					<span>現役営業職</span>
+					<span>29歳</span>
+					<span>カフェ好き</span>
+				</div>
+				<p>アナウンサーを目指した過去を持つ現役営業職。大手メーカーからスタートアップへ転職した経験を持ち、「自分らしいキャリア」を探す人に向けてリアルな声を届ける。</p>
+			</div>
+		</div>
+	</div>
 
-	<p>
-		Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta
-		nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam
-		tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci
-		ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar
-		proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
-	</p>
+	<h2>運営者</h2>
+
+	<div class="writers">
+		<div class="writer-card operator-card">
+			<div class="writer-icon">🛠️</div>
+			<div class="writer-body">
+				<div class="writer-name">Kenta</div>
+				<div class="writer-tags">
+					<span>運営者</span>
+					<span>ソフトウェアエンジニア</span>
+					<span>26歳</span>
+				</div>
+				<p>このサイトの開発・運営を担当。ライター陣が書きやすい環境づくりから、読者に届きやすい仕組みの整備まで、裏側を支えている。</p>
+			</div>
+		</div>
+	</div>
 </Layout>
+
+<style>
+	.writers {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+		margin-top: 1rem;
+	}
+	.writer-card {
+		display: flex;
+		gap: 1.25rem;
+		padding: 1.5rem;
+		border: 1px solid rgb(var(--gray-light));
+		border-radius: 12px;
+		align-items: flex-start;
+	}
+	.operator-card {
+		border-color: var(--accent);
+		background: rgba(232, 113, 74, 0.04);
+	}
+	.writer-icon {
+		font-size: 2.5rem;
+		line-height: 1;
+		flex-shrink: 0;
+	}
+	.writer-name {
+		font-weight: 700;
+		font-size: 1.1rem;
+		margin-bottom: 0.4rem;
+	}
+	.writer-tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.4em;
+		margin-bottom: 0.75rem;
+	}
+	.writer-tags span {
+		font-size: 0.75rem;
+		background: rgb(var(--gray-light));
+		color: rgb(var(--gray-dark));
+		padding: 0.2em 0.6em;
+		border-radius: 999px;
+	}
+	.writer-body p {
+		margin: 0;
+		font-size: 0.9rem;
+		color: rgb(var(--gray));
+		line-height: 1.7;
+	}
+	@media (max-width: 720px) {
+		.writer-card {
+			flex-direction: column;
+			gap: 0.75rem;
+			padding: 1rem;
+		}
+		.writer-icon {
+			font-size: 1.8rem;
+		}
+	}
+</style>

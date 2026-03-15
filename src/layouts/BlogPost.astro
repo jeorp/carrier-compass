@@ -8,7 +8,27 @@ import Header from '../components/Header.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, author, category, tags } = Astro.props;
+
+const authors: Record<string, { name: string; bio: string; icon: string }> = {
+	syun: {
+		name: 'Syun',
+		icon: '💼',
+		bio: '早稲田大学ラグビー部出身。大手外資系コンサルを経て、32歳でフリーランスのキャリアコンサルタントとして独立。サウナとルーティンをこよなく愛する。',
+	},
+	yuki: {
+		name: 'Yuki',
+		icon: '☕',
+		bio: 'アナウンサーを目指した過去を持つ29歳。大手メーカーからスタートアップへ転職した現役営業職。休日はカフェで充電しながらキャリアについて発信中。',
+	},
+	kenta: {
+		name: 'Kenta',
+		icon: '🛠️',
+		bio: '26歳のソフトウェアエンジニア。このサイトの開発・運営を担当。エンジニア目線でキャリアや働き方について発信する。',
+	},
+};
+
+const authorProfile = author ? authors[author] : null;
 ---
 
 <html lang="en">
@@ -52,6 +72,60 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 			.last-updated-on {
 				font-style: italic;
 			}
+			.meta {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.5em;
+				justify-content: center;
+				margin-top: 0.75em;
+			}
+			.category {
+				background: var(--accent);
+				color: white;
+				font-size: 0.75em;
+				padding: 0.25em 0.75em;
+				border-radius: 999px;
+				font-weight: 700;
+			}
+			.tag {
+				background: rgb(var(--gray-light));
+				color: rgb(var(--gray-dark));
+				font-size: 0.75em;
+				padding: 0.25em 0.75em;
+				border-radius: 999px;
+			}
+			.author-profile {
+				display: flex;
+				align-items: flex-start;
+				gap: 1em;
+				margin-top: 3em;
+				padding: 1.5em;
+				background: rgb(var(--gray-light));
+				border-radius: 12px;
+			}
+			.author-icon {
+				font-size: 2.5em;
+				line-height: 1;
+				flex-shrink: 0;
+			}
+			.author-name {
+				font-weight: 700;
+				margin-bottom: 0.25em;
+			}
+			.author-bio {
+				font-size: 0.85em;
+				color: rgb(var(--gray));
+				margin: 0;
+			}
+			@media (max-width: 720px) {
+				.author-profile {
+					flex-direction: column;
+					gap: 0.75em;
+				}
+				.author-icon {
+					font-size: 1.8em;
+				}
+			}
 		</style>
 	</head>
 
@@ -69,15 +143,28 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 							{
 								updatedDate && (
 									<div class="last-updated-on">
-										Last updated on <FormattedDate date={updatedDate} />
+										最終更新日: <FormattedDate date={updatedDate} />
 									</div>
 								)
 							}
 						</div>
 						<h1>{title}</h1>
+						<div class="meta">
+							{category && <span class="category">{category}</span>}
+							{tags && tags.map((tag) => <span class="tag">#{tag}</span>)}
+						</div>
 						<hr />
 					</div>
 					<slot />
+					{authorProfile && (
+					<div class="author-profile">
+						<div class="author-icon">{authorProfile.icon}</div>
+						<div class="author-info">
+							<div class="author-name">{authorProfile.name}</div>
+							<p class="author-bio">{authorProfile.bio}</p>
+						</div>
+					</div>
+				)}
 				</div>
 			</article>
 		</main>
