@@ -35,6 +35,30 @@ const writers = [
 ];
 
 const categories = ['転職', 'スキルアップ', '副業', '働き方'];
+
+const moments = [
+	{
+		situation: '転職しようか、ずっと迷っている',
+		quote: '「辞めていいのか」って8ヶ月考え続けた。答えが出たのは、問いを変えたときだった。',
+		author: 'Syun',
+		icon: '💼',
+		href: `${base}/blog/mindset-career-change`,
+	},
+	{
+		situation: '仕事がしんどくて、誰にも言えない',
+		quote: '怖いって言っても、辞めたいとかじゃなくて。ただ、自信がごっそり抜けてる感じ。',
+		author: 'Yuki',
+		icon: '☕',
+		href: `${base}/blog/when-work-got-scary`,
+	},
+	{
+		situation: 'なんとなく不満だけど、動き方が分からない',
+		quote: '新卒でフリーランスになって、正直まだ全部分かってない。でも動いた分だけ見えてきた。',
+		author: 'kz',
+		icon: '🛠️',
+		href: `${base}/blog/twenties-career-kz`,
+	},
+];
 ---
 
 <!doctype html>
@@ -122,6 +146,43 @@ const categories = ['転職', 'スキルアップ', '副業', '働き方'];
 				color: rgb(var(--gray));
 				margin: 0;
 				line-height: 1.6;
+			}
+			/* Moments */
+			.moments {
+				margin-bottom: 2.5em;
+			}
+			.moment-list {
+				display: flex;
+				flex-direction: column;
+				gap: 0.75em;
+			}
+			.moment-card {
+				display: block;
+				padding: 1.2em 1.4em;
+				border: 1px solid rgb(var(--gray-light));
+				border-radius: 12px;
+				text-decoration: none;
+				color: inherit;
+				transition: border-color 0.15s ease;
+			}
+			.moment-card:hover {
+				border-color: var(--accent);
+			}
+			.moment-situation {
+				font-size: 0.8rem;
+				font-weight: 700;
+				color: rgb(var(--gray));
+				margin-bottom: 0.5em;
+			}
+			.moment-quote {
+				font-size: 0.95rem;
+				line-height: 1.6;
+				margin: 0 0 0.6em;
+				color: rgb(var(--gray-dark));
+			}
+			.moment-attribution {
+				font-size: 0.8rem;
+				color: rgb(var(--gray));
 			}
 			/* Categories */
 			.categories {
@@ -254,6 +315,20 @@ const categories = ['転職', 'スキルアップ', '副業', '働き方'];
 								<div class="writer-name">{w.name}</div>
 								<p class="writer-desc">{w.desc}</p>
 							</div>
+						</a>
+					))}
+				</div>
+			</section>
+
+			<!-- Moments -->
+			<section class="moments">
+				<p class="section-title">こんな時に読んでほしい</p>
+				<div class="moment-list">
+					{moments.map((m) => (
+						<a class="moment-card" href={m.href}>
+							<div class="moment-situation">{m.situation}</div>
+							<p class="moment-quote">「{m.quote}」</p>
+							<div class="moment-attribution">{m.icon} {m.author}</div>
 						</a>
 					))}
 				</div>
