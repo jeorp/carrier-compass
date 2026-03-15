@@ -20,14 +20,37 @@ function getArticles(articlePath) {
   return [path.resolve(articlePath)];
 }
 
+function parseFrontmatter(content) {
+  const match = content.match(/^---\n([\s\S]*?)\n---/);
+  if (!match) return {};
+  const fm = {};
+  for (const line of match[1].split('\n')) {
+    const m = line.match(/^(\w+):\s*(.+)/);
+    if (m) fm[m[1]] = m[2].trim().replace(/^["']|["']$/g, '');
+  }
+  // tags配列をパース
+  const tagsMatch = match[1].match(/^tags:\s*\[([^\]]+)\]/m);
+  if (tagsMatch) {
+    fm.tags = tagsMatch[1].split(',').map(t => t.trim().replace(/^["']|["']$/g, ''));
+  }
+  const relatedMatch = match[1].match(/^related:\s*\[([^\]]+)\]/m);
+  if (relatedMatch) {
+    fm.related = relatedMatch[1].split(',').map(t => t.trim().replace(/^["']|["']$/g, ''));
+  }
+  return fm;
+}
+
 function reviewArticle(filePath) {
   const content = fs.readFileSync(filePath, 'utf-8');
-  const body = content.replace(/^---[\s\S]*?---\n/, ''); // frontmatter除去
+  const fm = parseFrontmatter(content);
+  const body = content.replace(/^---[\s\S]*?---\n/, '');
   const lines = body.split('\n');
   const warnings = [];
 
+  // ── 文体ルール ──────────────────────────────
+
   // 1. ですます混在チェック
-  const masuEndings = lines.filter(l => /[ぁ-ん]+(ます|ません|ました|ません|でした|ございます)。/.test(l));
+  const masuEndings = lines.filter(l => /[ぁ-ん]+(ます|ません|ました|でした|ございます)。/.test(l));
   const plainEndings = lines.filter(l => /[ぁ-ん]+(だ|だった|だろう|思う|感じる|いる|ある|ない|くない)。/.test(l));
   if (masuEndings.length > 0 && plainEndings.length > 0) {
     warnings.push({
@@ -38,7 +61,7 @@ function reviewArticle(filePath) {
     });
   }
 
-  // 2. 3点列挙チェック（H2/H3直下で3連続の**bold**や箇条書き）
+  // 2. 3点列挙チェック
   for (let i = 0; i < lines.length - 2; i++) {
     const a = lines[i].trim();
     const b = lines[i + 1].trim();
@@ -48,7 +71,7 @@ function reviewArticle(filePath) {
       warnings.push({
         level: 'WARN',
         rule: '3点列挙',
-        detail: '3点セットの列挙が見つかりました（2点か4点に変更推奨）',
+        detail: '3点セットの列挙（2点か4点に変更推奨）',
         lines: [a, b, c].map(l => `  → ${l}`).join('\n'),
       });
       i += 2;
@@ -95,7 +118,7 @@ function reviewArticle(filePath) {
     }
   }
 
-  // 6. H2見出しの数（多すぎると整いすぎてAIっぽい）
+  // 6. 見出し構造が整いすぎ
   const h2Count = lines.filter(l => /^## /.test(l)).length;
   const h3Count = lines.filter(l => /^### /.test(l)).length;
   if (h2Count >= 4 && h3Count >= h2Count) {
@@ -107,7 +130,75 @@ function reviewArticle(filePath) {
     });
   }
 
-  return warnings;
+  // ── SEOチェック ──────────────────────────────
+
+  // 7. title長さ（30〜40字推奨）
+  const title = fm.title ?? '';
+  if (title.length < 20) {
+    warnings.push({ level: 'WARN', rule: 'SEO: titleが短い', detail: `${title.length}字（20字以上推奨）`, lines: `  → ${title}` });
+  } else if (title.length > 60) {
+    warnings.push({ level: 'WARN', rule: 'SEO: titleが長い', detail: `${title.length}字（60字以下推奨）`, lines: `  → ${title}` });
+  }
+
+  // 8. description長さ（80〜160字推奨）
+  const desc = fm.description ?? '';
+  if (!desc) {
+    warnings.push({ level: 'ERROR', rule: 'SEO: descriptionなし', detail: 'frontmatterにdescriptionがありません', lines: '' });
+  } else if (desc.length < 80) {
+    warnings.push({ level: 'WARN', rule: 'SEO: descriptionが短い', detail: `${desc.length}字（80字以上推奨）`, lines: `  → ${desc}` });
+  } else if (desc.length > 160) {
+    warnings.push({ level: 'WARN', rule: 'SEO: descriptionが長い', detail: `${desc.length}字（160字以下推奨）`, lines: `  → ${desc.slice(0, 80)}…` });
+  }
+
+  // 9. 文字数（1500〜2500字推奨）
+  const charCount = body.replace(/\s/g, '').replace(/[#*\->`]/g, '').length;
+  if (charCount < 1000) {
+    warnings.push({ level: 'ERROR', rule: 'SEO: 文字数不足', detail: `${charCount}字（1500字以上推奨）`, lines: '' });
+  } else if (charCount < 1500) {
+    warnings.push({ level: 'WARN', rule: 'SEO: 文字数やや不足', detail: `${charCount}字（1500字以上推奨）`, lines: '' });
+  }
+
+  // 10. 冒頭の検索意図応答（最初の3段落に読者の悩み語彙が含まれるか）
+  const opening = lines.slice(0, 15).join(' ');
+  const painWords = ['怖い', '迷って', '不安', '悩ん', 'しんどい', '辛い', 'できない', '分からない', 'どうすれば', '難しい', '踏み出せ', '動けない'];
+  const hasPainWord = painWords.some(w => opening.includes(w));
+  if (!hasPainWord) {
+    warnings.push({
+      level: 'WARN',
+      rule: 'SEO: 冒頭に読者の悩み語彙なし',
+      detail: '冒頭15行に悩みを示す語彙が見当たりません（読者の検索意図に応答できていない可能性）',
+      lines: '',
+    });
+  }
+
+  // 11. related（内部リンク）の有無
+  if (!fm.related) {
+    warnings.push({ level: 'WARN', rule: 'SEO: relatedなし', detail: 'frontmatterにrelatedがありません（内部リンク強化推奨）', lines: '' });
+  }
+
+  // 12. tagsの有無・数
+  const tags = fm.tags ?? [];
+  if (tags.length === 0) {
+    warnings.push({ level: 'WARN', rule: 'SEO: tagsなし', detail: 'frontmatterにtagsがありません', lines: '' });
+  } else if (tags.length > 6) {
+    warnings.push({ level: 'WARN', rule: 'SEO: tagsが多すぎ', detail: `${tags.length}個（5個以下推奨）`, lines: `  → ${tags.join(', ')}` });
+  }
+
+  return { warnings, meta: { charCount, title, desc, tags, related: fm.related } };
+}
+
+// キーワード共食いチェック（--all時のみ）
+function checkKeywordCannibalization(files) {
+  const tagMap = {};
+  for (const f of files) {
+    const { meta } = reviewArticle(f);
+    for (const tag of meta.tags ?? []) {
+      if (!tagMap[tag]) tagMap[tag] = [];
+      tagMap[tag].push(path.basename(f, '.md'));
+    }
+  }
+  const overlaps = Object.entries(tagMap).filter(([, slugs]) => slugs.length >= 4);
+  return overlaps;
 }
 
 const args = process.argv[2];
@@ -123,7 +214,7 @@ let totalWarns = 0;
 
 for (const file of files) {
   const rel = path.relative(root, file);
-  const warnings = reviewArticle(file);
+  const { warnings } = reviewArticle(file);
   const errors = warnings.filter(w => w.level === 'ERROR');
   const warns = warnings.filter(w => w.level === 'WARN');
   totalErrors += errors.length;
@@ -139,6 +230,17 @@ for (const file of files) {
     const icon = w.level === 'ERROR' ? '❌' : '⚠️ ';
     console.log(`  ${icon} [${w.rule}] ${w.detail}`);
     if (w.lines) console.log(w.lines);
+  }
+}
+
+// キーワード共食い（--allのみ）
+if (args === '--all') {
+  const overlaps = checkKeywordCannibalization(files);
+  if (overlaps.length > 0) {
+    console.log('\n⚠️  [SEO: キーワード共食いの可能性]');
+    for (const [tag, slugs] of overlaps) {
+      console.log(`  「${tag}」: ${slugs.join(', ')}`);
+    }
   }
 }
 
