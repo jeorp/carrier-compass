@@ -58,14 +58,7 @@ const scoredPosts = (() => {
 const manualPosts = related?.length ? allPosts.filter((p) => related.includes(p.id)) : [];
 const candidatePosts = manualPosts.length ? manualPosts : scoredPosts;
 
-const recentFallback = allPosts
-	.filter((p) => p.id !== currentId && !candidatePosts.some((c) => c.id === p.id))
-	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
-
-const relatedPosts = [
-	...candidatePosts.slice(0, MAX_RELATED),
-	...recentFallback.slice(0, MAX_RELATED - Math.min(candidatePosts.length, MAX_RELATED)),
-].slice(0, MAX_RELATED);
+const relatedPosts = candidatePosts.slice(0, MAX_RELATED);
 
 const shareUrl = `https://x.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(Astro.url.href)}`;
 ---
@@ -280,12 +273,6 @@ const shareUrl = `https://x.com/intent/tweet?text=${encodeURIComponent(title)}&u
 						<hr />
 					</div>
 					<slot />
-					<div class="share">
-						<span class="share-label">シェア</span>
-						<a class="share-x" href={shareUrl} target="_blank" rel="noopener noreferrer">
-							𝕏 でポストする
-						</a>
-					</div>
 					{relatedPosts.length > 0 && (
 						<div class="related">
 							<p class="related-title">こんな記事も読まれています</p>
@@ -311,6 +298,12 @@ const shareUrl = `https://x.com/intent/tweet?text=${encodeURIComponent(title)}&u
 					</div>
 				</div>
 			)}
+					<div class="share">
+						<span class="share-label">シェア</span>
+						<a class="share-x" href={shareUrl} target="_blank" rel="noopener noreferrer">
+							𝕏 でポストする
+						</a>
+					</div>
 				</div>
 			</article>
 		</main>
