@@ -298,12 +298,14 @@ const shareUrl = `https://x.com/intent/tweet?text=${encodeURIComponent(title)}&u
 					</div>
 				</div>
 			)}
-					<div class="share">
-						<span class="share-label">シェア</span>
-						<a class="share-x" href={shareUrl} target="_blank" rel="noopener noreferrer">
-							𝕏 でポストする
-						</a>
-					</div>
+					{author && (
+						<div class="share">
+							<span class="share-label">シェア</span>
+							<a class="share-x" href={shareUrl} target="_blank" rel="noopener noreferrer">
+								𝕏 でポストする
+							</a>
+						</div>
+					)}
 				</div>
 			</article>
 		</main>
