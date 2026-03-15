@@ -37,24 +37,35 @@ const allPosts = await getCollection('blog');
 const segments = Astro.url.pathname.split('/').filter(Boolean);
 const currentId = segments[segments.length - 1];
 
-const relatedPosts = related?.length
-	? allPosts.filter((p) => related.includes(p.id))
-	: (() => {
-		const currentTags = tags ?? [];
-		return allPosts
-			.filter((p) => p.id !== currentId)
-			.map((p) => {
-				let score = 0;
-				if (p.data.author === author) score += 3;
-				if (p.data.category === category) score += 2;
-				score += (p.data.tags ?? []).filter((t) => currentTags.includes(t)).length;
-				return { post: p, score };
-			})
-			.filter(({ score }) => score > 0)
-			.sort((a, b) => b.score - a.score)
-			.slice(0, 1)
-			.map(({ post }) => post);
-	})();
+const MAX_RELATED = 3;
+
+const scoredPosts = (() => {
+	const currentTags = tags ?? [];
+	return allPosts
+		.filter((p) => p.id !== currentId)
+		.map((p) => {
+			let score = 0;
+			if (p.data.author === author) score += 3;
+			if (p.data.category === category) score += 2;
+			score += (p.data.tags ?? []).filter((t) => currentTags.includes(t)).length;
+			return { post: p, score };
+		})
+		.filter(({ score }) => score > 0)
+		.sort((a, b) => b.score - a.score)
+		.map(({ post }) => post);
+})();
+
+const manualPosts = related?.length ? allPosts.filter((p) => related.includes(p.id)) : [];
+const candidatePosts = manualPosts.length ? manualPosts : scoredPosts;
+
+const recentFallback = allPosts
+	.filter((p) => p.id !== currentId && !candidatePosts.some((c) => c.id === p.id))
+	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const relatedPosts = [
+	...candidatePosts.slice(0, MAX_RELATED),
+	...recentFallback.slice(0, MAX_RELATED - Math.min(candidatePosts.length, MAX_RELATED)),
+].slice(0, MAX_RELATED);
 ---
 
 <html lang="en">
