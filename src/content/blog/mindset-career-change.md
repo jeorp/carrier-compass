@@ -5,6 +5,7 @@ pubDate: 2026-03-15
 category: 転職
 tags: ["転職", "マインドセット", "キャリア相談", "決断"]
 author: syun
+related: ["high-performer-slow-career-change"]
 ---
 
 キャリア相談をしていると、転職を迷っている人から同じような言葉を聞くことが多い。

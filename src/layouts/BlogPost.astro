@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import type { CollectionEntry } from 'astro:content';
+import { getCollection, type CollectionEntry } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
@@ -8,7 +8,7 @@ import Header from '../components/Header.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
 
-const { title, description, pubDate, updatedDate, heroImage, author, category, tags } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, author, category, tags, related } = Astro.props;
 
 const authors: Record<string, { name: string; bio: string; icon: string }> = {
 	syun: {
@@ -30,6 +30,10 @@ const authors: Record<string, { name: string; bio: string; icon: string }> = {
 
 const authorProfile = author ? authors[author] : null;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const relatedPosts = related?.length
+	? (await getCollection('blog')).filter((p) => related.includes(p.id))
+	: [];
 ---
 
 <html lang="en">
@@ -134,6 +138,47 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 			.author-link:hover {
 				text-decoration: underline;
 			}
+			.related {
+				margin-top: 2.5em;
+				padding-top: 1.5em;
+				border-top: 1px solid rgb(var(--gray-light));
+			}
+			.related-title {
+				font-size: 0.8rem;
+				font-weight: 700;
+				color: rgb(var(--gray));
+				letter-spacing: 0.1em;
+				text-transform: uppercase;
+				margin: 0 0 1em;
+			}
+			.related-list {
+				display: flex;
+				flex-direction: column;
+				gap: 0.75em;
+			}
+			.related-card {
+				display: block;
+				padding: 1em 1.2em;
+				border: 1px solid rgb(var(--gray-light));
+				border-radius: 12px;
+				text-decoration: none;
+				color: inherit;
+				transition: border-color 0.15s ease;
+			}
+			.related-card:hover {
+				border-color: var(--accent);
+			}
+			.related-card-author {
+				font-size: 0.75rem;
+				color: rgb(var(--gray));
+				margin-bottom: 0.3em;
+			}
+			.related-card-title {
+				font-size: 0.95rem;
+				font-weight: 700;
+				line-height: 1.4;
+				margin: 0;
+			}
 			@media (max-width: 720px) {
 				.author-profile {
 					flex-direction: column;
@@ -173,6 +218,21 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 						<hr />
 					</div>
 					<slot />
+					{relatedPosts.length > 0 && (
+						<div class="related">
+							<p class="related-title">こんな記事も読まれています</p>
+							<div class="related-list">
+								{relatedPosts.map((p) => (
+									<a class="related-card" href={`${base}/blog/${p.id}/`}>
+										<div class="related-card-author">
+											{p.data.author === 'yuki' ? '☕ Yuki' : p.data.author === 'kz' ? '🛠️ kz' : '💼 Syun'}
+										</div>
+										<p class="related-card-title">{p.data.title}</p>
+									</a>
+								))}
+							</div>
+						</div>
+					)}
 					{authorProfile && (
 					<div class="author-profile">
 						<div class="author-icon">{authorProfile.icon}</div>
