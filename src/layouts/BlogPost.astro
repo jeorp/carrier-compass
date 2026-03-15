@@ -66,6 +66,8 @@ const relatedPosts = [
 	...candidatePosts.slice(0, MAX_RELATED),
 	...recentFallback.slice(0, MAX_RELATED - Math.min(candidatePosts.length, MAX_RELATED)),
 ].slice(0, MAX_RELATED);
+
+const shareUrl = `https://x.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(Astro.url.href)}`;
 ---
 
 <html lang="en">
@@ -211,6 +213,34 @@ const relatedPosts = [
 				line-height: 1.4;
 				margin: 0;
 			}
+			.share {
+				margin-top: 2.5em;
+				padding-top: 1.5em;
+				border-top: 1px solid rgb(var(--gray-light));
+				display: flex;
+				align-items: center;
+				gap: 0.75em;
+			}
+			.share-label {
+				font-size: 0.8rem;
+				color: rgb(var(--gray));
+				font-weight: 700;
+				letter-spacing: 0.05em;
+			}
+			.share-x {
+				display: inline-flex;
+				align-items: center;
+				gap: 0.4em;
+				padding: 0.5em 1.1em;
+				border-radius: 999px;
+				background: #000;
+				color: white;
+				font-size: 0.85rem;
+				font-weight: 700;
+				text-decoration: none;
+				transition: opacity 0.15s ease;
+			}
+			.share-x:hover { opacity: 0.8; }
 			@media (max-width: 720px) {
 				.author-profile {
 					flex-direction: column;
@@ -250,6 +280,12 @@ const relatedPosts = [
 						<hr />
 					</div>
 					<slot />
+					<div class="share">
+						<span class="share-label">シェア</span>
+						<a class="share-x" href={shareUrl} target="_blank" rel="noopener noreferrer">
+							𝕏 でポストする
+						</a>
+					</div>
 					{relatedPosts.length > 0 && (
 						<div class="related">
 							<p class="related-title">こんな記事も読まれています</p>
