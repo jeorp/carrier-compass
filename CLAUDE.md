@@ -143,8 +143,9 @@ carrier-note/
 1. `strategy/keywords.md` からメインキーワードを選ぶ（未執筆テーマ一覧から優先度・競合度を確認）
 2. `strategy/articles.md` で既存記事との重複がないか確認する
 3. frontmatterに `targetKeyword` フィールドを追加する（例: `targetKeyword: "営業 辞めたい 続ける"`）
-4. タイトル・description・本文冒頭100字に `targetKeyword` を自然に含める
-5. 執筆後、`strategy/articles.md` と `strategy/keywords.md` の両方を更新する
+4. `npm run review -- --all` を実行し、`❌ [SEO: targetKeyword重複の可能性]` が出ないことを確認する。重複が出た場合はtargetKeywordを変更するか、既存記事との差別化を明確にする
+5. タイトル・description・本文冒頭100字に `targetKeyword` を自然に含める
+6. 執筆後、`strategy/articles.md` と `strategy/keywords.md` の両方を更新する
 
 ### frontmatterテンプレート
 
