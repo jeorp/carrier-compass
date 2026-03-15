@@ -209,7 +209,32 @@ function reviewArticle(filePath) {
   return { warnings, meta: { charCount, title, desc, tags, related: fm.related, targetKeyword } };
 }
 
-// キーワード共食いチェック（--all時のみ）
+// targetKeyword重複チェック（--all時のみ）
+function checkTargetKeywordOverlap(files) {
+  const kwMap = [];
+  for (const f of files) {
+    const { meta } = reviewArticle(f);
+    if (meta.targetKeyword) {
+      kwMap.push({
+        slug: path.basename(f, '.md'),
+        kw: meta.targetKeyword,
+        words: meta.targetKeyword.split(/[\s　]+/),
+      });
+    }
+  }
+  const overlaps = [];
+  for (let i = 0; i < kwMap.length; i++) {
+    for (let j = i + 1; j < kwMap.length; j++) {
+      const shared = kwMap[i].words.filter(w => kwMap[j].words.includes(w));
+      if (shared.length >= 2) {
+        overlaps.push({ a: kwMap[i], b: kwMap[j], shared });
+      }
+    }
+  }
+  return overlaps;
+}
+
+// タグレベルのキーワード共食いチェック（--all時のみ）
 function checkKeywordCannibalization(files) {
   const tagMap = {};
   for (const f of files) {
@@ -255,11 +280,20 @@ for (const file of files) {
   }
 }
 
-// キーワード共食い（--allのみ）
+// targetKeyword重複・タグ共食い（--allのみ）
 if (args === '--all') {
+  const kwOverlaps = checkTargetKeywordOverlap(files);
+  if (kwOverlaps.length > 0) {
+    console.log('\n❌ [SEO: targetKeyword重複の可能性]');
+    for (const { a, b, shared } of kwOverlaps) {
+      console.log(`  「${shared.join(' ')}」が重複: ${a.slug}「${a.kw}」 / ${b.slug}「${b.kw}」`);
+    }
+    totalErrors += kwOverlaps.length;
+  }
+
   const overlaps = checkKeywordCannibalization(files);
   if (overlaps.length > 0) {
-    console.log('\n⚠️  [SEO: キーワード共食いの可能性]');
+    console.log('\n⚠️  [SEO: タグ共食いの可能性]');
     for (const [tag, slugs] of overlaps) {
       console.log(`  「${tag}」: ${slugs.join(', ')}`);
     }
