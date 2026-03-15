@@ -30,6 +30,7 @@ export async function getStaticPaths() {
 const { author } = Astro.params;
 const { posts } = Astro.props;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const readingTime = (body: string) => Math.max(1, Math.ceil(body.length / 400));
 ---
 
 <!doctype html>
@@ -109,7 +110,8 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 				border-radius: 999px;
 				font-weight: 700;
 			}
-			.date-chip { color: rgb(var(--gray)); margin-left: auto; }
+			.date-chip { color: rgb(var(--gray)); }
+			.reading-time { color: rgb(var(--gray)); margin-left: auto; }
 			.title {
 				margin: 0 0 0.4rem 0;
 				font-size: 1.2rem;
@@ -213,6 +215,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 										<span class="date-chip">
 											<FormattedDate date={post.data.pubDate} />
 										</span>
+										<span class="reading-time">約{readingTime(post.body)}分</span>
 									</div>
 									<h4 class="title">{post.data.title}</h4>
 									{post.data.description && (
