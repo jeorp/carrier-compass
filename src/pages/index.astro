@@ -13,26 +13,6 @@ const recentPosts = allPosts
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
-const writers = [
-	{
-		id: 'syun',
-		icon: '💼',
-		name: 'Syun',
-		desc: '外資コンサルを27歳で辞めた。年収は900万から300万になった。',
-	},
-	{
-		id: 'yuki',
-		icon: '☕',
-		name: 'Yuki',
-		desc: '営業2年目、急に仕事が怖くなった時期があった。',
-	},
-	{
-		id: 'kz',
-		icon: '🛠️',
-		name: 'kz',
-		desc: '新卒半年でフリーランスになって、今もがいてる。',
-	},
-];
 
 const categories = ['転職', 'スキルアップ', '副業', '働き方'];
 
@@ -108,46 +88,7 @@ const moments = [
 				text-transform: uppercase;
 				margin: 0 0 1rem;
 			}
-			/* Writers */
-			.writers {
-				margin-bottom: 2.5em;
-			}
-			.writer-list {
-				display: flex;
-				flex-direction: column;
-				gap: 1em;
-			}
-			.writer-card {
-				display: flex;
-				align-items: flex-start;
-				gap: 1em;
-				padding: 1.2em;
-				background: rgb(var(--gray-light));
-				border-radius: 12px;
-				text-decoration: none;
-				color: inherit;
-				transition: background 0.15s ease;
-			}
-			.writer-card:hover {
-				background: rgb(var(--gray-light), 0.7);
-				opacity: 0.85;
-			}
-			.writer-icon {
-				font-size: 2rem;
-				line-height: 1;
-				flex-shrink: 0;
-			}
-			.writer-name {
-				font-weight: 700;
-				margin-bottom: 0.2em;
-			}
-			.writer-desc {
-				font-size: 0.85rem;
-				color: rgb(var(--gray));
-				margin: 0;
-				line-height: 1.6;
-			}
-			/* Moments */
+/* Moments */
 			.moments {
 				margin-bottom: 2.5em;
 			}
@@ -302,22 +243,6 @@ const moments = [
 				<h1>迷いながら進む、それでいい。</h1>
 				<p>転職・働き方・スキルアップ・副業——キャリアに悩む人たちのリアルな体験談を、現役のコンサルタント・営業職・エンジニアが書いています。</p>
 				<a class="hero-cta" href={`${base}/blog`}>記事を読む</a>
-			</section>
-
-			<!-- Writers -->
-			<section class="writers">
-				<p class="section-title">ライター</p>
-				<div class="writer-list">
-					{writers.map((w) => (
-						<a class="writer-card" href={`${base}/blog/author/${w.id}`}>
-							<div class="writer-icon">{w.icon}</div>
-							<div>
-								<div class="writer-name">{w.name}</div>
-								<p class="writer-desc">{w.desc}</p>
-							</div>
-						</a>
-					))}
-				</div>
 			</section>
 
 			<!-- Moments -->
