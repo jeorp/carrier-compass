@@ -151,9 +151,17 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 				color: rgb(var(--gray));
 				line-height: 1.6;
 			}
+			/* モバイル用タブバー */
+			.mobile-tabs {
+				display: none;
+			}
 			@media (max-width: 720px) {
 				main {
 					width: 100%;
+					padding-bottom: calc(60px + 48px + 1em + env(safe-area-inset-bottom));
+				}
+				.feed-header {
+					display: none;
 				}
 				.date-chip {
 					display: none;
@@ -166,6 +174,41 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 				}
 				ul li {
 					padding: 1.25rem 0;
+				}
+				.mobile-tabs {
+					display: flex;
+					position: fixed;
+					bottom: calc(60px + env(safe-area-inset-bottom));
+					left: 0;
+					right: 0;
+					height: 48px;
+					background: white;
+					border-top: 1px solid rgb(var(--gray-light));
+					z-index: 99;
+					overflow-x: auto;
+					scrollbar-width: none;
+				}
+				.mobile-tabs::-webkit-scrollbar {
+					display: none;
+				}
+				.mobile-tabs a {
+					flex: 1;
+					min-width: 72px;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					font-size: 0.875rem;
+					font-weight: 600;
+					color: rgb(var(--gray));
+					text-decoration: none;
+					border-bottom: 3px solid transparent;
+					white-space: nowrap;
+					padding: 0 0.5em;
+					transition: color 0.15s ease;
+				}
+				.mobile-tabs a.active {
+					color: var(--accent);
+					border-bottom-color: var(--accent);
 				}
 			}
 		</style>
@@ -224,6 +267,12 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 			</section>
 		</main>
 		<Footer />
+		<nav class="mobile-tabs">
+			<a href={`${base}/blog`} class="active">すべて</a>
+			{authors.map((a) => (
+				<a href={`${base}/blog/author/${a}`}>{authorLabels[a]}</a>
+			))}
+		</nav>
 	<script>
 		const list = document.querySelector('ul')!;
 		const btnDesc = document.getElementById('sort-desc')!;
