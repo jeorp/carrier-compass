@@ -5,6 +5,7 @@ pubDate: 2026-03-05
 category: 働き方
 tags: ["メンタル", "1年目", "仕事", "営業"]
 author: yuki
+targetKeyword: "仕事 怖くなった 自信なくした"
 related: ["large-company-to-startup"]
 ---
 

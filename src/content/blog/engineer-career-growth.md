@@ -5,6 +5,7 @@ pubDate: 2026-01-08
 category: スキルアップ
 tags: ["スキルアップ", "勉強", "エンジニア", "キャリア"]
 author: kz
+targetKeyword: "エンジニア 勉強 何から始める"
 related: ["twenties-career-kz", "first-year-engineer"]
 ---
 

@@ -136,8 +136,27 @@ carrier-note/
 
 ## 記事管理
 
-**新記事を企画・執筆する前に必ず `strategy/articles.md` を参照すること。**
+**新記事を企画・執筆する前に必ず以下の順で参照・更新すること。**
 
-- 既存記事との重複を避けるため
-- 未執筆リストから優先度の高いテーマを選ぶため
-- 新記事を追加したら `strategy/articles.md` のテーブルと未執筆リストを更新すること
+### 新記事執筆ワークフロー
+
+1. `strategy/keywords.md` からメインキーワードを選ぶ（未執筆テーマ一覧から優先度・競合度を確認）
+2. `strategy/articles.md` で既存記事との重複がないか確認する
+3. frontmatterに `targetKeyword` フィールドを追加する（例: `targetKeyword: "営業 辞めたい 続ける"`）
+4. タイトル・description・本文冒頭100字に `targetKeyword` を自然に含める
+5. 執筆後、`strategy/articles.md` と `strategy/keywords.md` の両方を更新する
+
+### frontmatterテンプレート
+
+```yaml
+---
+title: ""
+description: ""
+pubDate: YYYY-MM-DD
+category: 働き方
+tags: []
+author: syun
+targetKeyword: ""
+related: []
+---
+```

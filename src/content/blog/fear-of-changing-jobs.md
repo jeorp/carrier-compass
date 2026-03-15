@@ -5,6 +5,7 @@ pubDate: 2026-03-13
 category: 転職
 tags: ["転職", "マインドセット", "決断", "キャリア相談"]
 author: syun
+targetKeyword: "転職 怖い 動けない"
 related: ["mindset-career-change", "high-performer-slow-career-change"]
 ---
 

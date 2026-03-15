@@ -5,6 +5,7 @@ pubDate: 2026-02-18
 category: 働き方
 tags: ["20代", "キャリア", "転職", "振り返り"]
 author: syun
+targetKeyword: "20代 キャリア 後悔しない"
 related: ["fear-of-changing-jobs", "regret-after-job-change"]
 ---
 

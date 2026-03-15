@@ -5,6 +5,7 @@ pubDate: 2026-01-17
 category: 転職
 tags: ["転職", "キャリアチェンジ", "独立", "外資系"]
 author: syun
+targetKeyword: "転職 年収下がる 後悔"
 related: ["high-earner-career-worries"]
 ---
 

@@ -5,6 +5,7 @@ pubDate: 2026-02-14
 category: 副業
 tags: ["副業", "失敗", "キャリア", "フリーランス"]
 author: syun
+targetKeyword: "副業 失敗 共通点"
 related: ["twenties-career-syun", "mindset-career-change"]
 ---
 

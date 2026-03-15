@@ -5,6 +5,7 @@ pubDate: 2026-03-15
 category: 転職
 tags: ["転職", "後悔", "マインドセット", "キャリア相談"]
 author: syun
+targetKeyword: "転職 後悔 する人しない人"
 related: ["gave-up-high-salary", "procrastinating-career-change"]
 ---
 

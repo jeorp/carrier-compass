@@ -5,6 +5,7 @@ pubDate: 2026-03-09
 category: 働き方
 tags: ["20代", "キャリア", "転職", "働き方"]
 author: yuki
+targetKeyword: "20代 キャリア 迷ってる"
 related: ["large-company-to-startup", "new-graduate-ai-impact"]
 ---
 

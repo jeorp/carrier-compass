@@ -5,6 +5,7 @@ pubDate: 2026-03-13
 category: 働き方
 tags: ["仕事", "しんどい", "営業", "メンタル"]
 author: yuki
+targetKeyword: "仕事 行きたくない 朝"
 related: ["when-work-got-scary", "why-i-continue-sales"]
 ---
 
