@@ -47,24 +47,28 @@ const moments = [
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 		<style>
 			main {
-				width: min(720px, calc(100% - 2em));
+				width: min(760px, calc(100% - 2em));
 				margin: 0 auto;
-				padding: 2em 1em 4em;
+				padding: 0 1em 4em;
 			}
+			/* Hero */
 			.hero {
-				padding: 2.5em 0 2em;
+				padding: 3.5em 1.5em 2.5em;
+				margin: 0 -1.5em 2.5em;
+				background: linear-gradient(160deg, rgba(232,113,74,0.06) 0%, rgba(250,249,248,0) 60%);
 				border-bottom: 1px solid rgb(var(--gray-light));
-				margin-bottom: 2.5em;
 			}
 			.hero h1 {
-				font-size: 1.8rem;
-				line-height: 1.3;
+				font-size: 2.2rem;
+				line-height: 1.25;
 				margin: 0 0 0.6em;
+				letter-spacing: -0.01em;
 			}
 			.hero p {
 				color: rgb(var(--gray));
-				margin: 0 0 1.2em;
-				line-height: 1.7;
+				margin: 0 0 1.4em;
+				line-height: 1.8;
+				max-width: 520px;
 			}
 			.hero-cta {
 				display: inline-flex;
@@ -72,65 +76,71 @@ const moments = [
 				background: var(--accent);
 				color: white;
 				text-decoration: none;
-				padding: 0.7em 1.4em;
+				padding: 0.7em 1.6em;
 				min-height: 44px;
 				border-radius: 999px;
 				font-size: 0.9rem;
 				font-weight: 700;
 				transition: opacity 0.15s ease;
 			}
-			.hero-cta:hover {
-				opacity: 0.85;
-			}
+			.hero-cta:hover { opacity: 0.85; }
+			/* Section */
 			.section-title {
-				font-size: 0.8rem;
+				font-size: 0.75rem;
 				font-weight: 700;
 				color: rgb(var(--gray));
-				letter-spacing: 0.1em;
+				letter-spacing: 0.12em;
 				text-transform: uppercase;
 				margin: 0 0 1rem;
-			}
-/* Moments */
-			.moments {
-				margin-bottom: 2.5em;
-			}
-			.moment-list {
 				display: flex;
-				flex-direction: column;
+				align-items: center;
+				gap: 0.6em;
+			}
+			.section-title::after {
+				content: '';
+				flex: 1;
+				height: 1px;
+				background: rgb(var(--gray-light));
+			}
+			/* Moments */
+			.moments { margin-bottom: 2.5em; }
+			.moment-list {
+				display: grid;
+				grid-template-columns: 1fr;
 				gap: 0.75em;
 			}
 			.moment-card {
 				display: block;
-				padding: 1.2em 1.4em;
-				border: 1px solid rgb(var(--gray-light));
-				border-radius: 12px;
+				padding: 1.1em 1.2em 1.1em 1.4em;
+				border-left: 3px solid var(--accent);
+				background: rgba(var(--gray-light), 0.35);
+				border-radius: 0 10px 10px 0;
 				text-decoration: none;
 				color: inherit;
-				transition: border-color 0.15s ease;
+				transition: background 0.15s ease, border-color 0.15s ease;
 			}
 			.moment-card:hover {
-				border-color: var(--accent);
+				background: rgba(var(--gray-light), 0.6);
 			}
 			.moment-situation {
-				font-size: 0.875rem;
+				font-size: 0.8rem;
 				font-weight: 700;
-				color: rgb(var(--gray));
-				margin-bottom: 0.5em;
+				color: var(--accent);
+				margin-bottom: 0.4em;
+				letter-spacing: 0.02em;
 			}
 			.moment-quote {
 				font-size: 0.95rem;
-				line-height: 1.6;
-				margin: 0 0 0.6em;
+				line-height: 1.65;
+				margin: 0 0 0.5em;
 				color: rgb(var(--gray-dark));
 			}
 			.moment-attribution {
-				font-size: 0.8rem;
+				font-size: 0.78rem;
 				color: rgb(var(--gray));
 			}
 			/* Categories */
-			.categories {
-				margin-bottom: 2.5em;
-			}
+			.categories { margin-bottom: 2.5em; }
 			.category-list {
 				display: flex;
 				flex-wrap: wrap;
@@ -138,22 +148,21 @@ const moments = [
 			}
 			.category-list a {
 				display: inline-block;
-				padding: 0.4em 1em;
+				padding: 0.4em 1.1em;
 				border-radius: 999px;
-				border: 1px solid rgb(var(--gray-light));
+				background: rgb(var(--gray-light));
 				font-size: 0.85rem;
 				color: rgb(var(--gray-dark));
 				text-decoration: none;
+				font-weight: 600;
 				transition: all 0.15s ease;
 			}
 			.category-list a:hover {
-				border-color: var(--accent);
-				color: var(--accent);
+				background: var(--accent);
+				color: white;
 			}
 			/* Recent posts */
-			.recent {
-				margin-bottom: 2em;
-			}
+			.recent { margin-bottom: 2em; }
 			.post-list {
 				list-style: none;
 				padding: 0;
@@ -161,55 +170,41 @@ const moments = [
 				display: flex;
 				flex-direction: column;
 			}
-			.post-list li {
-				border-bottom: 1px solid rgb(var(--gray-light));
-				padding: 1.5em 0;
-			}
-			.post-list li:first-child {
-				padding-top: 0;
-			}
+			.post-list li { padding: 1.4em 0; border-bottom: 1px solid rgb(var(--gray-light)); }
+			.post-list li:first-child { padding-top: 0; }
 			.post-list a {
+				display: block;
 				text-decoration: none;
 				color: inherit;
-				display: block;
+				padding: 0.6em 0.8em;
+				margin: -0.6em -0.8em;
+				border-radius: 8px;
+				transition: background 0.15s ease;
 			}
+			.post-list a:hover { background: rgba(var(--gray-light), 0.5); }
 			.post-meta {
 				display: flex;
 				align-items: center;
 				gap: 0.5em;
-				font-size: 0.8rem;
+				font-size: 0.78rem;
 				margin-bottom: 0.5em;
 			}
-			.author-chip {
-				font-weight: 700;
-				color: rgb(var(--gray-dark));
-			}
+			.author-chip { font-weight: 700; color: rgb(var(--gray-dark)); }
 			.category-chip {
 				background: var(--accent);
 				color: white;
-				font-size: 0.7rem;
+				font-size: 0.68rem;
 				padding: 0.15em 0.6em;
 				border-radius: 999px;
 				font-weight: 700;
 			}
-			.date-chip {
-				color: rgb(var(--gray));
-				margin-left: auto;
-			}
+			.date-chip { color: rgb(var(--gray)); margin-left: auto; }
 			.post-title {
-				font-size: 1.1rem;
+				font-size: 1.05rem;
 				font-weight: 700;
 				margin: 0 0 0.3em;
-				line-height: 1.4;
-				display: inline;
-				background-image: linear-gradient(var(--accent), var(--accent));
-				background-size: 0% 2px;
-				background-repeat: no-repeat;
-				background-position: left bottom;
-				transition: background-size 0.25s ease;
-			}
-			.post-list a:hover .post-title {
-				background-size: 100% 2px;
+				line-height: 1.45;
+				color: rgb(var(--black));
 			}
 			.post-desc {
 				font-size: 0.875rem;
@@ -223,17 +218,25 @@ const moments = [
 				font-size: 0.875rem;
 				color: var(--accent);
 				text-decoration: none;
+				font-weight: 600;
 			}
-			.all-link:hover {
-				text-decoration: underline;
+			.all-link:hover { text-decoration: underline; }
+			/* Desktop enhancements */
+			@media (min-width: 600px) {
+				.moment-list {
+					grid-template-columns: 1fr 1fr;
+				}
+				.moment-list .moment-card:first-child {
+					grid-column: 1 / -1;
+				}
 			}
-			@media (max-width: 720px) {
-				.hero h1 {
-					font-size: 1.6rem;
+			@media (max-width: 599px) {
+				.hero {
+					padding: 2.5em 1em 2em;
+					margin: 0 -1em 2em;
 				}
-				.date-chip {
-					display: none;
-				}
+				.hero h1 { font-size: 1.6rem; }
+				.date-chip { display: none; }
 			}
 		</style>
 	</head>
