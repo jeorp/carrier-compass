@@ -6,23 +6,30 @@ import FormattedDate from '../../components/FormattedDate.astro';
 import Header from '../../components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
 
-const posts = (await getCollection('blog')).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
-const categories = ['転職', 'スキルアップ', '副業', '働き方'] as const;
 const authors = ['syun', 'yuki', 'kz'] as const;
 const authorLabels: Record<string, string> = { syun: '💼 Syun', yuki: '☕ Yuki', kz: '🛠️ kz' };
+const categories = ['転職', 'スキルアップ', '副業', '働き方'] as const;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+export async function getStaticPaths({ paginate }: { paginate: Function }) {
+	const posts = (await getCollection('blog')).sort(
+		(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+	);
+	return paginate(posts, { pageSize: 8 });
+}
+
+const { page } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="ja">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<BaseHead
+			title={page.currentPage === 1 ? SITE_TITLE : `${SITE_TITLE} — ${page.currentPage}ページ目`}
+			description={SITE_DESCRIPTION}
+		/>
 		<style>
-			main {
-				width: 680px;
-			}
+			main { width: 680px; }
 			.feed-header {
 				margin-bottom: 2rem;
 				padding-bottom: 0.5rem;
@@ -50,37 +57,8 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 				color: rgb(var(--gray));
 				transition: all 0.15s ease;
 			}
-			.category-filters a:hover {
-				border-color: var(--accent);
-				color: var(--accent);
-			}
+			.category-filters a:hover { border-color: var(--accent); color: var(--accent); }
 			.category-filters a.active {
-				background: var(--accent);
-				border-color: var(--accent);
-				color: white;
-				font-weight: 700;
-			}
-			.sort-buttons {
-				display: flex;
-				gap: 0.5em;
-				margin-top: 0.75rem;
-			}
-			.sort-buttons button {
-				font-size: 0.8rem;
-				padding: 0.3em 0.8em;
-				border-radius: 999px;
-				border: 1px solid rgb(var(--gray-light));
-				background: none;
-				color: rgb(var(--gray));
-				cursor: pointer;
-				transition: all 0.15s ease;
-				font-family: inherit;
-			}
-			.sort-buttons button:hover {
-				border-color: var(--accent);
-				color: var(--accent);
-			}
-			.sort-buttons button.active {
 				background: var(--accent);
 				border-color: var(--accent);
 				color: white;
@@ -92,20 +70,13 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 				padding: 0;
 				display: flex;
 				flex-direction: column;
-				gap: 0;
 			}
 			ul li {
 				border-bottom: 1px solid rgb(var(--gray-light));
 				padding: 1.75rem 0;
 			}
-			ul li:first-child {
-				padding-top: 0;
-			}
-			ul li a {
-				display: block;
-				text-decoration: none;
-				color: inherit;
-			}
+			ul li:first-child { padding-top: 0; }
+			ul li a { display: block; text-decoration: none; color: inherit; }
 			.card-meta {
 				display: flex;
 				align-items: center;
@@ -113,10 +84,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 				margin-bottom: 0.6rem;
 				font-size: 0.8rem;
 			}
-			.author-chip {
-				font-weight: 700;
-				color: rgb(var(--gray-dark));
-			}
+			.author-chip { font-weight: 700; color: rgb(var(--gray-dark)); }
 			.category-chip {
 				background: var(--accent);
 				color: white;
@@ -125,16 +93,12 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 				border-radius: 999px;
 				font-weight: 700;
 			}
-			.date-chip {
-				color: rgb(var(--gray));
-				margin-left: auto;
-			}
+			.date-chip { color: rgb(var(--gray)); margin-left: auto; }
 			.title {
 				margin: 0 0 0.4rem 0;
 				font-size: 1.2rem;
 				line-height: 1.4;
 				color: rgb(var(--black));
-				transition: color 0.15s ease;
 				display: inline;
 				background-image: linear-gradient(var(--accent), var(--accent));
 				background-size: 0% 2px;
@@ -142,39 +106,55 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 				background-position: left bottom;
 				transition: background-size 0.25s ease;
 			}
-			ul li a:hover .title {
-				background-size: 100% 2px;
+			ul li a:hover .title { background-size: 100% 2px; }
+			.description { margin: 0; font-size: 0.9rem; color: rgb(var(--gray)); line-height: 1.6; }
+			/* Pagination */
+			.pagination {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				padding: 2rem 0 1rem;
+				gap: 1em;
 			}
-			.description {
-				margin: 0;
-				font-size: 0.9rem;
+			.pagination a, .pagination span {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				min-width: 44px;
+				min-height: 44px;
+				padding: 0 1em;
+				border-radius: 999px;
+				font-size: 0.875rem;
+				font-weight: 600;
+				text-decoration: none;
+				border: 1px solid rgb(var(--gray-light));
+				color: rgb(var(--gray-dark));
+				transition: all 0.15s ease;
+			}
+			.pagination a:hover { border-color: var(--accent); color: var(--accent); }
+			.pagination .disabled {
+				opacity: 0.3;
+				pointer-events: none;
+			}
+			.pagination .page-info {
+				border: none;
+				font-size: 0.85rem;
 				color: rgb(var(--gray));
-				line-height: 1.6;
+				min-width: auto;
 			}
 			/* モバイル用タブバー */
-			.mobile-tabs {
-				display: none;
-			}
+			.mobile-tabs { display: none; }
 			@media (max-width: 720px) {
 				main {
 					width: 100%;
 					padding-bottom: calc(60px + 48px + 1em + env(safe-area-inset-bottom));
 				}
-				.feed-header {
-					display: none;
-				}
-				.date-chip {
-					display: none;
-				}
-				.title {
-					font-size: 1rem;
-				}
-				.description {
-					font-size: 0.85rem;
-				}
-				ul li {
-					padding: 1.25rem 0;
-				}
+				.feed-header { display: none; }
+				.date-chip { display: none; }
+				.title { font-size: 1rem; }
+				.description { font-size: 0.85rem; }
+				ul li { padding: 1.25rem 0; }
+				.pagination { padding: 1.5rem 0 0.5rem; }
 				.mobile-tabs {
 					display: flex;
 					position: fixed;
@@ -188,9 +168,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 					overflow-x: auto;
 					scrollbar-width: none;
 				}
-				.mobile-tabs::-webkit-scrollbar {
-					display: none;
-				}
+				.mobile-tabs::-webkit-scrollbar { display: none; }
 				.mobile-tabs a {
 					flex: 1;
 					min-width: 72px;
@@ -232,38 +210,43 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 							<a href={`${base}/blog/category/${cat}`}>{cat}</a>
 						))}
 					</div>
-					<div class="sort-buttons">
-						<button id="sort-desc" class="active">新しい順</button>
-						<button id="sort-asc">古い順</button>
-					</div>
 				</div>
 				<ul>
-					{
-						posts.map((post) => (
-							<li>
-								<a href={`${import.meta.env.BASE_URL}blog/${post.id}/`} data-date={post.data.pubDate.valueOf()}>
-									<div class="card-meta">
-										{post.data.author && (
-											<span class="author-chip">
-												{post.data.author === 'yuki' ? '☕ Yuki' : post.data.author === 'kz' ? '🛠️ kz' : '💼 Syun'}
-											</span>
-										)}
-										{post.data.category && (
-											<span class="category-chip">{post.data.category}</span>
-										)}
-										<span class="date-chip">
-											<FormattedDate date={post.data.pubDate} />
+					{page.data.map((post) => (
+						<li>
+							<a href={`${base}/blog/${post.id}/`}>
+								<div class="card-meta">
+									{post.data.author && (
+										<span class="author-chip">
+											{post.data.author === 'yuki' ? '☕ Yuki' : post.data.author === 'kz' ? '🛠️ kz' : '💼 Syun'}
 										</span>
-									</div>
-									<h4 class="title">{post.data.title}</h4>
-									{post.data.description && (
-										<p class="description">{post.data.description}</p>
 									)}
-								</a>
-							</li>
-						))
-					}
+									{post.data.category && (
+										<span class="category-chip">{post.data.category}</span>
+									)}
+									<span class="date-chip">
+										<FormattedDate date={post.data.pubDate} />
+									</span>
+								</div>
+								<h4 class="title">{post.data.title}</h4>
+								{post.data.description && (
+									<p class="description">{post.data.description}</p>
+								)}
+							</a>
+						</li>
+					))}
 				</ul>
+				<nav class="pagination">
+					{page.url.prev
+						? <a href={page.url.prev}>← 新しい記事</a>
+						: <span class="disabled">← 新しい記事</span>
+					}
+					<span class="page-info">{page.currentPage} / {page.lastPage}</span>
+					{page.url.next
+						? <a href={page.url.next}>古い記事 →</a>
+						: <span class="disabled">古い記事 →</span>
+					}
+				</nav>
 			</section>
 		</main>
 		<Footer />
@@ -273,25 +256,5 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 				<a href={`${base}/blog/author/${a}`}>{authorLabels[a]}</a>
 			))}
 		</nav>
-	<script>
-		const list = document.querySelector('ul')!;
-		const btnDesc = document.getElementById('sort-desc')!;
-		const btnAsc = document.getElementById('sort-asc')!;
-
-		function sortPosts(order: 'asc' | 'desc') {
-			const items = Array.from(list.querySelectorAll('li'));
-			items.sort((a, b) => {
-				const dateA = Number(a.querySelector('a')?.dataset.date ?? 0);
-				const dateB = Number(b.querySelector('a')?.dataset.date ?? 0);
-				return order === 'desc' ? dateB - dateA : dateA - dateB;
-			});
-			items.forEach((item) => list.appendChild(item));
-			btnDesc.classList.toggle('active', order === 'desc');
-			btnAsc.classList.toggle('active', order === 'asc');
-		}
-
-		btnDesc.addEventListener('click', () => sortPosts('desc'));
-		btnAsc.addEventListener('click', () => sortPosts('asc'));
-	</script>
 	</body>
 </html>
