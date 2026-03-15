@@ -5,6 +5,7 @@ pubDate: 2026-01-08
 category: スキルアップ
 tags: ["スキルアップ", "勉強", "エンジニア", "キャリア"]
 author: kz
+related: ["twenties-career-kz", "first-year-engineer"]
 ---
 
 「何を勉強すればいいですか？」

@@ -5,6 +5,7 @@ pubDate: 2026-02-14
 category: 副業
 tags: ["副業", "失敗", "キャリア", "フリーランス"]
 author: syun
+related: ["twenties-career-syun", "mindset-career-change"]
 ---
 
 副業、やってみたことある人なら分かると思うんだけど。
