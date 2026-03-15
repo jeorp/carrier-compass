@@ -15,7 +15,7 @@ const blog = defineCollection({
 			heroImage: z.optional(image()),
 			category: z.enum(['転職', 'スキルアップ', '副業', '働き方']),
 			tags: z.array(z.string()).optional(),
-			author: z.enum(['syun', 'yuki', 'kenta']).optional(),
+			author: z.enum(['syun', 'yuki', 'kz']).optional(),
 		}),
 });
 
