@@ -19,7 +19,7 @@ const categories = ['転職', 'スキルアップ', '副業', '働き方'];
 const moments = [
 	{
 		situation: '転職しようか、ずっと迷っている',
-		quote: '「辞めていいのか」って8ヶ月考え続けた。答えが出たのは、問いを変えたときだった。',
+		quote: '辞めていいのか、って8ヶ月考え続けた。答えが出たのは、問いを変えたときだった。',
 		author: 'Syun',
 		icon: '💼',
 		href: `${base}/blog/mindset-career-change`,
@@ -67,11 +67,13 @@ const moments = [
 				line-height: 1.7;
 			}
 			.hero-cta {
-				display: inline-block;
+				display: inline-flex;
+				align-items: center;
 				background: var(--accent);
 				color: white;
 				text-decoration: none;
-				padding: 0.5em 1.2em;
+				padding: 0.7em 1.4em;
+				min-height: 44px;
 				border-radius: 999px;
 				font-size: 0.9rem;
 				font-weight: 700;
@@ -110,7 +112,7 @@ const moments = [
 				border-color: var(--accent);
 			}
 			.moment-situation {
-				font-size: 0.8rem;
+				font-size: 0.875rem;
 				font-weight: 700;
 				color: rgb(var(--gray));
 				margin-bottom: 0.5em;
@@ -227,7 +229,7 @@ const moments = [
 			}
 			@media (max-width: 720px) {
 				.hero h1 {
-					font-size: 1.4rem;
+					font-size: 1.6rem;
 				}
 				.date-chip {
 					display: none;
