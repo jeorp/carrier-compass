@@ -31,9 +31,30 @@ const authors: Record<string, { name: string; bio: string; icon: string }> = {
 const authorProfile = author ? authors[author] : null;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
+const allPosts = await getCollection('blog');
+
+// URLから現在記事のIDを取得して除外
+const segments = Astro.url.pathname.split('/').filter(Boolean);
+const currentId = segments[segments.length - 1];
+
 const relatedPosts = related?.length
-	? (await getCollection('blog')).filter((p) => related.includes(p.id))
-	: [];
+	? allPosts.filter((p) => related.includes(p.id))
+	: (() => {
+		const currentTags = tags ?? [];
+		return allPosts
+			.filter((p) => p.id !== currentId)
+			.map((p) => {
+				let score = 0;
+				if (p.data.author === author) score += 3;
+				if (p.data.category === category) score += 2;
+				score += (p.data.tags ?? []).filter((t) => currentTags.includes(t)).length;
+				return { post: p, score };
+			})
+			.filter(({ score }) => score > 0)
+			.sort((a, b) => b.score - a.score)
+			.slice(0, 1)
+			.map(({ post }) => post);
+	})();
 ---
 
 <html lang="en">
