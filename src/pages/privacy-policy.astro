@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/BlogPost.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <Layout
@@ -28,7 +29,7 @@ import Layout from '../layouts/BlogPost.astro';
 <p>当サイトは、必要に応じて本プライバシーポリシーを変更することがあります。変更後のポリシーは本ページに掲載した時点で効力を生じるものとします。</p>
 
 <h2>お問い合わせ</h2>
-<p>本ポリシーに関するお問い合わせは、<a href="/contact">お問い合わせページ</a>よりご連絡ください。</p>
+<p>本ポリシーに関するお問い合わせは、<a href={`${base}/contact`}>お問い合わせページ</a>よりご連絡ください。</p>
 
 <p style="margin-top: 2em; font-size: 0.85em; color: rgb(var(--gray));">制定日：2026年3月15日</p>
 </Layout>
