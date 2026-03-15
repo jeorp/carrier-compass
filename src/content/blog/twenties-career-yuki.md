@@ -6,7 +6,7 @@ category: 働き方
 tags: ["20代", "キャリア", "転職", "働き方"]
 author: yuki
 targetKeyword: "20代 キャリア 迷ってる"
-related: ["large-company-to-startup", "new-graduate-ai-impact"]
+related: ["large-company-to-startup", "twenties-career-syun"]
 ---
 
 29歳って、なんか微妙な年齢で。
