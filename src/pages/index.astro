@@ -9,12 +9,21 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 const allPosts = await getCollection('blog');
 const recentPosts = allPosts
 	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-	.slice(0, 3);
+	.slice(0, 5);
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
-
 const categories = ['転職', 'スキルアップ', '副業', '働き方'];
+
+const writers = [
+	{ id: 'syun', icon: '💼', name: 'Syun', tagline: '外資コンサル出身のキャリアコンサルタント' },
+	{ id: 'yuki', icon: '☕', name: 'Yuki', tagline: '大手メーカー→スタートアップの現役営業' },
+	{ id: 'kz', icon: '🛠️', name: 'kz', tagline: '新卒フリーランスのソフトウェアエンジニア' },
+];
+
+const postCountByAuthor = Object.fromEntries(
+	writers.map((w) => [w.id, allPosts.filter((p) => p.data.author === w.id).length])
+);
 
 const moments = [
 	{
@@ -161,6 +170,46 @@ const moments = [
 				background: var(--accent);
 				color: white;
 			}
+			/* Writers */
+			.writers { margin-bottom: 2.5em; }
+			.writer-list {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 0.75em;
+			}
+			.writer-card {
+				display: flex;
+				flex-direction: column;
+				gap: 0.3em;
+				padding: 1em 1.1em;
+				border: 1px solid rgb(var(--gray-light));
+				border-radius: 12px;
+				text-decoration: none;
+				color: inherit;
+				transition: border-color 0.15s ease;
+			}
+			.writer-card:hover { border-color: var(--accent); }
+			.writer-card-header {
+				display: flex;
+				align-items: center;
+				gap: 0.5em;
+				font-weight: 700;
+				font-size: 0.95rem;
+			}
+			.writer-card-tagline {
+				font-size: 0.78rem;
+				color: rgb(var(--gray));
+				line-height: 1.4;
+			}
+			.writer-card-count {
+				font-size: 0.75rem;
+				color: var(--accent);
+				font-weight: 700;
+				margin-top: 0.2em;
+			}
+			@media (max-width: 599px) {
+				.writer-list { grid-template-columns: 1fr; }
+			}
 			/* Recent posts */
 			.recent { margin-bottom: 2em; }
 			.post-list {
@@ -274,7 +323,24 @@ const moments = [
 				</div>
 			</section>
 
-			<!-- Recent posts -->
+			<!-- Writers -->
+			<section class="writers">
+				<p class="section-title">ライターで探す</p>
+				<div class="writer-list">
+					{writers.map((w) => (
+						<a class="writer-card" href={`${base}/blog/author/${w.id}`}>
+							<div class="writer-card-header">
+								<span>{w.icon}</span>
+								<span>{w.name}</span>
+							</div>
+							<div class="writer-card-tagline">{w.tagline}</div>
+							<div class="writer-card-count">{postCountByAuthor[w.id]}件の記事</div>
+						</a>
+					))}
+				</div>
+			</section>
+
+		<!-- Recent posts -->
 			<section class="recent">
 				<p class="section-title">最新記事</p>
 				<ul class="post-list">
