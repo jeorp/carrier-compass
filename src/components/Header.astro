@@ -13,17 +13,6 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 			<HeaderLink href={`${base}/blog`}>ブログ</HeaderLink>
 			<HeaderLink href={`${base}/about`}>このサイトについて</HeaderLink>
 		</div>
-		<div class="social-links">
-			<a href="https://twitter.com/" target="_blank">
-				<span class="sr-only">Xをフォロー</span>
-				<svg viewBox="0 0 24 24" aria-hidden="true" width="32" height="32"
-					><path
-						fill="currentColor"
-						d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"
-					></path></svg
-				>
-			</a>
-		</div>
 	</nav>
 </header>
 <style>
@@ -57,14 +46,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 		text-decoration: none;
 		border-bottom-color: var(--accent);
 	}
-	.social-links,
-	.social-links a {
-		display: flex;
-	}
 	@media (max-width: 720px) {
-		.social-links {
-			display: none;
-		}
 		nav {
 			flex-wrap: wrap;
 			gap: 0.25em;
