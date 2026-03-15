@@ -122,7 +122,7 @@ const posts = (await getCollection('blog')).sort(
 					{
 						posts.map((post) => (
 							<li>
-								<a href={`/blog/${post.id}/`}>
+								<a href={`${import.meta.env.BASE_URL}blog/${post.id}/`}>
 									<div class="card-meta">
 										{post.data.author && (
 											<span class="author-chip">
