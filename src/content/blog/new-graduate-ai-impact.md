@@ -5,6 +5,7 @@ pubDate: 2026-01-27
 category: 働き方
 tags: ["新卒", "不安", "働き方", "テクノロジー"]
 author: yuki
+targetKeyword: "社会人 怖い 就活生"
 related: ["first-year-surprises", "twenties-career-yuki"]
 ---
 

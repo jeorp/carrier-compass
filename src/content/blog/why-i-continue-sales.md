@@ -5,6 +5,7 @@ pubDate: 2026-03-12
 category: 働き方
 tags: ["営業", "仕事", "やりがい", "キャリア"]
 author: yuki
+targetKeyword: "営業 辞めたい 続ける"
 related: ["not-suited-for-sales", "large-company-to-startup"]
 ---
 

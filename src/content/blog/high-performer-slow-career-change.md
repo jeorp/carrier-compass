@@ -5,6 +5,7 @@ pubDate: 2026-02-28
 category: 転職
 tags: ["転職", "マインドセット", "ハイパフォーマー", "決断"]
 author: syun
+targetKeyword: "転職 踏み切れない 仕事できる"
 related: ["mindset-career-change", "procrastinating-career-change"]
 ---
 

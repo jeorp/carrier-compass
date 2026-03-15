@@ -5,6 +5,7 @@ pubDate: 2026-02-05
 category: 働き方
 tags: ["新卒", "1年目", "社会人", "働き方"]
 author: yuki
+targetKeyword: "社会人1年目 ギャップ"
 related: ["when-work-got-scary"]
 ---
 

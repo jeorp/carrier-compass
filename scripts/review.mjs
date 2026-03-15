@@ -184,7 +184,29 @@ function reviewArticle(filePath) {
     warnings.push({ level: 'WARN', rule: 'SEO: tagsが多すぎ', detail: `${tags.length}個（5個以下推奨）`, lines: `  → ${tags.join(', ')}` });
   }
 
-  return { warnings, meta: { charCount, title, desc, tags, related: fm.related } };
+  // 13. targetKeywordの有無
+  const targetKeyword = fm.targetKeyword ?? '';
+  if (!targetKeyword) {
+    warnings.push({ level: 'WARN', rule: 'SEO: targetKeywordなし', detail: 'frontmatterにtargetKeywordがありません（keywords.mdから選んで設定してください）', lines: '' });
+  } else {
+    // targetKeywordがtitle・description・本文冒頭100字に含まれるか
+    const kws = targetKeyword.split(/[\s　]+/);
+    const opening100 = body.replace(/^#+.*\n/gm, '').replace(/\n/g, '').slice(0, 100);
+    const titleHits = kws.filter(kw => title.includes(kw));
+    const descHits = kws.filter(kw => desc.includes(kw));
+    const openingHits = kws.filter(kw => opening100.includes(kw));
+    if (titleHits.length === 0) {
+      warnings.push({ level: 'WARN', rule: 'SEO: targetKeywordがtitleに未使用', detail: `「${targetKeyword}」のいずれの語もtitleに含まれていません`, lines: `  → title: ${title}` });
+    }
+    if (descHits.length === 0) {
+      warnings.push({ level: 'WARN', rule: 'SEO: targetKeywordがdescriptionに未使用', detail: `「${targetKeyword}」のいずれの語もdescriptionに含まれていません`, lines: '' });
+    }
+    if (openingHits.length === 0) {
+      warnings.push({ level: 'WARN', rule: 'SEO: targetKeywordが冒頭100字に未使用', detail: `「${targetKeyword}」のいずれの語も本文冒頭100字に含まれていません`, lines: '' });
+    }
+  }
+
+  return { warnings, meta: { charCount, title, desc, tags, related: fm.related, targetKeyword } };
 }
 
 // キーワード共食いチェック（--all時のみ）

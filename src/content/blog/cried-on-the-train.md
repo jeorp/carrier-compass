@@ -5,6 +5,7 @@ pubDate: 2026-03-15
 category: 働き方
 tags: ["仕事", "ミス", "しんどい", "営業", "1年目"]
 author: yuki
+targetKeyword: "仕事 帰り 電車 泣く"
 related: ["first-year-surprises", "when-work-got-scary"]
 ---
 

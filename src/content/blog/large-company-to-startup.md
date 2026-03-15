@@ -5,6 +5,7 @@ pubDate: 2026-02-24
 category: 転職
 tags: ["転職", "スタートアップ", "大手", "営業"]
 author: yuki
+targetKeyword: "大手 スタートアップ 転職 後悔"
 related: ["twenties-career-yuki", "fear-of-changing-jobs"]
 ---
 

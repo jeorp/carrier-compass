@@ -5,6 +5,7 @@ pubDate: 2026-02-08
 category: 転職
 tags: ["転職", "マインドセット", "キャリア相談", "決断"]
 author: syun
+targetKeyword: "転職 迷う 決断できない"
 related: ["high-performer-slow-career-change"]
 ---
 

@@ -5,6 +5,7 @@ pubDate: 2026-03-14
 category: 働き方
 tags: ["営業", "仕事", "キャリア", "向いてない"]
 author: yuki
+targetKeyword: "営業 向いてない 辞めたい"
 related: ["why-i-continue-sales", "when-work-got-scary"]
 ---
 

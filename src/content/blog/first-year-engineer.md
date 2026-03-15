@@ -5,6 +5,7 @@ pubDate: 2026-03-16
 category: スキルアップ
 tags: ["エンジニア", "新卒", "1年目", "キャリア", "スキルアップ"]
 author: kz
+targetKeyword: "新卒 エンジニア 1年目 やること"
 related: ["engineer-career-growth", "twenties-career-kz"]
 ---
 
