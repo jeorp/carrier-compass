@@ -5,6 +5,7 @@ pubDate: 2026-01-17
 category: 転職
 tags: ["転職", "キャリアチェンジ", "独立", "外資系"]
 author: syun
+related: ["high-earner-career-worries"]
 ---
 
 正直に言うと、あのころの僕はかなり恵まれていました。
