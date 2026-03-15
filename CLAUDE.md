@@ -143,9 +143,20 @@ carrier-note/
 1. `strategy/keywords.md` からメインキーワードを選ぶ（未執筆テーマ一覧から優先度・競合度を確認）
 2. `strategy/articles.md` で既存記事との重複がないか確認する
 3. frontmatterに `targetKeyword` フィールドを追加する（例: `targetKeyword: "営業 辞めたい 続ける"`）
-4. `npm run review -- --all` を実行し、`❌ [SEO: targetKeyword重複の可能性]` が出ないことを確認する。重複が出た場合はtargetKeywordを変更するか、既存記事との差別化を明確にする
+4. `npm run review -- --all` を実行し、`❌ [SEO: targetKeyword重複の可能性]` が出ないことを確認する。重複が出た場合は下記「targetKeyword重複への対応」を参照する
 5. タイトル・description・本文冒頭100字に `targetKeyword` を自然に含める
 6. 執筆後、`strategy/articles.md` と `strategy/keywords.md` の両方を更新する
+
+### targetKeyword重複への対応
+
+`npm run review -- --all` で重複が検出されたら、記事を消す前に以下を試みる。
+
+1. **ハブ記事を1本決める**（重複グループの中で最も包括的・汎用的なテーマを扱う記事）
+2. **スポーク記事のrelatedにハブを追加する**（スポーク → ハブへの一方向リンク）
+3. **ハブ記事のrelatedにスポーク記事を追加する**（相互リンク完成）
+4. それでも意図・内容が完全に被る場合はtargetKeywordを変更して差別化する
+
+棲み分けの目安：「同じキーワードで競合する2本は、**体験談 vs 解説**・**男性視点 vs 女性視点**・**転職前 vs 転職後**のように切り口が違えば相互リンクで共存できる」
 
 ### frontmatterテンプレート
 

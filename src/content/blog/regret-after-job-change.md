@@ -6,7 +6,7 @@ category: 転職
 tags: ["転職", "後悔", "マインドセット", "キャリア相談"]
 author: syun
 targetKeyword: "転職 後悔 する人しない人"
-related: ["gave-up-high-salary", "procrastinating-career-change"]
+related: ["gave-up-high-salary", "large-company-to-startup"]
 ---
 
 転職して後悔した、という人に会ったことがある。

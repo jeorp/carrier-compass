@@ -6,7 +6,7 @@ category: 働き方
 tags: ["20代", "キャリア", "転職", "振り返り"]
 author: syun
 targetKeyword: "20代 キャリア 後悔しない"
-related: ["fear-of-changing-jobs", "regret-after-job-change"]
+related: ["twenties-career-yuki", "regret-after-job-change"]
 ---
 
 32歳になって、転職相談の仕事をしていると、20代の人から「20代のうちにやっておくべきことは何ですか」と聞かれることがある。

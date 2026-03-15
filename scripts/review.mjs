@@ -284,11 +284,11 @@ for (const file of files) {
 if (args === '--all') {
   const kwOverlaps = checkTargetKeywordOverlap(files);
   if (kwOverlaps.length > 0) {
-    console.log('\n❌ [SEO: targetKeyword重複の可能性]');
+    console.log('\n⚠️  [SEO: targetKeyword重複の可能性（相互リンクで対応してください）]');
     for (const { a, b, shared } of kwOverlaps) {
       console.log(`  「${shared.join(' ')}」が重複: ${a.slug}「${a.kw}」 / ${b.slug}「${b.kw}」`);
     }
-    totalErrors += kwOverlaps.length;
+    totalWarns += kwOverlaps.length;
   }
 
   const overlaps = checkKeywordCannibalization(files);

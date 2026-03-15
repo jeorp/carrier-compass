@@ -6,7 +6,7 @@ category: 転職
 tags: ["転職", "スタートアップ", "大手", "営業"]
 author: yuki
 targetKeyword: "大手 スタートアップ 転職 後悔"
-related: ["twenties-career-yuki", "fear-of-changing-jobs"]
+related: ["regret-after-job-change", "twenties-career-yuki"]
 ---
 
 転職を考え始めたのは、入社3年目の夏だった。
