@@ -49,16 +49,18 @@ function reviewArticle(filePath) {
 
   // ── 文体ルール ──────────────────────────────
 
-  // 1. ですます混在チェック
-  const masuEndings = lines.filter(l => /[ぁ-ん]+(ます|ません|ました|でした|ございます)。/.test(l));
-  const plainEndings = lines.filter(l => /[ぁ-ん]+(だ|だった|だろう|思う|感じる|いる|ある|ない|くない)。/.test(l));
-  if (masuEndings.length > 0 && plainEndings.length > 0) {
-    warnings.push({
-      level: 'ERROR',
-      rule: 'ですます・普通体混在',
-      detail: `ですます調: ${masuEndings.length}行、普通体: ${plainEndings.length}行`,
-      lines: masuEndings.slice(0, 3).map(l => `  → ${l.trim()}`).join('\n'),
-    });
+  // 1. ですます混在チェック（yukiは意図的混在のためスキップ）
+  if (fm.author !== 'yuki') {
+    const masuEndings = lines.filter(l => /[ぁ-ん]+(ます|ません|ました|でした|ございます)。/.test(l));
+    const plainEndings = lines.filter(l => /[ぁ-ん]+(だ|だった|だろう|思う|感じる|いる|ある|ない|くない)。/.test(l));
+    if (masuEndings.length > 0 && plainEndings.length > 0) {
+      warnings.push({
+        level: 'ERROR',
+        rule: 'ですます・普通体混在',
+        detail: `ですます調: ${masuEndings.length}行、普通体: ${plainEndings.length}行`,
+        lines: masuEndings.slice(0, 3).map(l => `  → ${l.trim()}`).join('\n'),
+      });
+    }
   }
 
   // 2. 3点列挙チェック
@@ -234,6 +236,45 @@ function checkTargetKeywordOverlap(files) {
   return overlaps;
 }
 
+// authorとkeywords.md管理テーブルの整合チェック（--all時のみ）
+function checkAuthorTableConsistency(files) {
+  const keywordsPath = path.join(root, 'strategy/keywords.md');
+  if (!fs.existsSync(keywordsPath)) return [];
+
+  const kwContent = fs.readFileSync(keywordsPath, 'utf-8');
+
+  // keywords.mdの各セクション（Syun/Yuki/kz）に含まれるスラッグを抽出
+  const sectionAuthorMap = { syun: new Set(), yuki: new Set(), kz: new Set() };
+  let currentAuthor = null;
+  for (const line of kwContent.split('\n')) {
+    if (/^## Syun/i.test(line)) { currentAuthor = 'syun'; continue; }
+    if (/^## Yuki/i.test(line)) { currentAuthor = 'yuki'; continue; }
+    if (/^## kz/i.test(line))   { currentAuthor = 'kz';   continue; }
+    if (/^## /.test(line))      { currentAuthor = null;   continue; }
+    if (!currentAuthor) continue;
+    // テーブル行（ヘッダー・区切り行を除く）: | slug | ...
+    const m = line.match(/^\|\s*([a-z][a-z0-9-]+)\s*\|/);
+    if (m) sectionAuthorMap[currentAuthor].add(m[1]);
+  }
+
+  const mismatches = [];
+  for (const f of files) {
+    const content = fs.readFileSync(f, 'utf-8');
+    const fm = parseFrontmatter(content);
+    const slug = path.basename(f, '.md');
+    const articleAuthor = fm.author ?? '';
+    // どのセクションに登録されているか
+    const registeredIn = Object.entries(sectionAuthorMap)
+      .filter(([, slugs]) => slugs.has(slug))
+      .map(([author]) => author);
+    if (registeredIn.length === 0) continue; // 未登録はスキップ
+    if (!registeredIn.includes(articleAuthor)) {
+      mismatches.push({ slug, articleAuthor, registeredIn });
+    }
+  }
+  return mismatches;
+}
+
 // タグレベルのキーワード共食いチェック（--all時のみ）
 function checkKeywordCannibalization(files) {
   const tagMap = {};
@@ -297,6 +338,15 @@ if (args === '--all') {
     for (const [tag, slugs] of overlaps) {
       console.log(`  「${tag}」: ${slugs.join(', ')}`);
     }
+  }
+
+  const authorMismatches = checkAuthorTableConsistency(files);
+  if (authorMismatches.length > 0) {
+    console.log('\n❌ [管理: authorとkeywords.mdのテーブル不一致]');
+    for (const { slug, articleAuthor, registeredIn } of authorMismatches) {
+      console.log(`  ${slug}: frontmatter author="${articleAuthor}" / keywords.mdでは「${registeredIn.join(', ')}」セクションに登録`);
+    }
+    totalErrors += authorMismatches.length;
   }
 }
 
