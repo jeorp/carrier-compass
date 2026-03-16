@@ -24,7 +24,7 @@ export async function getStaticPaths({ paginate }: { paginate: Function }) {
 const { category } = Astro.params;
 const { page } = Astro.props;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-const readingTime = (body: string) => Math.max(1, Math.ceil(body.length / 250));
+const readingTime = (body: string) => Math.max(1, Math.ceil(body.length / 500));
 ---
 
 <!doctype html>
