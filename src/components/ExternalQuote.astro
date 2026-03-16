@@ -1,0 +1,61 @@
+---
+interface Props {
+  cite: string;    // 引用元URL
+  source: string;  // 表示するサイト名・資料名
+}
+const { cite, source } = Astro.props;
+---
+
+<figure class="external-quote">
+  <blockquote cite={cite}>
+    <slot />
+  </blockquote>
+  <figcaption>
+    <a href={cite} target="_blank" rel="noopener noreferrer">
+      <span class="source-icon" aria-hidden="true">↗</span>
+      {source}
+    </a>
+  </figcaption>
+</figure>
+
+<style>
+  .external-quote {
+    margin: 2em 0;
+    background: rgba(var(--gray-light), 0.5);
+    border-left: 4px solid var(--accent);
+    border-radius: 0 6px 6px 0;
+    padding: 1.2em 1.4em 1em;
+  }
+
+  .external-quote blockquote {
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-size: 0.95em;
+    line-height: 1.75;
+    color: rgb(var(--gray-dark));
+  }
+
+  .external-quote figcaption {
+    margin-top: 0.75em;
+    font-size: 0.8em;
+    color: rgb(var(--gray));
+  }
+
+  .external-quote figcaption a {
+    color: rgb(var(--gray));
+    text-decoration: none;
+    border-bottom: 1px solid rgba(var(--gray), 0.4);
+    transition: color 0.15s, border-color 0.15s;
+  }
+
+  .external-quote figcaption a:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+
+  .source-icon {
+    margin-right: 0.3em;
+    font-size: 0.9em;
+  }
+</style>
