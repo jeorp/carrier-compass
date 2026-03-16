@@ -9,7 +9,7 @@ targetKeyword: "キャリア相談 タイミング"
 related: ["transfer-agent-first-time-fear", "fear-of-changing-jobs", "mindset-career-change", "career-consultation-what-to-say"]
 ---
 
-「まだ相談するほどのことじゃないかな」と思って、半年が過ぎた。
+キャリア相談のタイミングを迷いながら「まだ相談するほどのことじゃないかな」と思って、半年が過ぎた。
 
 累計で数百件の相談を受けてきたが、こういうパターンがけっこうある。なんとなく今の仕事がしんどい、でも転職するかどうかもわからない、こんな状態で相談していいのかな——と思っているうちに、ずるずると時間が経っていく。
 
