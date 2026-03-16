@@ -6,7 +6,6 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://jeorp.github.io',
-	base: 'carrier-compass',
+	site: 'https://www.carrier-compass.com',
 	integrations: [mdx(), sitemap()],
 });
