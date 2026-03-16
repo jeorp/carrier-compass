@@ -6,6 +6,7 @@ category: 転職
 tags: ["転職", "転職エージェント", "転職活動", "キャリア"]
 author: syun
 targetKeyword: "転職エージェント 複数登録 使い方"
+isAffiliate: true
 related: ["transfer-agent-first-time-fear", "job-change-preparation"]
 ---
 

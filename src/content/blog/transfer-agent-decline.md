@@ -6,6 +6,7 @@ category: 転職
 tags: ["転職", "転職エージェント", "転職活動", "キャリア"]
 author: syun
 targetKeyword: "転職エージェント 断り方"
+isAffiliate: true
 related: ["transfer-agent-first-time-fear", "transfer-agent-multiple-use", "fear-of-changing-jobs"]
 ---
 

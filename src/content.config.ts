@@ -17,6 +17,7 @@ const blog = defineCollection({
 			tags: z.array(z.string()).optional(),
 			author: z.enum(['syun', 'yuki', 'kz']).optional(),
 		related: z.array(z.string()).optional(),
+		isAffiliate: z.boolean().optional(),
 		}),
 });
 

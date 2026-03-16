@@ -6,6 +6,7 @@ category: 転職
 tags: ["転職", "マインドセット", "決断", "キャリア相談"]
 author: syun
 targetKeyword: "転職 怖い 動けない"
+isAffiliate: true
 related: ["mindset-career-change", "high-performer-slow-career-change"]
 ---
 
