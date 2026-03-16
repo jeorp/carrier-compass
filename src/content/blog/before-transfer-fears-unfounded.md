@@ -6,6 +6,7 @@ category: 転職
 tags: ["転職", "不安", "転職前", "キャリア"]
 author: syun
 targetKeyword: "転職前 不安 杞憂"
+isAffiliate: true
 related: ["fear-of-changing-jobs", "gave-up-high-salary", "mindset-career-change"]
 ---
 

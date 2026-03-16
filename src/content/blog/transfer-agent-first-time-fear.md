@@ -6,6 +6,7 @@ category: 転職
 tags: ["転職", "転職エージェント", "転職活動", "キャリア"]
 author: syun
 targetKeyword: "転職エージェント 初めて 怖い"
+isAffiliate: true
 related: ["fear-of-changing-jobs", "procrastinating-career-change"]
 ---
 

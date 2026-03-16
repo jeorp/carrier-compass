@@ -8,7 +8,7 @@ import Header from '../components/Header.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
 
-const { title, description, pubDate, updatedDate, heroImage, author, category, tags, related } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, author, category, tags, related, isAffiliate } = Astro.props;
 
 const authors: Record<string, { name: string; bio: string; icon: string }> = {
 	syun: {
@@ -234,6 +234,11 @@ const shareUrl = `https://x.com/intent/tweet?text=${encodeURIComponent(title)}&u
 				transition: opacity 0.15s ease;
 			}
 			.share-x:hover { opacity: 0.8; }
+			.pr-notice {
+				font-size: 0.78rem;
+				color: rgb(var(--gray));
+				margin: 0 0 1.5em;
+			}
 			@media (max-width: 720px) {
 				.author-profile {
 					flex-direction: column;
@@ -272,6 +277,9 @@ const shareUrl = `https://x.com/intent/tweet?text=${encodeURIComponent(title)}&u
 						</div>
 						<hr />
 					</div>
+					{isAffiliate && (
+						<p class="pr-notice">※ 本記事はアフィリエイト広告を含みます。</p>
+					)}
 					<slot />
 					{author && relatedPosts.length > 0 && (
 						<div class="related">
