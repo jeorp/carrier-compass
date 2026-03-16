@@ -6,7 +6,7 @@ category: 転職
 tags: ["転職", "キャリア", "悩み", "コンサル"]
 author: syun
 targetKeyword: "いい会社 なんか違う"
-related: ["gave-up-high-salary", "mindset-career-change", "fear-of-changing-jobs"]
+related: ["gave-up-high-salary", "mindset-career-change", "good-company-quit-consultation"]
 ---
 
 「なんか違う」って、言語化するのが難しい感覚だと思う。
