@@ -19,7 +19,7 @@
 ## スキル・技術領域
 - Web3（スマートコントラクト設計、ERC20/ERC721）
 - AI（アプリ開発、Expo/NestJS）
-- フィンテック（FAPI、mTLS、PKCE、CIBA、JWE、DPoP、Apigee）
+- フィンテック（Kotlin, Go, Micro Service, FAPI、mTLS、PKCE、JWE、DPoP、Apigee）
 
 ## 現在地・課題感
 - ミドルエンジニアの入り口にいてまだもがいている
