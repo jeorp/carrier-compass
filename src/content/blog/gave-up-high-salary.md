@@ -6,7 +6,7 @@ category: 転職
 tags: ["転職", "キャリアチェンジ", "独立", "外資系"]
 author: syun
 targetKeyword: "転職 年収下がる 後悔"
-related: ["regret-after-job-change", "high-earner-career-worries"]
+related: ["regret-after-job-change", "high-earner-career-worries", "large-company-to-startup"]
 ---
 
 転職で年収が下がることへの後悔はあるか、とよく聞かれる。正直に言うと、ない。
