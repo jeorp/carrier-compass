@@ -6,7 +6,7 @@ category: 転職
 tags: ["転職", "年収", "マインドセット", "キャリア相談"]
 author: syun
 targetKeyword: "年収1000万 転職できない"
-related: ["gave-up-high-salary", "high-performer-slow-career-change"]
+related: ["gave-up-high-salary", "high-performer-slow-career-change", "high-income-career-consultation"]
 ---
 
 転職相談を受けていると、年収帯によって悩みの種類がはっきり変わる。

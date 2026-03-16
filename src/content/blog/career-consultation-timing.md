@@ -6,7 +6,7 @@ category: 転職
 tags: ["転職", "キャリア相談", "キャリア", "転職エージェント"]
 author: syun
 targetKeyword: "キャリア相談 タイミング"
-related: ["transfer-agent-first-time-fear", "fear-of-changing-jobs", "mindset-career-change"]
+related: ["transfer-agent-first-time-fear", "fear-of-changing-jobs", "mindset-career-change", "career-consultation-what-to-say"]
 ---
 
 「まだ相談するほどのことじゃないかな」と思って、半年が過ぎた。

@@ -6,7 +6,7 @@ category: 転職
 tags: ["転職", "ミスマッチ", "転職後", "キャリア"]
 author: syun
 targetKeyword: "転職 ミスマッチ 気づいた"
-related: ["regret-after-job-change", "career-change-trigger", "after-transfer-probation-struggle"]
+related: ["regret-after-job-change", "career-change-trigger", "after-transfer-probation-struggle", "mismatch-next-step-consultation"]
 ---
 
 転職してからミスマッチに気づいた、というのは、想像以上に悩むことだと思う。
