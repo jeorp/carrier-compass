@@ -6,7 +6,8 @@ category: 働き方
 tags: ["仕事", "営業", "キャリア", "働き方"]
 author: yuki
 targetKeyword: "女性 リーダー 不安 向いてない"
-isAffiliate: false
+isAffiliate: true
+books: ["9784478066119"]
 related: ["first-time-senior-anxiety", "work-not-recognized", "when-work-became-fun"]
 ---
 
@@ -49,6 +50,11 @@ related: ["first-time-senior-anxiety", "work-not-recognized", "when-work-became-
 リーダーになって不安なのは、その役割と正面から向き合おうとしているからだと思ってる。
 
 なんとなくこなせる人の方が、後からしんどくなることが多い——そういうことを、後輩を持ったときも感じたし、リーダーになったときも感じた。最初のぎこちなさは、そのまま続かない。
+
+スタートアップに移って2年目のころ、読み返した『幸せになる勇気』（岸見一郎・古賀史健）に、「認められることを目的にするとき、人は他者の基準の中で生きることになる」という話が出てくる。リーダーとして認められようとして力んでいたあの半年は、まさにそういう状態だったと思う。誰かに「よくやってる」と言われなくても、メンバーのために動けたかどうかを自分で確認できるようになってから、少し楽になった 📖
+
+<table cellpadding="0" cellspacing="0" border="0" style=" border:1px solid #ccc; width:300px;"><tbody><tr style="border-style:none;"><td style="vertical-align:top; border-style:none; padding:10px; width:44px;"><a href="https://rpx.a8.net/svt/ejp?a8mat=4AZHWG+64AELU+2HOM+BWGDT&rakuten=y&a8ejpredirect=https%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2Fg00q0724.2bo11c45.g00q0724.2bo12179%2Fa26031790506_4AZHWG_64AELU_2HOM_BWGDT%3Fpc%3Dhttps%253A%252F%252Fitem.rakuten.co.jp%252Fbook%252F13604272%252F%26amp%3Bm%3Dhttp%253A%252F%252Fm.rakuten.co.jp%252Fbook%252Fi%252F17754919%252F%26amp%3Brafcid%3Dwsc_i_is_33f72da33714639c415e592c9633ecd7" rel="nofollow"><img border="0" alt="" src="https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/6119/9784478066119.jpg?_ex=64x64" /></a></td><td style="font-size:12px; vertical-align:middle; border-style:none; padding:10px;"><p style="padding:0; margin:0;"><a href="https://rpx.a8.net/svt/ejp?a8mat=4AZHWG+64AELU+2HOM+BWGDT&rakuten=y&a8ejpredirect=https%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2Fg00q0724.2bo11c45.g00q0724.2bo12179%2Fa26031790506_4AZHWG_64AELU_2HOM_BWGDT%3Fpc%3Dhttps%253A%252F%252Fitem.rakuten.co.jp%252Fbook%252F13604272%252F%26amp%3Bm%3Dhttp%253A%252F%252Fm.rakuten.co.jp%252Fbook%252Fi%252F17754919%252F%26amp%3Brafcid%3Dwsc_i_is_33f72da33714639c415e592c9633ecd7" rel="nofollow">幸せになる勇気 自己啓発の源流「アドラー」の教え2 [ 岸見 一郎 ]</a></p><p style="color:#666; margin-top:5px line-height:1.5;">価格:<span style="font-size:14px; color:#C00; font-weight:bold;">1760円</span><br/><span style="font-size:10px; font-weight:normal;">(2026/3/18 01:13時点)</span><br/><span style="font-weight:bold;">感想(72件)</span></p></td></tr></tbody></table>
+<img border="0" width="1" height="1" src="https://www18.a8.net/0.gif?a8mat=4AZHWG+64AELU+2HOM+BWGDT" alt="">
 
 女性リーダーに向いているかどうかは、続けながらじゃないとわからない。少なくとも私はそうだった。向いてると感じるのは、続けていった先にあるものな気がしてる 🌱
 
