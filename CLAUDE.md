@@ -190,10 +190,16 @@ carrier-note/
 
 1. `strategy/keywords.md` からメインキーワードを選ぶ（未執筆テーマ一覧から優先度・競合度を確認）
 2. `strategy/articles.md` で既存記事との重複がないか確認する
-3. frontmatterに `targetKeyword` フィールドを追加する（例: `targetKeyword: "営業 辞めたい 続ける"`）
-4. `npm run review -- --all` を実行し、`❌ [SEO: targetKeyword重複の可能性]` が出ないことを確認する。重複が出た場合は下記「targetKeyword重複への対応」を参照する
-5. タイトル・description・本文冒頭100字に `targetKeyword` を自然に含める
-6. 執筆後、`strategy/articles.md` と `strategy/keywords.md` の両方を更新する
+3. `writers/[author].md` を読み、ペルソナ・経歴・エピソードを把握する
+4. 同著者の既存記事を1〜2本読み、文体・テンポ・絵文字の使い方を確認する
+5. frontmatterに `targetKeyword` フィールドを追加する（例: `targetKeyword: "営業 辞めたい 続ける"`）
+6. 執筆する
+7. syun・kz の場合、`strategy/writing-style-manabu.md` のチェックリストを各H2に適用する
+8. `strategy/brushup.md` の重複表現チェックを実行し、頻出エピソード（サウナ等）が他記事と被っていないか確認する
+9. `npm run review -- --all` を実行し、`❌ [SEO: targetKeyword重複の可能性]` が出ないことを確認する。重複が出た場合は下記「targetKeyword重複への対応」を参照する
+10. タイトル・description・本文冒頭100字に `targetKeyword` が含まれているか確認する
+11. `strategy/articles.md` と `strategy/keywords.md` の両方を更新する
+12. 記事から新たなペルソナ情報が生まれた場合は `writers/[author].md` を更新する
 
 ### targetKeyword重複への対応
 
