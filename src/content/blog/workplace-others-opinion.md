@@ -6,7 +6,8 @@ category: 働き方
 tags: ["仕事", "働き方", "メンタル", "キャリア"]
 author: yuki
 targetKeyword: "仕事 他人の目 気にしすぎ"
-isAffiliate: false
+isAffiliate: true
+books: ["9784478025819"]
 related: ["perfectionism-exhaustion", "comparing-with-coworkers", "work-confidence-issue"]
 ---
 
@@ -37,6 +38,9 @@ related: ["perfectionism-exhaustion", "comparing-with-coworkers", "work-confiden
 転職1年目の終わり、ちょうど本当にしんどかった時期に読んだ『嫌われる勇気』（岸見一郎・古賀史健）に、「課題の分離」という言葉があった。相手がどう感じるかは相手の領域で、自分にはどうにもできない——そういう内容で、最初は「そんなに割り切れない」と思いながら読んだ。
 
 でも、「私がどう思われるかは、相手が決めること」という言葉が、どこかに引っかかったままだった 📖
+
+<table cellpadding="0" cellspacing="0" border="0" style=" border:1px solid #ccc; width:300px;"><tbody><tr style="border-style:none;"><td style="vertical-align:top; border-style:none; padding:10px; width:44px;"><a href="https://rpx.a8.net/svt/ejp?a8mat=4AZHWG+64AELU+2HOM+BWGDT&rakuten=y&a8ejpredirect=https%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2Fg00q0724.2bo11c45.g00q0724.2bo12179%2Fa26031790506_4AZHWG_64AELU_2HOM_BWGDT%3Fpc%3Dhttps%253A%252F%252Fitem.rakuten.co.jp%252Fbook%252F12570589%252F%26amp%3Bm%3Dhttp%253A%252F%252Fm.rakuten.co.jp%252Fbook%252Fi%252F16720039%252F%26amp%3Brafcid%3Dwsc_i_is_33f72da33714639c415e592c9633ecd7" rel="nofollow"><img border="0" alt="" src="https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/5819/9784478025819.jpg?_ex=64x64" /></a></td><td style="font-size:12px; vertical-align:middle; border-style:none; padding:10px;"><p style="padding:0; margin:0;"><a href="https://rpx.a8.net/svt/ejp?a8mat=4AZHWG+64AELU+2HOM+BWGDT&rakuten=y&a8ejpredirect=https%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2Fg00q0724.2bo11c45.g00q0724.2bo12179%2Fa26031790506_4AZHWG_64AELU_2HOM_BWGDT%3Fpc%3Dhttps%253A%252F%252Fitem.rakuten.co.jp%252Fbook%252F12570589%252F%26amp%3Bm%3Dhttp%253A%252F%252Fm.rakuten.co.jp%252Fbook%252Fi%252F16720039%252F%26amp%3Brafcid%3Dwsc_i_is_33f72da33714639c415e592c9633ecd7" rel="nofollow">嫌われる勇気 自己啓発の源流「アドラー」の教え [ 岸見　一郎 ]</a></p><p style="color:#666; margin-top:5px line-height:1.5;">価格:<span style="font-size:14px; color:#C00; font-weight:bold;">1760円</span><br/><span style="font-size:10px; font-weight:normal;">(2026/3/17 23:51時点)</span><br/><span style="font-weight:bold;">感想(581件)</span></p></td></tr></tbody></table>
+<img border="0" width="1" height="1" src="https://www16.a8.net/0.gif?a8mat=4AZHWG+64AELU+2HOM+BWGDT" alt="">
 
 ## 「気にしないようにする」よりも
 
