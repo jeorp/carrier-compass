@@ -7,6 +7,7 @@ tags: ["仕事", "メンタル", "働き方", "営業"]
 author: yuki
 targetKeyword: "仕事 しんどい 言えない"
 related: ["when-work-got-scary", "sales-slump-recovery", "self-blame-cant-stop"]
+books: ["9784041030400"]
 ---
 
 仕事がしんどいのに、誰にも言えないまま過ごしていた時期がある。
@@ -58,6 +59,9 @@ related: ["when-work-got-scary", "sales-slump-recovery", "self-blame-cant-stop"]
 転職1年目の終わりにしんどかった時期に、『反応しない練習』という本を読んだ。
 
 仏教の思想をベースにした本で、「気にするな」と頭で思っても止まらないのは「反応を止めようとすること自体が反応だから」という話があった。しんどさを出すまいとして、弱音を飲み込もうとして、「弱い自分を見せてはいけない」という命令を自分に出し続ける——それ自体が消耗の原因になる、という内容だった 📖
+
+<table cellpadding="0" cellspacing="0" border="0" style=" border:1px solid #ccc; width:300px;"><tbody><tr style="border-style:none;"><td style="vertical-align:top; border-style:none; padding:10px; width:44px;"><a href="https://rpx.a8.net/svt/ejp?a8mat=4AZHWG+64AELU+2HOM+BWGDT&rakuten=y&a8ejpredirect=https%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2Fg00q0724.2bo11c45.g00q0724.2bo12179%2Fa26031790506_4AZHWG_64AELU_2HOM_BWGDT%3Fpc%3Dhttps%253A%252F%252Fitem.rakuten.co.jp%252Fbook%252F13315854%252F%26amp%3Bm%3Dhttp%253A%252F%252Fm.rakuten.co.jp%252Fbook%252Fi%252F17518526%252F%26amp%3Brafcid%3Dwsc_i_is_33f72da33714639c415e592c9633ecd7" rel="nofollow"><img border="0" alt="" src="https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/0400/9784041030400_1_22.jpg?_ex=64x64" /></a></td><td style="font-size:12px; vertical-align:middle; border-style:none; padding:10px;"><p style="padding:0; margin:0;"><a href="https://rpx.a8.net/svt/ejp?a8mat=4AZHWG+64AELU+2HOM+BWGDT&rakuten=y&a8ejpredirect=https%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2Fg00q0724.2bo11c45.g00q0724.2bo12179%2Fa26031790506_4AZHWG_64AELU_2HOM_BWGDT%3Fpc%3Dhttps%253A%252F%252Fitem.rakuten.co.jp%252Fbook%252F13315854%252F%26amp%3Bm%3Dhttp%253A%252F%252Fm.rakuten.co.jp%252Fbook%252Fi%252F17518526%252F%26amp%3Brafcid%3Dwsc_i_is_33f72da33714639c415e592c9633ecd7" rel="nofollow">反応しない練習 あらゆる悩みが消えていくブッダの超・合理的な「考え方」 [ 草薙龍瞬 ]</a></p><p style="color:#666; margin-top:5px line-height:1.5;">価格:<span style="font-size:14px; color:#C00; font-weight:bold;">1430円</span><br/><span style="font-size:10px; font-weight:normal;">(2026/3/18 01:20時点)</span><br/><span style="font-weight:bold;">感想(130件)</span></p></td></tr></tbody></table>
+<img border="0" width="1" height="1" src="https://www13.a8.net/0.gif?a8mat=4AZHWG+64AELU+2HOM+BWGDT" alt="">
 
 あのとき読んで腑に落ちたのは、「弱音を出そうとして止めること」がどれだけエネルギーを使うことか、というところだった。飲み込むのって、タダじゃないんだな、と。
 

@@ -7,6 +7,7 @@ tags: ["転職", "キャリア", "就活", "自己理解"]
 author: syun
 targetKeyword: "なんとなく就職した 後悔"
 related: ["good-company-feels-wrong", "mindset-career-change", "twenties-career-syun"]
+books: ["9784478107829"]
 ---
 
 なんとなく就職した後悔があるか、と聞かれたら——正直に言うと、ある。
@@ -58,6 +59,9 @@ related: ["good-company-feels-wrong", "mindset-career-change", "twenties-career-
 転職を決めるのに8ヶ月かかったのは、「なんか違う」という感覚を言語化するのに時間がかかったから。それは、自分のことをよく知らないまま就職していたせいだと今は思っている。
 
 『苦しかったときの話をしようか』（森岡毅）を読んだのは、転職を考え始めたころだった。「できることと、やりたいことを混同しないこと」という話に刺さった。コンサルの仕事はできていた。でも自分が必要としていたものは、そこにはなかった。その区別が、当時の自分にはなかったんだと思う。
+
+<table cellpadding="0" cellspacing="0" border="0" style=" border:1px solid #ccc; width:300px;"><tbody><tr style="border-style:none;"><td style="vertical-align:top; border-style:none; padding:10px; width:44px;"><a href="https://rpx.a8.net/svt/ejp?a8mat=4AZHWG+64AELU+2HOM+BWGDT&rakuten=y&a8ejpredirect=https%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2Fg00q0724.2bo11c45.g00q0724.2bo12179%2Fa26031790506_4AZHWG_64AELU_2HOM_BWGDT%3Fpc%3Dhttps%253A%252F%252Fitem.rakuten.co.jp%252Fbook%252F15830754%252F%26amp%3Bm%3Dhttp%253A%252F%252Fm.rakuten.co.jp%252Fbook%252Fi%252F19526700%252F%26amp%3Brafcid%3Dwsc_i_is_33f72da33714639c415e592c9633ecd7" rel="nofollow"><img border="0" alt="" src="https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/7829/9784478107829_1_2.jpg?_ex=64x64" /></a></td><td style="font-size:12px; vertical-align:middle; border-style:none; padding:10px;"><p style="padding:0; margin:0;"><a href="https://rpx.a8.net/svt/ejp?a8mat=4AZHWG+64AELU+2HOM+BWGDT&rakuten=y&a8ejpredirect=https%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2Fg00q0724.2bo11c45.g00q0724.2bo12179%2Fa26031790506_4AZHWG_64AELU_2HOM_BWGDT%3Fpc%3Dhttps%253A%252F%252Fitem.rakuten.co.jp%252Fbook%252F15830754%252F%26amp%3Bm%3Dhttp%253A%252F%252Fm.rakuten.co.jp%252Fbook%252Fi%252F19526700%252F%26amp%3Brafcid%3Dwsc_i_is_33f72da33714639c415e592c9633ecd7" rel="nofollow">苦しかったときの話をしようか ビジネスマンの父が我が子のために書きためた「働くことの本質」 [ 森岡 毅 ]</a></p><p style="color:#666; margin-top:5px line-height:1.5;">価格:<span style="font-size:14px; color:#C00; font-weight:bold;">1650円</span><br/><span style="font-size:10px; font-weight:normal;">(2026/3/17 20:04時点)</span><br/><span style="font-weight:bold;">感想(78件)</span></p></td></tr></tbody></table>
+<img border="0" width="1" height="1" src="https://www17.a8.net/0.gif?a8mat=4AZHWG+64AELU+2HOM+BWGDT" alt="" />
 
 ## 「なんとなく」を責めることはしない
 
