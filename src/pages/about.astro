@@ -12,7 +12,7 @@ import Layout from '../layouts/BlogPost.astro';
 		「キャリアの羅針盤」は、自分のキャリアに迷いや不安を抱えるすべての人に向けたブログです。完璧なルートなんてない。迷って、修正して、また進む——そのプロセスこそがキャリアだと私たちは考えています。
 	</p>
 	<p>
-		このサイトのライターには、共通点があります。「自分のキャリアをよくしたい」という意思を持ち続けてきた人たちだということ。転職した人も、踏みとどまった人も、今もまだ迷っている人も——それぞれが自分のキャリアに本気で向き合った経験を持っています。運営者のkzが「現場のリアルな声を届けたい」という思いから声をかけ、寄稿という形で一緒に作っています。
+		このサイトのライターには、共通点があります。「自分のキャリアをよくしたい」という意思を持ち続けてきた人たちだということ。転職した人も、踏みとどまった人も、今もまだ迷っている人も——それぞれが自分のキャリアに本気で向き合った経験を持っています。
 	</p>
 
 	<h2>ライター紹介</h2>
@@ -43,27 +43,22 @@ import Layout from '../layouts/BlogPost.astro';
 				<p>アナウンサーを目指した過去を持つ現役営業職。大手メーカーからスタートアップへ転職した経験を持ち、「自分らしいキャリア」を探す人に向けてリアルな声を届ける。</p>
 			</div>
 		</div>
-	</div>
 
-	<h2>運営者</h2>
-
-	<div class="writers">
-		<div class="writer-card operator-card">
+		<div class="writer-card">
 			<div class="writer-icon">🛠️</div>
 			<div class="writer-body">
 				<div class="writer-name">kz</div>
 				<div class="writer-tags">
-					<span>運営者</span>
 					<span>ソフトウェアエンジニア</span>
 					<span>26歳</span>
 				</div>
-				<p>新卒でブロックチェーンゲームのバックエンド開発からキャリアをスタート。入社半年でフリーランスに転向し、半年以内に2本のAIチャットアプリをリリース。その後フィンテック領域へ移り、現在は銀行のBaaSチームでAPIゲートウェイやBFFの開発に携わっている。Web3・AI・金融と、波が来る領域に飛び込み続けながら、このサイトの開発・運営も担当している。</p>
-			<a class="linkedin-link" href="https://www.linkedin.com/in/kenta-kanno-b1946a336/" target="_blank" rel="noopener noreferrer">
-				<svg viewBox="0 0 24 24" aria-hidden="true" width="20" height="20" fill="currentColor">
-					<path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-				</svg>
-				LinkedIn
-			</a>
+				<p>新卒でブロックチェーンゲームのバックエンド開発からキャリアをスタート。入社半年でフリーランスに転向し、半年以内に2本のAIチャットアプリをリリース。その後フィンテック領域へ移り、現在は銀行のBaaSチームでAPIゲートウェイやBFFの開発に携わっている。エンジニア目線でキャリアや副業・フリーランスについて発信する。</p>
+				<a class="linkedin-link" href="https://www.linkedin.com/in/kenta-kanno-b1946a336/" target="_blank" rel="noopener noreferrer">
+					<svg viewBox="0 0 24 24" aria-hidden="true" width="20" height="20" fill="currentColor">
+						<path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+					</svg>
+					LinkedIn
+				</a>
 			</div>
 		</div>
 	</div>
@@ -85,10 +80,6 @@ import Layout from '../layouts/BlogPost.astro';
 		border: 1px solid rgb(var(--gray-light));
 		border-radius: 12px;
 		align-items: flex-start;
-	}
-	.operator-card {
-		border-color: var(--accent);
-		background: rgba(232, 113, 74, 0.04);
 	}
 	.writer-icon {
 		font-size: 2.5rem;
