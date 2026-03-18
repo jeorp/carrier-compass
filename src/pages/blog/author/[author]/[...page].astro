@@ -14,6 +14,33 @@ const authorLabels: Record<string, string> = {
 };
 const categories = ['転職', 'スキルアップ', '副業', '働き方'] as const;
 
+type AuthorProfile = {
+	name: string;
+	role: string;
+	age: string;
+	bio: string;
+};
+const authorProfiles: Record<string, AuthorProfile> = {
+	syun: {
+		name: 'Syun',
+		role: 'フリーランス国家資格キャリアコンサルタント',
+		age: '32歳・男性',
+		bio: '外資系コンサル3年→キャリアコンサルタントへ転身。27歳で「なんか違う」を抱えたまま動き始め、30歳でフリーランス独立。転職相談の現場から見たリアルを書いています。',
+	},
+	yuki: {
+		name: 'Yuki',
+		role: 'スタートアップ営業職・編集リーダー',
+		age: '29歳・女性',
+		bio: '大手メーカー営業→スタートアップへ転職。「共感できないやり方では続けられない」と感じた26歳の判断が今の自分を作った気がしています。チームリーダーも経験しながら、日々の仕事のことを書いています。',
+	},
+	kz: {
+		name: 'kz',
+		role: 'ソフトウェアエンジニア・ブログ運営',
+		age: '26歳・男性',
+		bio: 'ブロックチェーン→フリーランス→フィンテック企業と渡り歩いてきたエンジニア。このブログの開発・運営も担当。「作る側」から見たキャリアの話を書いています。',
+	},
+};
+
 export async function getStaticPaths({ paginate }: { paginate: Function }) {
 	const authors = ['yuki', 'syun', 'kz'] as const;
 	const posts = await getCollection('blog');
@@ -40,6 +67,43 @@ const readingTime = (body: string) => Math.max(1, Math.ceil(body.length / 500));
 		/>
 		<style>
 			main { width: 680px; }
+			.author-profile {
+				display: flex;
+				align-items: flex-start;
+				gap: 1rem;
+				padding: 1.5rem 0;
+				margin-bottom: 1.5rem;
+				border-bottom: 2px solid rgb(var(--gray-light));
+			}
+			.author-avatar {
+				width: 64px;
+				height: 64px;
+				border-radius: 50%;
+				background: rgb(var(--gray-light));
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 1.75rem;
+				flex-shrink: 0;
+			}
+			.author-info { flex: 1; }
+			.author-info-name {
+				font-size: 1.1rem;
+				font-weight: 700;
+				color: rgb(var(--black));
+				margin: 0 0 0.2rem 0;
+			}
+			.author-info-meta {
+				font-size: 0.78rem;
+				color: rgb(var(--gray));
+				margin: 0 0 0.5rem 0;
+			}
+			.author-info-bio {
+				font-size: 0.875rem;
+				color: rgb(var(--gray-dark));
+				line-height: 1.65;
+				margin: 0;
+			}
 			.feed-header {
 				margin-bottom: 2rem;
 				padding-bottom: 0.5rem;
@@ -181,6 +245,16 @@ const readingTime = (body: string) => Math.max(1, Math.ceil(body.length / 500));
 		<Header />
 		<main>
 			<section>
+				{authorProfiles[author] && (
+					<div class="author-profile">
+						<div class="author-avatar">{authorLabels[author].split(' ')[0]}</div>
+						<div class="author-info">
+							<p class="author-info-name">{authorProfiles[author].name}</p>
+							<p class="author-info-meta">{authorProfiles[author].age}｜{authorProfiles[author].role}</p>
+							<p class="author-info-bio">{authorProfiles[author].bio}</p>
+						</div>
+					</div>
+				)}
 				<div class="feed-header">
 					<h2 class="feed-title">ライター</h2>
 					<div class="filter-row">
