@@ -7,7 +7,7 @@ tags: ["仕事", "働き方", "メンタル", "営業"]
 author: yuki
 targetKeyword: "仕事 帰宅後 何もできない 疲れた"
 isAffiliate: false
-related: ["dont-want-to-go-to-work", "may-blues-work-motivation", "when-work-became-fun"]
+related: ["dont-want-to-go-to-work", "may-blues-work-motivation", "when-work-became-fun", "tired-day-reset-routine"]
 ---
 
 家に帰ったら、何もできない日がある。

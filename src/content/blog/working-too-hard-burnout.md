@@ -8,7 +8,7 @@ author: yuki
 targetKeyword: "仕事 頑張りすぎ 疲れた"
 isAffiliate: true
 books: ["9784478066119"]
-related: ["work-no-praise-struggle", "after-work-exhaustion", "when-work-became-fun"]
+related: ["work-no-praise-struggle", "after-work-exhaustion", "when-work-became-fun", "tired-day-reset-routine"]
 ---
 
 仕事を頑張りすぎて疲れた、という感覚がある。
