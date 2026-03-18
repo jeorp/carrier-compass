@@ -6,7 +6,7 @@ category: 働き方
 tags: ["仕事", "メンタル", "働き方", "営業"]
 author: yuki
 targetKeyword: "仕事 メンタル 限界 サイン"
-related: ["working-too-hard-burnout", "tired-day-reset-routine", "cried-on-the-train"]
+related: ["working-harder-lost-my-style", "working-too-hard-burnout", "tired-day-reset-routine", "cried-on-the-train"]
 ---
 
 スタートアップ2年目の秋、大口を失注した 😶
