@@ -1,29 +1,14 @@
 ---
-import { getCollection } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
-import FormattedDate from '../components/FormattedDate.astro';
 import Header from '../components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
-
-const allPosts = await getCollection('blog');
-const recentPosts = allPosts
-	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-	.slice(0, 5);
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 const categories = ['転職', 'スキルアップ', '副業', '働き方'];
 
-const writers = [
-	{ id: 'yuki', icon: '☕', name: 'Yuki', tagline: 'アナウンサーを諦め、衝動で転職した。それでも営業は続けている。' },
-	{ id: 'syun', icon: '💼', name: 'Syun', tagline: '年収900万を捨てて、ゼロの月もあった。それでも後悔していない。' },
-	{ id: 'kz', icon: '🛠️', name: 'kz', tagline: '新卒半年でフリーランスへ。アプリ2本リリースしてユーザーはほぼ来なかった。' },
-];
 
-const postCountByAuthor = Object.fromEntries(
-	writers.map((w) => [w.id, allPosts.filter((p) => p.data.author === w.id).length])
-);
 
 const moments = [
 	{
@@ -224,94 +209,6 @@ const featuredYuki = [
 				background: var(--accent);
 				color: white;
 			}
-			/* Writers */
-			.writers { margin-bottom: 2.5em; }
-			.writer-list {
-				display: grid;
-				grid-template-columns: repeat(3, 1fr);
-				gap: 0.75em;
-			}
-			.writer-card {
-				display: flex;
-				flex-direction: column;
-				gap: 0.3em;
-				padding: 1em 1.1em;
-				border: 1px solid rgb(var(--gray-light));
-				border-radius: 12px;
-				text-decoration: none;
-				color: inherit;
-				transition: border-color 0.15s ease;
-			}
-			.writer-card:hover { border-color: var(--accent); }
-			.writer-card-header {
-				display: flex;
-				align-items: center;
-				gap: 0.5em;
-				font-weight: 700;
-				font-size: 0.95rem;
-			}
-			.writer-card-tagline {
-				font-size: 0.78rem;
-				color: rgb(var(--gray));
-				line-height: 1.4;
-			}
-			.writer-card-count {
-				font-size: 0.75rem;
-				color: var(--accent);
-				font-weight: 700;
-				margin-top: 0.2em;
-			}
-			/* Recent posts */
-			.recent { margin-bottom: 2em; }
-			.post-list {
-				list-style: none;
-				padding: 0;
-				margin: 0;
-				display: flex;
-				flex-direction: column;
-			}
-			.post-list li { padding: 1.4em 0; border-bottom: 1px solid rgb(var(--gray-light)); }
-			.post-list li:first-child { padding-top: 0; }
-			.post-list a {
-				display: block;
-				text-decoration: none;
-				color: inherit;
-				padding: 0.6em 0.8em;
-				margin: -0.6em -0.8em;
-				border-radius: 8px;
-				transition: background 0.15s ease;
-			}
-			.post-list a:hover { background: rgba(var(--gray-light), 0.5); }
-			.post-meta {
-				display: flex;
-				align-items: center;
-				gap: 0.5em;
-				font-size: 0.78rem;
-				margin-bottom: 0.5em;
-			}
-			.author-chip { font-weight: 700; color: rgb(var(--gray-dark)); }
-			.category-chip {
-				background: var(--accent);
-				color: white;
-				font-size: 0.68rem;
-				padding: 0.15em 0.6em;
-				border-radius: 999px;
-				font-weight: 700;
-			}
-			.date-chip { color: rgb(var(--gray)); margin-left: auto; }
-			.post-title {
-				font-size: 1.05rem;
-				font-weight: 700;
-				margin: 0 0 0.3em;
-				line-height: 1.45;
-				color: rgb(var(--black));
-			}
-			.post-desc {
-				font-size: 0.875rem;
-				color: rgb(var(--gray));
-				margin: 0;
-				line-height: 1.6;
-			}
 			.all-link {
 				display: inline-block;
 				margin-top: 1.2em;
@@ -440,36 +337,6 @@ const featuredYuki = [
 				<a class="all-link" href={`${base}/blog/author/yuki`}>Yukiの記事をすべて見る →</a>
 			</section>
 
-			<!-- Recent posts -->
-			<section class="recent">
-				<p class="section-title">最新記事</p>
-				<ul class="post-list">
-					{recentPosts.map((post) => (
-						<li>
-							<a href={`${base}/blog/${post.id}/`}>
-								<div class="post-meta">
-									{post.data.author && (
-										<span class="author-chip">
-											{post.data.author === 'yuki' ? '☕ Yuki' : post.data.author === 'kz' ? '🛠️ kz' : '💼 Syun'}
-										</span>
-									)}
-									{post.data.category && (
-										<span class="category-chip">{post.data.category}</span>
-									)}
-									<span class="date-chip">
-										<FormattedDate date={post.data.pubDate} />
-									</span>
-								</div>
-								<h3 class="post-title">{post.data.title}</h3>
-								{post.data.description && (
-									<p class="post-desc">{post.data.description}</p>
-								)}
-							</a>
-						</li>
-					))}
-				</ul>
-				<a class="all-link" href={`${base}/blog`}>すべての記事を見る →</a>
-			</section>
 
 			<!-- Categories -->
 			<section class="categories">
@@ -481,22 +348,6 @@ const featuredYuki = [
 				</div>
 			</section>
 
-			<!-- Writers -->
-			<section class="writers">
-				<p class="section-title">ライターで探す</p>
-				<div class="writer-list">
-					{writers.map((w) => (
-						<a class="writer-card" href={`${base}/blog/author/${w.id}`}>
-							<div class="writer-card-header">
-								<span>{w.icon}</span>
-								<span>{w.name}</span>
-							</div>
-							<div class="writer-card-tagline">{w.tagline}</div>
-							<div class="writer-card-count">{postCountByAuthor[w.id]}件の記事</div>
-						</a>
-					))}
-				</div>
-			</section>
 			<!-- Yuki's pick -->
 			<section class="yuki-pick">
 				<p class="section-title">☕ Yukiのお気に入り</p>
