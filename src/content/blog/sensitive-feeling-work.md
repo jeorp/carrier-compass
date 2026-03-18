@@ -7,7 +7,8 @@ tags: ["仕事", "メンタル", "営業", "働き方"]
 author: yuki
 targetKeyword: "仕事 感情 引きずる 切り替えできない"
 related: ["why-i-continue-sales", "work-cant-show-weakness", "sales-slump-recovery"]
-books: ["sensitive-person-work"]
+isAffiliate: true
+books: ["繊細さん"]
 ---
 
 仕事で感情を引きずりやすい、というのが昔からある。気持ちの切り替えが苦手で、しんどいと感じることも多かった。
