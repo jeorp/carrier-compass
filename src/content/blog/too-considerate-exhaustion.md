@@ -7,7 +7,7 @@ tags: ["仕事", "働き方", "メンタル", "キャリア"]
 author: yuki
 targetKeyword: "仕事 気を遣いすぎ 疲れる"
 isAffiliate: true
-books: ["繊細さん", "9784478066119"]
+books: ["9784864106269", "9784478066119"]
 related: ["working-too-hard-burnout", "after-work-exhaustion", "workplace-others-opinion"]
 ---
 
