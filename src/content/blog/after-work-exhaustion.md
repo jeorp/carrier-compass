@@ -6,7 +6,7 @@ category: 働き方
 tags: ["仕事", "働き方", "メンタル", "営業"]
 author: yuki
 targetKeyword: "仕事 帰宅後 何もできない 疲れた"
-isAffiliate: false
+isAffiliate: true
 related: ["dont-want-to-go-to-work", "may-blues-work-motivation", "when-work-became-fun", "tired-day-reset-routine"]
 ---
 
@@ -91,3 +91,6 @@ related: ["dont-want-to-go-to-work", "may-blues-work-motivation", "when-work-bec
 帰宅後に何かできるかどうかより、翌朝ちゃんと起きられてるかどうかの方が、実は大事な指標だと思う。今日の夜に何もできなくても、明日また仕事に行けるなら、昨日の夜はちゃんと機能してた。
 
 「疲れてる」を認めることが、長く続けることの一部だと思ってる。スタートアップに転職してから、それをやっと腹落ちさせるのに2年かかった気がする。遅いかもしれないけど、気づいたときから変えればいい。帰宅後に何もできない夜がある自分を、少しだけ許してあげてほしい。全力で仕事してたから疲れる。それだけのことだから。
+
+そういう夜のはじまりとして、コーヒーを一杯だけ淹れることにしてる。最近は<a href="https://px.a8.net/svt/ejp?a8mat=4AZJGB+CI4HE+5UFU+5YJRM" rel="nofollow">ブルーボトルコーヒー公式オンラインストア</a>の豆を自宅に置いてて、淹れてる時間が「今日は終わり」の合図になってる。
+<amp-pixel src="https://www14.a8.net/0.gif?a8mat=4AZJGB+CI4HE+5UFU+5YJRM" layout="nodisplay"></amp-pixel>

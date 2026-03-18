@@ -6,6 +6,7 @@ category: 働き方
 tags: ["仕事", "QOL", "働き方", "価値観"]
 author: yuki
 targetKeyword: "仕事 QOL 大切にしてること"
+isAffiliate: true
 related: ["tired-day-reset-routine", "work-life-balance-cant-manage", "working-harder-lost-my-style"]
 ---
 
@@ -56,3 +57,6 @@ related: ["tired-day-reset-routine", "work-life-balance-cant-manage", "working-h
 QOLって、たぶん人によって全然違う。私の場合は「足りてる状態をキープすること」と「嘘をつかない仕事をすること」が根っこにある。それが崩れると、ほかが整っていても何かずれる感じがある。
 
 今もカフェに寄りながら、まだそれを確認してる 🌿
+
+カフェに行けない日は、自宅でコーヒーを淹れることにしてる。最近は<a href="https://px.a8.net/svt/ejp?a8mat=4AZJGB+CI4HE+5UFU+5YJRM" rel="nofollow">ブルーボトルコーヒー公式オンラインストア</a>で豆を取り寄せてて、それを淹れる時間がカフェと同じ役割を果たしてる。
+<amp-pixel src="https://www14.a8.net/0.gif?a8mat=4AZJGB+CI4HE+5UFU+5YJRM" layout="nodisplay"></amp-pixel>
