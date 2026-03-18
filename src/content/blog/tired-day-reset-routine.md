@@ -6,6 +6,7 @@ category: 働き方
 tags: ["仕事", "働き方", "メンタル", "習慣"]
 author: yuki
 targetKeyword: "仕事 疲れた 整え方"
+isAffiliate: true
 books: ["9784864106269"]
 related: ["after-work-exhaustion", "working-too-hard-burnout", "writing-down-work-feelings"]
 ---
@@ -55,3 +56,6 @@ related: ["after-work-exhaustion", "working-too-hard-burnout", "writing-down-wor
 今も、整えられない週がある。コーヒーを飲む気にもなれない日、友達に連絡する元気もない週。そういう時は何もしない。ただ寝る。それも整え方のひとつだと、今は思っている。
 
 完璧に回復しようとしてた時期が、一番長く疲れてた。
+
+カフェに寄れない日は、家でコーヒーを淹れることにしてる。豆からドリップする10分が、同じ「仕事モードから出る」合図になってる感じがあって。最近は<a href="https://px.a8.net/svt/ejp?a8mat=4AZJGB+CI4HE+5UFU+5YJRM" rel="nofollow">ブルーボトルコーヒー公式オンラインストア</a>で豆を取り寄せてるんだけど、それが地味な楽しみになってる。
+<amp-pixel src="https://www14.a8.net/0.gif?a8mat=4AZJGB+CI4HE+5UFU+5YJRM" layout="nodisplay"></amp-pixel>
