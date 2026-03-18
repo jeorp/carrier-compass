@@ -7,6 +7,8 @@ tags: ["営業", "仕事", "やりがい", "キャリア"]
 author: yuki
 targetKeyword: "営業 辞めたい 続ける"
 related: ["not-suited-for-sales", "large-company-to-startup"]
+isAffiliate: true
+books: ["営業の魔法"]
 ---
 
 営業って、しんどいです。正直に言います。
@@ -50,6 +52,11 @@ related: ["not-suited-for-sales", "large-company-to-startup"]
 代わりに、「この人のこと、ちゃんと覚えておく」ことは誰にも負けないようにしてる。半年ぶりに連絡が来たとき、前回話してた悩みを覚えてたら、それだけで「ちゃんと見てくれてたんですね」って言ってもらえることがある。そういう積み重ねの方が、私には合ってたみたい。
 
 向いてないことを直すより、自分なりのやり方を見つける方が早かった気がしてる。私の場合は、だけど。
+
+そのころ読んだ『営業の魔法』（中村信仁）に、「営業とはお客様のお役に立つことで、押しつけることじゃない」という話が出てくる。読んでて、あ、私がやりたいのってこっちだ、と思えた。ゴリゴリ攻めるやり方が「正解」じゃなくて、向いてるやり方が違うだけだったんだって 📖
+
+<table cellpadding="0" cellspacing="0" border="0" style=" border:1px solid #ccc; width:300px;"><tbody><tr style="border-style:none;"><td style="vertical-align:top; border-style:none; padding:10px; width:44px;"><a href="https://rpx.a8.net/svt/ejp?a8mat=4AZHWG+64AELU+2HOM+BWGDT&rakuten=y&a8ejpredirect=https%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2Fg00q0724.2bo11c45.g00q0724.2bo12179%2Fa26031790506_4AZHWG_64AELU_2HOM_BWGDT%3Fpc%3Dhttps%253A%252F%252Fitem.rakuten.co.jp%252Fbook%252F4802433%252F%26amp%3Bm%3Dhttp%253A%252F%252Fm.rakuten.co.jp%252Fbook%252Fi%252F12309248%252F%26amp%3Brafcid%3Dwsc_i_is_33f72da33714639c415e592c9633ecd7" rel="nofollow"><img border="0" alt="" src="https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/9511/9784902969511.jpg?_ex=64x64" /></a></td><td style="font-size:12px; vertical-align:middle; border-style:none; padding:10px;"><p style="padding:0; margin:0;"><a href="https://rpx.a8.net/svt/ejp?a8mat=4AZHWG+64AELU+2HOM+BWGDT&rakuten=y&a8ejpredirect=https%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2Fg00q0724.2bo11c45.g00q0724.2bo12179%2Fa26031790506_4AZHWG_64AELU_2HOM_BWGDT%3Fpc%3Dhttps%253A%252F%252Fitem.rakuten.co.jp%252Fbook%252F4802433%252F%26amp%3Bm%3Dhttp%253A%252F%252Fm.rakuten.co.jp%252Fbook%252Fi%252F12309248%252F%26amp%3Brafcid%3Dwsc_i_is_33f72da33714639c415e592c9633ecd7" rel="nofollow">営業の魔法 この魔法を手にした者は必ず成功する [ 中村信仁 ]</a></p><p style="color:#666; margin-top:5px line-height:1.5;">価格:<span style="font-size:14px; color:#C00; font-weight:bold;">1650円</span><br/><span style="font-size:10px; font-weight:normal;">(2026/3/17 20:09時点)</span><br/><span style="font-weight:bold;">感想(32件)</span></p></td></tr></tbody></table>
+<img border="0" width="1" height="1" src="https://www18.a8.net/0.gif?a8mat=4AZHWG+64AELU+2HOM+BWGDT" alt="" />
 
 ## 辞めようって本気で思った夜のこと
 

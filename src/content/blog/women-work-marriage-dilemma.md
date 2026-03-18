@@ -7,6 +7,8 @@ tags: ["女性", "キャリア", "結婚", "仕事"]
 author: yuki
 targetKeyword: "女性 仕事 結婚 どうする"
 related: ["twenties-career-yuki", "women-in-sales"]
+isAffiliate: true
+books: ["LEAN IN"]
 ---
 
 仲のいい友人が来月30歳になる。
@@ -34,6 +36,11 @@ related: ["twenties-career-yuki", "women-in-sales"]
 スタートアップで営業をやっていて、今のところ仕事はやりたいと思ってる。お客さんとの関係が積み重なってきた実感もあるし、まだここでやれることがあるとも思ってる。
 
 結婚しても仕事は続けたい。これは、私の中では決まってる。「仕事か結婚か」じゃなくて「仕事しながら結婚したい」が本音 ✌️
+
+スタートアップに転職するかどうか迷っていた頃に読んだ『LEAN IN』（シェリル・サンドバーグ）に、「女性は自らテーブルに座りにいく必要がある」という話が出てくる。仕事と家庭をどちらか選ぶ話じゃなくて、どちらも持ったままテーブルに座り続けることを選ぶ、という話として受け取った。両方諦めなくていいって、この本がちょっと後押ししてくれた気がしてる 📖
+
+<table cellpadding="0" cellspacing="0" border="0" style=" border:1px solid #ccc; width:300px;"><tbody><tr style="border-style:none;"><td style="vertical-align:top; border-style:none; padding:10px; width:44px;"><a href="https://rpx.a8.net/svt/ejp?a8mat=4AZHWG+64AELU+2HOM+BWGDT&rakuten=y&a8ejpredirect=https%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2Fg00q0724.2bo11c45.g00q0724.2bo12179%2Fa26031790506_4AZHWG_64AELU_2HOM_BWGDT%3Fpc%3Dhttps%253A%252F%252Fitem.rakuten.co.jp%252Fbook%252F15626509%252F%26amp%3Bm%3Dhttp%253A%252F%252Fm.rakuten.co.jp%252Fbook%252Fi%252F19315210%252F%26amp%3Brafcid%3Dwsc_i_is_33f72da33714639c415e592c9633ecd7" rel="nofollow"><img border="0" alt="" src="https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/8763/9784532198763.jpg?_ex=64x64" /></a></td><td style="font-size:12px; vertical-align:middle; border-style:none; padding:10px;"><p style="padding:0; margin:0;"><a href="https://rpx.a8.net/svt/ejp?a8mat=4AZHWG+64AELU+2HOM+BWGDT&rakuten=y&a8ejpredirect=https%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2Fg00q0724.2bo11c45.g00q0724.2bo12179%2Fa26031790506_4AZHWG_64AELU_2HOM_BWGDT%3Fpc%3Dhttps%253A%252F%252Fitem.rakuten.co.jp%252Fbook%252F15626509%252F%26amp%3Bm%3Dhttp%253A%252F%252Fm.rakuten.co.jp%252Fbook%252Fi%252F19315210%252F%26amp%3Brafcid%3Dwsc_i_is_33f72da33714639c415e592c9633ecd7" rel="nofollow">LEAN IN（リーン・イン） 女性、仕事、リーダーへの意欲 （日経ビジネス人文庫） [ シェリル・サンドバーグ ]</a></p><p style="color:#666; margin-top:5px line-height:1.5;">価格:<span style="font-size:14px; color:#C00; font-weight:bold;">935円</span><br/><span style="font-size:10px; font-weight:normal;">(2026/3/17 20:10時点)</span><br/><span style="font-weight:bold;">感想(1件)</span></p></td></tr></tbody></table>
+<img border="0" width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=4AZHWG+64AELU+2HOM+BWGDT" alt="" />
 
 ただ、現実的に考えると不安はある。スタートアップって、育休とか産休のイメージが正直まだ薄い。会社の規模的に、抜けたときのカバーがどうなるのかが見えにくい。
 
