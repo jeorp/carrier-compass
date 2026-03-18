@@ -5,6 +5,7 @@ pubDate: 2026-03-30
 category: 働き方
 tags: ["仕事", "職場環境", "人間関係", "働き方"]
 author: yuki
+isAffiliate: true
 targetKeyword: "職場 特定の人 苦手"
 related: ["workplace-others-opinion", "fear-of-boss-anger", "too-considerate-exhaustion"]
 ---
@@ -62,3 +63,6 @@ related: ["workplace-others-opinion", "fear-of-boss-anger", "too-considerate-exh
 でも「苦手」を認めてからの方が、接し方が落ち着いた。「苦手だから距離を保つ」と整理できてから、会うたびに消耗することが少し減った。
 
 苦手な人がいることは、おかしくない。苦手なまま、仕事を続けられる 🌱
+
+そういう日の帰りは、コーヒーを淹れることにしてる。カフェに寄る気分じゃないときでも、自宅でドリップする10分くらいが切り替えの合図になってる感じがあって。最近は<a href="https://px.a8.net/svt/ejp?a8mat=4AZJGB+CI4HE+5UFU+5YJRM" rel="nofollow">ブルーボトルコーヒー公式オンラインストア</a>で豆を取り寄せてるんだけど、それが小さな楽しみになってる。
+<amp-pixel src="https://www14.a8.net/0.gif?a8mat=4AZJGB+CI4HE+5UFU+5YJRM" layout="nodisplay"></amp-pixel>
