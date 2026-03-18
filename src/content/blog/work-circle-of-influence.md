@@ -8,7 +8,7 @@ author: yuki
 targetKeyword: "仕事 コントロールできない 気にしすぎ"
 related: ["workplace-others-opinion", "fear-of-boss-anger", "work-cant-show-weakness"]
 isAffiliate: true
-books: ["9784863940246", "9784478025819"]
+books: ["9784863941014", "9784478025819"]
 ---
 
 仕事で疲れる理由って、自分でコントロールできないことに全力を使ってたからだったと、あとから気づいた。
@@ -30,6 +30,9 @@ books: ["9784863940246", "9784478025819"]
 読みながら「あ、私ずっと関心の輪に全力を使ってた」と思った。上司の機嫌、お客さんの反応、評価のされ方——全部、自分が直接コントロールできないものだった。でもそこにエネルギーを注いでいた。一方で、自分の準備、提案の質、お客さんへの連絡の丁寧さ——本当に自分で変えられるものへの意識が薄くなってた 📖
 
 コントロールできないことに意識を向け続けるほど、消耗が増える。コントロールできることに集中するほど、動きやすくなる。シンプルな話なのに、当時の自分にはそれが見えていなかった。
+
+<table cellpadding="0" cellspacing="0" border="0" style=" border:1px solid #ccc; width:300px;"><tbody><tr style="border-style:none;"><td style="vertical-align:top; border-style:none; padding:10px; width:44px;"><a href="https://rpx.a8.net/svt/ejp?a8mat=4AZHWG+64AELU+2HOM+BWGDT&rakuten=y&a8ejpredirect=https%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2Fg00q0724.2bo11c45.g00q0724.2bo12179%2Fa26031790506_4AZHWG_64AELU_2HOM_BWGDT%3Fpc%3Dhttps%253A%252F%252Fitem.rakuten.co.jp%252Fbook%252F16478139%252F%26amp%3Bm%3Dhttp%253A%252F%252Fm.rakuten.co.jp%252Fbook%252Fi%252F20148375%252F%26amp%3Brafcid%3Dwsc_i_is_33f72da33714639c415e592c9633ecd7" rel="nofollow"><img border="0" alt="" src="https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/1014/9784863941014.jpg?_ex=64x64" /></a></td><td style="font-size:12px; vertical-align:middle; border-style:none; padding:10px;"><p style="padding:0; margin:0;"><a href="https://rpx.a8.net/svt/ejp?a8mat=4AZHWG+64AELU+2HOM+BWGDT&rakuten=y&a8ejpredirect=https%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2Fg00q0724.2bo11c45.g00q0724.2bo12179%2Fa26031790506_4AZHWG_64AELU_2HOM_BWGDT%3Fpc%3Dhttps%253A%252F%252Fitem.rakuten.co.jp%252Fbook%252F16478139%252F%26amp%3Bm%3Dhttp%253A%252F%252Fm.rakuten.co.jp%252Fbook%252Fi%252F20148375%252F%26amp%3Brafcid%3Dwsc_i_is_33f72da33714639c415e592c9633ecd7" rel="nofollow">完訳7つの習慣 30周年記念版 [ スティーブ・R．コヴィー ]</a></p><p style="color:#666; margin-top:5px line-height:1.5;">価格:<span style="font-size:14px; color:#C00; font-weight:bold;">2420円</span><br/><span style="font-size:10px; font-weight:normal;">(2026/3/18 22:20時点)</span><br/><span style="font-weight:bold;">感想(18件)</span></p></td></tr></tbody></table>
+<img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=4AZHWG+64AELU+2HOM+BWGDT" alt="">
 
 ## 「課題の分離」と重なった
 
