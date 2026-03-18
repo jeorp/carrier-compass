@@ -27,13 +27,6 @@ const postCountByAuthor = Object.fromEntries(
 
 const moments = [
 	{
-		situation: '転職しようか、ずっと迷っている',
-		quote: '辞めていいのか、って8ヶ月考え続けた。答えが出たのは、問いを変えたときだった。',
-		author: 'Syun',
-		icon: '💼',
-		href: `${base}/blog/mindset-career-change`,
-	},
-	{
 		situation: '仕事がしんどくて、誰にも言えない',
 		quote: '怖いって言っても、辞めたいとかじゃなくて。ただ、自信がごっそり抜けてる感じ。',
 		author: 'Yuki',
@@ -41,11 +34,41 @@ const moments = [
 		href: `${base}/blog/when-work-got-scary`,
 	},
 	{
-		situation: 'なんとなく不満だけど、動き方が分からない',
-		quote: '新卒でフリーランスになって、正直まだ全部分かってない。でも動いた分だけ見えてきた。',
-		author: 'kz',
-		icon: '🛠️',
-		href: `${base}/blog/twenties-career-kz`,
+		situation: 'がんばってるのに、誰にも言えずにいる',
+		quote: 'スランプのとき、全然普通じゃなかったのに、全員に「普通だよ」って答えてた。',
+		author: 'Yuki',
+		icon: '☕',
+		href: `${base}/blog/work-cant-show-weakness`,
+	},
+	{
+		situation: '転職しようか、ずっと迷っている',
+		quote: '辞めていいのか、って8ヶ月考え続けた。答えが出たのは、問いを変えたときだった。',
+		author: 'Syun',
+		icon: '💼',
+		href: `${base}/blog/mindset-career-change`,
+	},
+];
+
+const featuredYuki = [
+	{
+		situation: '帰りの電車で泣いた夜があった',
+		slug: 'cried-on-the-train',
+		title: '帰りの電車で泣いたことがある。仕事でミスして立ち直れなかった夜の話',
+	},
+	{
+		situation: '女性リーダーになって、向いてないかもと思った',
+		slug: 'female-leader-anxiety',
+		title: '女性リーダーになって、向いてないかもと思った話',
+	},
+	{
+		situation: '気を遣いすぎて消耗しきっていた',
+		slug: 'too-considerate-exhaustion',
+		title: '仕事で気を遣いすぎて消耗する。それが「優しさ」だと思っていた話',
+	},
+	{
+		situation: '自分を責めるのをやめられなかった',
+		slug: 'self-blame-cant-stop',
+		title: '仕事の自己嫌悪が止まらない。自分を責めるのをやめられなかった話',
 	},
 ];
 ---
@@ -148,6 +171,37 @@ const moments = [
 				font-size: 0.78rem;
 				color: rgb(var(--gray));
 			}
+			/* Featured Yuki */
+			.featured-yuki { margin-bottom: 2.5em; }
+			.featured-yuki-list {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 0.75em;
+			}
+			.featured-yuki-card {
+				display: block;
+				padding: 1em 1.1em;
+				border: 1px solid rgb(var(--gray-light));
+				border-radius: 12px;
+				text-decoration: none;
+				color: inherit;
+				transition: border-color 0.15s ease;
+			}
+			.featured-yuki-card:hover { border-color: var(--accent); }
+			.featured-yuki-situation {
+				font-size: 0.72rem;
+				font-weight: 700;
+				color: var(--accent);
+				margin-bottom: 0.4em;
+				letter-spacing: 0.02em;
+			}
+			.featured-yuki-title {
+				font-size: 0.88rem;
+				font-weight: 700;
+				line-height: 1.45;
+				margin: 0;
+				color: rgb(var(--black));
+			}
 			/* Categories */
 			.categories { margin-bottom: 2.5em; }
 			.category-list {
@@ -206,9 +260,6 @@ const moments = [
 				color: var(--accent);
 				font-weight: 700;
 				margin-top: 0.2em;
-			}
-			@media (max-width: 599px) {
-				.writer-list { grid-template-columns: 1fr; }
 			}
 			/* Recent posts */
 			.recent { margin-bottom: 2em; }
@@ -286,6 +337,8 @@ const moments = [
 				}
 				.hero h1 { font-size: 1.6rem; }
 				.date-chip { display: none; }
+				.featured-yuki-list { grid-template-columns: 1fr; }
+				.writer-list { grid-template-columns: 1fr; }
 			}
 		</style>
 	</head>
@@ -295,8 +348,8 @@ const moments = [
 			<!-- Hero -->
 			<section class="hero">
 				<h1>迷いながら進む、それでいい。</h1>
-				<p>転職・働き方・スキルアップ・副業——キャリアに悩む人たちのリアルな体験談を、現役のコンサルタント・営業職・エンジニアが書いています。</p>
-				<a class="hero-cta" href={`${base}/blog`}>記事を読む</a>
+				<p>転職・働き方・しんどさ——キャリアに迷う人たちのリアルな体験談を、現役の営業職・コンサルタント・エンジニアが書いています。</p>
+				<a class="hero-cta" href={`${base}/blog/author/yuki`}>☕ Yukiの記事を読む</a>
 			</section>
 
 			<!-- Moments -->
@@ -313,34 +366,21 @@ const moments = [
 				</div>
 			</section>
 
-			<!-- Categories -->
-			<section class="categories">
-				<p class="section-title">カテゴリ</p>
-				<div class="category-list">
-					{categories.map((cat) => (
-						<a href={`${base}/blog/category/${cat}`}>{cat}</a>
-					))}
-				</div>
-			</section>
-
-			<!-- Writers -->
-			<section class="writers">
-				<p class="section-title">ライターで探す</p>
-				<div class="writer-list">
-					{writers.map((w) => (
-						<a class="writer-card" href={`${base}/blog/author/${w.id}`}>
-							<div class="writer-card-header">
-								<span>{w.icon}</span>
-								<span>{w.name}</span>
-							</div>
-							<div class="writer-card-tagline">{w.tagline}</div>
-							<div class="writer-card-count">{postCountByAuthor[w.id]}件の記事</div>
+			<!-- Featured Yuki -->
+			<section class="featured-yuki">
+				<p class="section-title">☕ Yukiの記事</p>
+				<div class="featured-yuki-list">
+					{featuredYuki.map((a) => (
+						<a class="featured-yuki-card" href={`${base}/blog/${a.slug}/`}>
+							<div class="featured-yuki-situation">{a.situation}</div>
+							<p class="featured-yuki-title">{a.title}</p>
 						</a>
 					))}
 				</div>
+				<a class="all-link" href={`${base}/blog/author/yuki`}>Yukiの記事をすべて見る →</a>
 			</section>
 
-		<!-- Recent posts -->
+			<!-- Recent posts -->
 			<section class="recent">
 				<p class="section-title">最新記事</p>
 				<ul class="post-list">
@@ -369,6 +409,33 @@ const moments = [
 					))}
 				</ul>
 				<a class="all-link" href={`${base}/blog`}>すべての記事を見る →</a>
+			</section>
+
+			<!-- Categories -->
+			<section class="categories">
+				<p class="section-title">カテゴリ</p>
+				<div class="category-list">
+					{categories.map((cat) => (
+						<a href={`${base}/blog/category/${cat}`}>{cat}</a>
+					))}
+				</div>
+			</section>
+
+			<!-- Writers -->
+			<section class="writers">
+				<p class="section-title">ライターで探す</p>
+				<div class="writer-list">
+					{writers.map((w) => (
+						<a class="writer-card" href={`${base}/blog/author/${w.id}`}>
+							<div class="writer-card-header">
+								<span>{w.icon}</span>
+								<span>{w.name}</span>
+							</div>
+							<div class="writer-card-tagline">{w.tagline}</div>
+							<div class="writer-card-count">{postCountByAuthor[w.id]}件の記事</div>
+						</a>
+					))}
+				</div>
 			</section>
 		</main>
 		<Footer />
