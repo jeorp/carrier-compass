@@ -321,6 +321,66 @@ const featuredYuki = [
 				font-weight: 600;
 			}
 			.all-link:hover { text-decoration: underline; }
+			/* Yuki's pick */
+			.yuki-pick {
+				margin-bottom: 2.5em;
+			}
+			.yuki-pick-card {
+				display: flex;
+				align-items: center;
+				gap: 1em;
+				padding: 1.1em 1.3em;
+				border: 1px solid rgb(var(--gray-light));
+				border-radius: 12px;
+				text-decoration: none;
+				color: inherit;
+				transition: border-color 0.15s ease;
+			}
+			.yuki-pick-card:hover { border-color: var(--accent); }
+			.yuki-pick-icon {
+				font-size: 2rem;
+				flex-shrink: 0;
+			}
+			.yuki-pick-body {
+				flex: 1;
+				min-width: 0;
+			}
+			.yuki-pick-label {
+				display: flex;
+				align-items: center;
+				gap: 0.5em;
+				font-size: 0.72rem;
+				font-weight: 700;
+				color: var(--accent);
+				letter-spacing: 0.05em;
+				margin-bottom: 0.3em;
+			}
+			.yuki-pick-pr {
+				font-size: 0.65rem;
+				font-weight: 700;
+				color: rgb(var(--gray));
+				background: rgb(var(--gray-light));
+				padding: 0.1em 0.45em;
+				border-radius: 3px;
+				letter-spacing: 0.03em;
+			}
+			.yuki-pick-name {
+				font-size: 0.95rem;
+				font-weight: 700;
+				margin: 0 0 0.25em;
+				color: rgb(var(--black));
+			}
+			.yuki-pick-desc {
+				font-size: 0.82rem;
+				color: rgb(var(--gray));
+				margin: 0;
+				line-height: 1.55;
+			}
+			.yuki-pick-arrow {
+				font-size: 0.9rem;
+				color: rgb(var(--gray));
+				flex-shrink: 0;
+			}
 			/* Desktop enhancements */
 			@media (min-width: 600px) {
 				.moment-list {
@@ -436,6 +496,20 @@ const featuredYuki = [
 						</a>
 					))}
 				</div>
+			</section>
+			<!-- Yuki's pick -->
+			<section class="yuki-pick">
+				<p class="section-title">☕ Yukiのお気に入り</p>
+				<a class="yuki-pick-card" href="https://px.a8.net/svt/ejp?a8mat=4AZJGB+CI4HE+5UFU+5YJRM" rel="nofollow" target="_blank">
+					<div class="yuki-pick-icon">☕</div>
+					<div class="yuki-pick-body">
+						<div class="yuki-pick-label">Yukiが愛用中のコーヒー<span class="yuki-pick-pr">PR</span></div>
+						<p class="yuki-pick-name">ブルーボトルコーヒー 公式オンラインストア</p>
+						<p class="yuki-pick-desc">しんどい日の帰り道、自宅でドリップする10分が切り替えの合図。豆はここで取り寄せてる。</p>
+					</div>
+					<div class="yuki-pick-arrow">→</div>
+				</a>
+				<img src="https://www14.a8.net/0.gif?a8mat=4AZJGB+CI4HE+5UFU+5YJRM" width="1" height="1" alt="" style="display:none;" />
 			</section>
 		</main>
 		<Footer />
