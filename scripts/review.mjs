@@ -152,12 +152,12 @@ function reviewArticle(filePath) {
     warnings.push({ level: 'WARN', rule: 'SEO: descriptionが長い', detail: `${desc.length}字（160字以下推奨）`, lines: `  → ${desc.slice(0, 80)}…` });
   }
 
-  // 9. 文字数（1500〜2500字推奨）
+  // 9. 文字数（3000字以上推奨）
   const charCount = body.replace(/\s/g, '').replace(/[#*\->`]/g, '').length;
-  if (charCount < 1000) {
-    warnings.push({ level: 'ERROR', rule: 'SEO: 文字数不足', detail: `${charCount}字（1500字以上推奨）`, lines: '' });
-  } else if (charCount < 1500) {
-    warnings.push({ level: 'WARN', rule: 'SEO: 文字数やや不足', detail: `${charCount}字（1500字以上推奨）`, lines: '' });
+  if (charCount < 2000) {
+    warnings.push({ level: 'ERROR', rule: 'SEO: 文字数不足', detail: `${charCount}字（3000字以上推奨）`, lines: '' });
+  } else if (charCount < 3000) {
+    warnings.push({ level: 'WARN', rule: 'SEO: 文字数やや不足', detail: `${charCount}字（3000字以上推奨）`, lines: '' });
   }
 
   // 10. 冒頭の検索意図応答（最初の3段落に読者の悩み語彙が含まれるか）
