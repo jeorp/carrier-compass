@@ -186,6 +186,10 @@ carrier-note/
 ペルソナ更新後・著者記事が5本溜まった時点・品質に違和感を覚えたときに実施する。
 詳細手順とチェックリストは [`strategy/brushup.md`](strategy/brushup.md) を参照。
 
+### note記事執筆ワークフロー
+
+yukiのnote記事を書くときは [`strategy/note.md`](strategy/note.md) を参照する。ブログ記事とはディレクトリ・frontmatter・フォーマット・ハッシュタグがすべて異なる。
+
 ### 新記事執筆ワークフロー
 
 1. `strategy/keywords.md` からメインキーワードを選ぶ（未執筆テーマ一覧から優先度・競合度を確認）
