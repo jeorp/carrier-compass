@@ -84,6 +84,26 @@ platform: note
 
 ---
 
+## サムネイル画像
+
+**フリー素材サイト**
+
+| サイト | URL | 特徴 |
+|---|---|---|
+| Unsplash | unsplash.com | 高品質・商用利用可・クレジット不要 |
+| Pexels | pexels.com | 同上。日本語検索も可 |
+
+**yukiのnoteに合う検索ワード**
+- `morning coffee window` `cafe woman` `coffee journal`
+- `朝 コーヒー` `カフェ 窓` `woman coffee morning`
+
+**選ぶ基準**
+- 暖色系・自然光
+- 人物は後ろ姿か手元だけ（顔が映らないもの）
+- カフェ・窓際・コーヒーカップのどれかが写っているもの
+
+---
+
 ## ハッシュタグ
 
 5個程度を目安。毎記事セットで考える。
