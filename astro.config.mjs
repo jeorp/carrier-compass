@@ -7,5 +7,11 @@ import { defineConfig } from 'astro/config';
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://www.carrier-compass.com',
-	integrations: [mdx(), sitemap()],
+	integrations: [
+		mdx(),
+		sitemap({
+			filter: (page) =>
+				!/\/(blog\/tag|blog\/category|blog\/author)\//.test(page),
+		}),
+	],
 });

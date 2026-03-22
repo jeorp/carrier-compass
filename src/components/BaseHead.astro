@@ -10,11 +10,12 @@ interface Props {
 	title: string;
 	description: string;
 	image?: ImageMetadata;
+	noindex?: boolean;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = FallbackImage } = Astro.props;
+const { title, description, image = FallbackImage, noindex = false } = Astro.props;
 const isProd = import.meta.env.PROD;
 ---
 
@@ -53,6 +54,9 @@ const isProd = import.meta.env.PROD;
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
+
+<!-- Robots -->
+{noindex && <meta name="robots" content="noindex" />}
 
 <!-- Primary Meta Tags -->
 <title>{title}</title>
