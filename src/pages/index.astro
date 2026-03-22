@@ -91,7 +91,7 @@ const featuredYuki = [
 				display: inline-flex;
 				align-items: center;
 				background: var(--accent);
-				color: white;
+				color: rgb(var(--gray-dark));
 				text-decoration: none;
 				padding: 0.7em 1.6em;
 				min-height: 44px;
@@ -255,7 +255,7 @@ const featuredYuki = [
 			.yuki-pick-pr {
 				font-size: 0.65rem;
 				font-weight: 700;
-				color: rgb(var(--gray));
+				color: rgb(var(--gray-dark));
 				background: rgb(var(--gray-light));
 				padding: 0.1em 0.45em;
 				border-radius: 3px;
@@ -372,7 +372,7 @@ const featuredYuki = [
 			<section class="hero">
 				<h1>迷いながら進む、それでいい。</h1>
 				<p>転職・働き方・しんどさ——キャリアに迷う人たちのリアルな体験談を、現役の営業職・コンサルタント・エンジニアが書いています。</p>
-				<a class="hero-cta" href={`${base}/blog/author/yuki`}>☕ Yukiの記事を読む</a>
+				<a class="hero-cta" href={`${base}/blog/author/yuki/`}>☕ Yukiの記事を読む</a>
 			</section>
 
 			<!-- Moments -->
@@ -400,7 +400,7 @@ const featuredYuki = [
 						</a>
 					))}
 				</div>
-				<a class="all-link" href={`${base}/blog/author/yuki`}>Yukiの記事をすべて見る →</a>
+				<a class="all-link" href={`${base}/blog/author/yuki/`}>Yukiの記事をすべて見る →</a>
 			</section>
 
 
@@ -409,7 +409,7 @@ const featuredYuki = [
 				<p class="section-title">カテゴリ</p>
 				<div class="category-list">
 					{categories.map((cat) => (
-						<a href={`${base}/blog/category/${cat}`}>{cat}</a>
+						<a href={`${base}/blog/category/${cat}/`}>{cat}</a>
 					))}
 				</div>
 			</section>
