@@ -100,6 +100,7 @@
 | good-at-talking-job | 話すのが得意 仕事 活かし方 | 話すのが得意 向いてる仕事 / コミュニケーション 強み | 体験談系 | 低 |
 | late-twenties-career-anxiety | 20代後半 転職 焦り | 20代後半 転職 タイミング / 29歳 転職 焦り | 悩み系 | 低 |
 | after-dream-failed | 夢 諦めた後 仕事 | 夢 諦めた 次の仕事 / 夢破れた後 働き方 | 体験談系 | 低 |
+| job-hunting-failure-what-i-did | 就活 全落ち その後 | 就活 失敗 どうした / 就活 全滅 社会人 | 体験談系 | 低 |
 | when-work-became-fun | 仕事 楽しくなった きっかけ | 仕事 好きになった / 仕事 楽しめるようになった | 体験談系 | 低 |
 | left-big-company-realizations | 大手 辞めた 気づき | 大手 辞めて よかった / 大手 やめた 後悔なし | 体験談系 | 低 |
 
