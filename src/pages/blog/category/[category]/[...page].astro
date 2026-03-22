@@ -143,16 +143,16 @@ const readingTime = (body: string) => Math.max(1, Math.ceil(body.length / 500));
 				<div class="feed-header">
 					<h2 class="feed-title">ライター</h2>
 					<div class="filter-row">
-						<a href={`${base}/blog`}>すべて</a>
+						<a href={`${base}/blog/`}>すべて</a>
 						{authors.map((a) => (
-							<a href={`${base}/blog/author/${a}`}>{authorLabels[a]}</a>
+							<a href={`${base}/blog/author/${a}/`}>{authorLabels[a]}</a>
 						))}
 					</div>
 					<h2 class="feed-title" style="margin-top:1rem;">カテゴリ</h2>
 					<div class="filter-row">
-						<a href={`${base}/blog`}>すべて</a>
+						<a href={`${base}/blog/`}>すべて</a>
 						{categories.map((cat) => (
-							<a href={`${base}/blog/category/${cat}`} class={cat === category ? 'active' : ''}>{cat}</a>
+							<a href={`${base}/blog/category/${cat}/`} class={cat === category ? 'active' : ''}>{cat}</a>
 						))}
 					</div>
 				</div>

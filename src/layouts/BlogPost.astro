@@ -273,7 +273,7 @@ const shareUrl = `https://x.com/intent/tweet?text=${encodeURIComponent(title)}&u
 						<h1>{title}</h1>
 						<div class="meta">
 							{category && <span class="category">{category}</span>}
-							{tags && tags.map((tag) => <a href={`${base}/blog/tag/${tag}`} class="tag">#{tag}</a>)}
+							{tags && tags.map((tag) => <a href={`${base}/blog/tag/${tag}/`} class="tag">#{tag}</a>)}
 						</div>
 						<hr />
 					</div>
@@ -302,7 +302,7 @@ const shareUrl = `https://x.com/intent/tweet?text=${encodeURIComponent(title)}&u
 						<div class="author-info">
 							<div class="author-name">{authorProfile.name}</div>
 							<p class="author-bio">{authorProfile.bio}</p>
-						<a class="author-link" href={`${base}/blog/author/${author}`}>{authorProfile.name}の記事をもっと読む →</a>
+						<a class="author-link" href={`${base}/blog/author/${author}/`}>{authorProfile.name}の記事をもっと読む →</a>
 					</div>
 				</div>
 			)}

@@ -131,7 +131,7 @@ const readingTime = (body: string) => Math.max(1, Math.ceil(body.length / 500));
 				<div class="feed-header">
 					<h2 class="feed-title">タグ</h2>
 					<div class="tag-label">#{tag}</div>
-					<a class="back-link" href={`${base}/blog`}>← すべての記事へ</a>
+					<a class="back-link" href={`${base}/blog/`}>← すべての記事へ</a>
 				</div>
 				<ul>
 					{page.data.map((post) => (
