@@ -31,7 +31,8 @@
 	font-display: swap;
 }
 body {
-	font-family: "Noto Sans JP", "Atkinson", sans-serif;
+	font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans",
+		"Yu Gothic Medium", "游ゴシック Medium", Meiryo, sans-serif;
 	margin: 0;
 	padding: 0;
 	text-align: left;
