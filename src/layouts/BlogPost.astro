@@ -256,7 +256,7 @@ const shareUrl = `https://x.com/intent/tweet?text=${encodeURIComponent(title)}&u
 		<main>
 			<article>
 				<div class="hero-image">
-					{heroImage && <Image width={1020} height={510} src={heroImage} alt="" />}
+					{heroImage && <Image width={1020} height={510} src={heroImage} alt="" fetchpriority="high" loading="eager" />}
 				</div>
 				<div class="prose">
 					<div class="title">
