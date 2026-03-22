@@ -33,6 +33,7 @@ const readingTime = (body: string) => Math.max(1, Math.ceil(body.length / 500));
 		<BaseHead
 			title={page.currentPage === 1 ? `${category} | ${SITE_TITLE}` : `${category} — ${page.currentPage}ページ目 | ${SITE_TITLE}`}
 			description={`${category}に関する記事一覧`}
+			noindex={true}
 		/>
 		<style>
 			main { width: 680px; }

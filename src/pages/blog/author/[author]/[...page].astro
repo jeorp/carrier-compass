@@ -64,6 +64,7 @@ const readingTime = (body: string) => Math.max(1, Math.ceil(body.length / 500));
 		<BaseHead
 			title={page.currentPage === 1 ? `${authorLabels[author]} | ${SITE_TITLE}` : `${authorLabels[author]} — ${page.currentPage}ページ目 | ${SITE_TITLE}`}
 			description={`${authorLabels[author]}の記事一覧`}
+			noindex={true}
 		/>
 		<style>
 			main { width: 680px; }
