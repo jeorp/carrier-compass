@@ -1,6 +1,4 @@
 ---
-import { Image } from 'astro:assets';
-import JournalIllustration from '../assets/journal-woman-window.png';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../components/FormattedDate.astro';
 import '../styles/home.css';
@@ -20,30 +18,30 @@ const categories = ['転職', 'スキルアップ', '副業', '働き方'];
 
 const moments = [
 	{
-		situation: '気を遣いすぎて、疲れた日',
-		description: '自分のことは、いつも後回し。抱え込んでいることを、少しずつほどいてみる。',
-		author: 'Yuki',
+		situation: '人間関係で、疲れている',
+		description: '気を遣いすぎたり、抱え込んだり。今の負担を言葉にするところから。',
+		label: '気持ちを整理する',
 		href: `${base}/blog/too-considerate-exhaustion/`,
 	},
 	{
-		situation: '「私でいいのかな」と思う日',
-		description: '新しい役割も、誰かの期待も。自信が持てない気持ちから、一緒に考える。',
-		author: 'Yuki',
-		href: `${base}/blog/female-leader-anxiety/`,
+		situation: 'この仕事を続けるか迷う',
+		description: '悪い会社ではないけれど、何かが違う。その違和感を、一つずつ確かめる。',
+		label: '働き方を見つめ直す',
+		href: `${base}/blog/good-company-feels-wrong/`,
 	},
 	{
-		situation: 'これからの暮らしに迷う日',
-		description: '仕事も、仕事以外の大切なことも。自分が望むこれからを、ゆっくり見つめる。',
-		author: 'Yuki',
-		href: `${base}/blog/women-work-marriage-dilemma/`,
+		situation: '次に何をすればいい？',
+		description: '誰かに相談したい。でも、何を話せばいいか分からないときの準備に。',
+		label: '相談の準備をする',
+		href: `${base}/blog/career-consultation-what-to-say/`,
 	},
 ];
 
-const featuredYuki = [
-	{ situation: '職場の人間関係', slug: 'too-considerate-exhaustion' },
-	{ situation: '自分らしいキャリア', slug: 'female-leader-anxiety' },
-	{ situation: '仕事とこれからの暮らし', slug: 'women-work-marriage-dilemma' },
-	{ situation: '自分との向き合い方', slug: 'comparing-with-coworkers' },
+const featuredPosts = [
+	{ situation: '抱え込みすぎないために', slug: 'workplace-nice-person-exhaustion' },
+	{ situation: '今の職場でできること', slug: 'work-cant-show-weakness' },
+	{ situation: '転職を決める、その前に', slug: 'career-consult-no-transfer' },
+	{ situation: '環境を変える準備', slug: 'job-change-preparation' },
 ].map((item) => {
 	const post = posts.find((post) => post.id === item.slug);
 	if (!post) throw new Error(`Featured article not found: ${item.slug}`);
@@ -57,8 +55,6 @@ const featuredYuki = [
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 		<link rel="dns-prefetch" href="https://www14.a8.net" />
-		<link rel="dns-prefetch" href="https://www15.a8.net" />
-		<link rel="dns-prefetch" href="https://www12.a8.net" />
 
 	</head>
 	<body>
@@ -67,44 +63,59 @@ const featuredYuki = [
 			<!-- Hero -->
 			<section class="hero">
 				<div class="hero-copy">
-					<p class="eyebrow">わたしと、仕事と、これから。</p>
-					<h1>がんばる毎日に、<br /><span>わたしを想う時間。</span></h1>
-					<p class="hero-description">仕事は大切。でも、わたしの気持ちも大切。<br />人間関係、キャリア、これからの暮らし。<br />迷う日も、自分のペースで考えていこう。</p>
-					<a class="hero-cta" href="#moments">今の気持ちに合う記事を読む <span aria-hidden="true">→</span></a>
+					<p class="eyebrow">仕事と、自分と、これから。</p>
+					<h1>今の仕事と、<br /><span>これからの自分。</span></h1>
+					<p class="hero-description">仕事がしんどい。でも、辞めるべきかは分からない。<br />気持ちの整理から、働き方の見直しまで。<br />自分に合う次の一歩を、ここから。</p>
+					<a class="hero-cta" href="#moments">今の悩みから記事を探す <span aria-hidden="true">→</span></a>
 					<a class="hero-secondary" href={`${base}/blog/`}>すべての記事を見る <span aria-hidden="true">↗</span></a>
 				</div>
-				<figure class="hero-visual">
-					<Image src={JournalIllustration} alt="やわらかな日差しの窓辺で、ノートに思いを書く女性のイラスト" widths={[480, 800, 1200]} sizes="(max-width: 720px) calc(100vw - 40px), 50vw" width={900} format="webp" loading="eager" fetchpriority="high" />
-					<figcaption>ひと息ついて、わたしのペースで。</figcaption>
+				<figure class="hero-visual" aria-label="自分のペースで、進む方向を考える羅針盤">
+					<div class="compass-heading"><span>CAREER COMPASS</span><span aria-hidden="true">↗</span></div>
+					<svg class="compass-art" viewBox="0 0 440 290" fill="none" aria-hidden="true">
+						<path d="M-20 235C60 170 81 280 180 206S327 72 460 106" stroke="var(--compass-line)" stroke-width="1.5" stroke-dasharray="5 8" />
+						<path d="M-20 258C62 193 102 300 199 223S344 90 460 125" stroke="var(--compass-line)" opacity=".45" />
+						<circle cx="220" cy="145" r="117" stroke="var(--compass-line)" />
+						<circle cx="220" cy="145" r="99" stroke="var(--compass-line)" stroke-dasharray="1 9" />
+						<circle cx="220" cy="145" r="80" fill="var(--paper)" stroke="var(--compass-line)" />
+						<path d="M220 15V35M220 255V275M90 145H110M330 145H350" stroke="var(--accent)" />
+						<path d="M149 74L158 83M282 207L291 216M149 216L158 207M282 83L291 74" stroke="var(--compass-line)" />
+						<path d="M266 80L236 161L174 210L204 129Z" fill="var(--surface)" stroke="var(--accent)" stroke-width="1.5" />
+						<path d="M266 80L204 129L236 161Z" fill="var(--accent)" />
+						<circle cx="220" cy="145" r="7" fill="var(--paper)" stroke="var(--accent)" stroke-width="2" />
+						<circle cx="55" cy="216" r="5" fill="var(--ochre)" />
+						<circle cx="391" cy="108" r="5" fill="var(--accent)" />
+					</svg>
+					<figcaption>進む方向は、自分のペースで。</figcaption>
+					<div class="compass-steps"><span>01 気持ちを整理する</span><span>02 選択肢を知る</span><span>03 一歩を選ぶ</span></div>
 				</figure>
 			</section>
 
 			<!-- Moments -->
 			<section class="moments" id="moments">
-				<div class="section-heading"><div><p class="eyebrow">HOW ARE YOU TODAY?</p><h2>今日は、どんな気持ち？</h2></div><span class="section-note">うまく言葉にできなくても、大丈夫。</span></div>
+				<div class="section-heading"><div><p class="eyebrow">START HERE</p><h2>今、気になっていることは？</h2></div><span class="section-note">うまく言葉にできなくても、大丈夫。</span></div>
 				<div class="moment-list">
 					{moments.map((m, index) => (
 						<a class="moment-card" href={m.href}>
 							<span class="moment-number">0{index + 1}</span><h3 class="moment-situation">{m.situation}</h3>
 							<p class="moment-quote">{m.description}</p>
-							<div class="moment-attribution">{m.author}<span aria-hidden="true">↗</span></div>
+							<div class="moment-action">{m.label}<span aria-hidden="true">↗</span></div>
 						</a>
 					))}
 				</div>
 			</section>
 
-			<!-- Featured Yuki -->
-			<section class="featured-yuki">
-				<div class="section-heading"><div><p class="eyebrow">EDITOR’S LETTER</p><h2>わたしらしく働くために。</h2></div><span class="section-note">気持ちに寄り添う、4つの読みもの</span></div>
-				<div class="featured-yuki-list">
-					{featuredYuki.map((a, index) => (
-						<a class="featured-yuki-card" href={`${base}/blog/${a.slug}/`}>
-							<span class="story-index">0{index + 1}</span><div class="featured-yuki-situation">{a.situation}</div>
-							<h3 class="featured-yuki-title">{a.title}</h3><span class="story-arrow" aria-hidden="true">↗</span>
+			<!-- Featured guides -->
+			<section class="featured-guides">
+				<div class="section-heading"><div><p class="eyebrow">READ & REFLECT</p><h2>自分に合う働き方を考える。</h2></div><span class="section-note">整理や行動に使える、4つのガイド</span></div>
+				<div class="featured-guides-list">
+					{featuredPosts.map((a, index) => (
+						<a class="featured-guides-card" href={`${base}/blog/${a.slug}/`}>
+							<span class="story-index">0{index + 1}</span><div class="featured-guides-situation">{a.situation}</div>
+							<h3 class="featured-guides-title">{a.title}</h3><span class="story-arrow" aria-hidden="true">↗</span>
 						</a>
 					))}
 				</div>
-				<a class="all-link" href={`${base}/blog/author/yuki/`}>Yukiの記事をすべて見る →</a>
+				<a class="all-link" href={`${base}/blog/`}>すべての記事を見る →</a>
 			</section>
 
 
@@ -122,45 +133,21 @@ const featuredYuki = [
 				</div>
 			</section>
 
-			<!-- Yuki's pick -->
-			<section class="yuki-pick">
+			<!-- Coffee advertisement -->
+			<section class="coffee-ad">
 				<h2 class="section-title">コーヒーの広告</h2>
-				<a class="yuki-pick-card" href="https://px.a8.net/svt/ejp?a8mat=4AZJGB+CI4HE+5UFU+5YJRM" rel="nofollow" target="_blank">
-					<div class="yuki-pick-icon">☕</div>
-					<div class="yuki-pick-body">
-						<div class="yuki-pick-label">コーヒーのサービス紹介<span class="yuki-pick-pr">PR</span></div>
-						<p class="yuki-pick-name">ブルーボトルコーヒー 公式オンラインストア</p>
-						<p class="yuki-pick-desc">自宅で飲むコーヒーを探している方へ。商品や購入条件は公式オンラインストアで確認できます。</p>
+				<a class="coffee-ad-card" href="https://px.a8.net/svt/ejp?a8mat=4AZJGB+CI4HE+5UFU+5YJRM" rel="nofollow" target="_blank">
+					<div class="coffee-ad-icon">☕</div>
+					<div class="coffee-ad-body">
+						<div class="coffee-ad-label">コーヒーのサービス紹介<span class="coffee-ad-pr">PR</span></div>
+						<p class="coffee-ad-name">ブルーボトルコーヒー 公式オンラインストア</p>
+						<p class="coffee-ad-desc">自宅で飲むコーヒーを探している方へ。商品や購入条件は公式オンラインストアで確認できます。</p>
 					</div>
-					<div class="yuki-pick-arrow">→</div>
+					<div class="coffee-ad-arrow">→</div>
 				</a>
 				<img src="https://www14.a8.net/0.gif?a8mat=4AZJGB+CI4HE+5UFU+5YJRM" width="1" height="1" alt="" style="display:none;" />
 			</section>
 
-			<!-- kz's pick -->
-			<section class="kz-pick">
-				<h2 class="section-title">kzのおすすめ</h2>
-				<a class="kz-pick-card" href="https://px.a8.net/svt/ejp?a8mat=4AZJGB+N7XDE+2OM2+ZQ80I" rel="nofollow" target="_blank">
-					<div class="kz-pick-icon">🛠️</div>
-					<div class="kz-pick-body">
-						<div class="kz-pick-label">副業プラットフォームの紹介<span class="kz-pick-pr">PR</span></div>
-						<p class="kz-pick-name">クラウドワークス テック</p>
-						<p class="kz-pick-desc">エンジニア向け案件が充実。フリーランス転向を考えているなら、まず案件の相場感を掴むのに使える。</p>
-					</div>
-					<div class="kz-pick-arrow">→</div>
-				</a>
-				<img width="1" height="1" src="https://www15.a8.net/0.gif?a8mat=4AZJGB+N7XDE+2OM2+ZQ80I" alt="" style="display:none;" />
-				<a class="kz-pick-card" href="https://px.a8.net/svt/ejp?a8mat=4AZJGB+3KMEQ+5B0Y+HVNAP" rel="nofollow" target="_blank">
-					<div class="kz-pick-icon">🚀</div>
-					<div class="kz-pick-body">
-						<div class="kz-pick-label">転職サービスの紹介<span class="kz-pick-pr">PR</span></div>
-						<p class="kz-pick-name">TechGo（テックゴー）</p>
-						<p class="kz-pick-desc">ITエンジニア向けのハイクラス転職サービス。年収アップを狙うなら選択肢に入れておいて損はない。</p>
-					</div>
-					<div class="kz-pick-arrow">→</div>
-				</a>
-				<img width="1" height="1" src="https://www12.a8.net/0.gif?a8mat=4AZJGB+3KMEQ+5B0Y+HVNAP" alt="" style="display:none;" />
-			</section>
 		</main>
 		<Footer />
 	</body>

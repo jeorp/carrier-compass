@@ -5,7 +5,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 <footer>
 	<p class="footer-brand">キャリアの羅針盤</p>
-	<p class="footer-message">わたしの気持ちも、大切に。</p>
+	<p class="footer-message">自分に合う、次の一歩を。</p>
 	<nav class="footer-links" aria-label="サイト情報">
 		<a href={`${base}/about/`}>このサイトについて</a>
 		<a href={`${base}/contact/`}>お問い合わせ</a>
@@ -19,7 +19,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 	footer {
 		padding: 48px 24px;
 		border-top: 1px solid rgb(var(--gray-light));
-		background: #f7ebef;
+		background: var(--tint);
 		color: rgb(var(--gray));
 		text-align: center;
 	}
