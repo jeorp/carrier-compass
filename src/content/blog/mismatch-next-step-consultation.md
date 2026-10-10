@@ -6,14 +6,14 @@ category: 転職
 tags: ["転職", "ミスマッチ", "転職後", "キャリア相談"]
 author: syun
 targetKeyword: "転職 ミスマッチ 次の一手"
-related: ["regret-after-job-change", "career-consultation-what-to-say", "work-cant-show-weakness"]
+related: ["job-change-mismatch-notice", "regret-after-job-change", "career-consultation-what-to-say", "work-cant-show-weakness"]
 updatedDate: 2026-10-11
 isAffiliate: false
 ---
 
 転職後のミスマッチを感じたとき、次の一手は**困っている出来事と、確認したいことを一組にして相談すること**だ。「とりあえず1年続ける」「すぐ再転職する」と決める前に、今の職場で変えられることを確かめたい。
 
-困りごとの整理がまだ難しい場合は、先に[転職後の期待と現実を分けるメモ](/blog/regret-after-job-change/)を使ってみる。この記事では、そのメモを誰に伝え、返答を受けてどう動くかを扱う。
+何が違うのかを分類したい場合は、[ミスマッチを整理する4つの切り口](/blog/job-change-mismatch-notice/)から確認できる。困りごとの整理がまだ難しい場合は、先に[転職後の期待と現実を分けるメモ](/blog/regret-after-job-change/)を使ってみる。この記事では、そのメモを誰に伝え、返答を受けてどう動くかを扱う。
 
 ## 確認先を、困っていることに合わせる
 
