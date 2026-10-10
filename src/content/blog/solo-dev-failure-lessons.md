@@ -7,6 +7,7 @@ tags: ["エンジニア", "個人開発", "フリーランス", "キャリア"]
 author: kz
 targetKeyword: "個人開発 失敗 学び"
 related: ["why-i-left-freelance", "twenties-career-kz", "engineer-career-growth"]
+isAffiliate: true
 ---
 
 個人開発をやってみたけど、うまくいかなかった。どうすればよかったのか、何が間違っていたのか、分からないまま時間が過ぎた経験がある人には、少し参考になるかもしれない。

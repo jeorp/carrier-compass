@@ -7,6 +7,7 @@ tags: ["仕事", "やりがい", "営業", "キャリア"]
 author: yuki
 targetKeyword: "仕事 楽しくなった きっかけ"
 related: ["dont-want-to-go-to-work", "when-work-got-scary", "why-i-continue-sales"]
+isAffiliate: true
 ---
 
 仕事が楽しくなったきっかけって、ちゃんとあるんですよね。

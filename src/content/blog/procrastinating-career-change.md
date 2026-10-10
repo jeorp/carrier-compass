@@ -7,6 +7,7 @@ tags: ["転職", "マインドセット", "決断", "タイミング"]
 author: syun
 targetKeyword: "転職 先延ばし やめたほうがいい"
 related: ["mindset-career-change", "fear-of-changing-jobs"]
+isAffiliate: true
 ---
 
 転職したい、でも今じゃない——そう思いながら、8ヶ月が過ぎた。

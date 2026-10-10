@@ -8,6 +8,7 @@ author: syun
 targetKeyword: "なんとなく就職した 後悔"
 related: ["good-company-feels-wrong", "mindset-career-change", "twenties-career-syun"]
 books: ["9784478107829"]
+isAffiliate: true
 ---
 
 なんとなく就職した後悔があるか、と聞かれたら——正直に言うと、ある。

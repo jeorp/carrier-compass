@@ -7,6 +7,7 @@ tags: ["営業", "仕事", "キャリア", "向いてない"]
 author: yuki
 targetKeyword: "営業 向いてない 辞めたい"
 related: ["why-i-continue-sales", "when-work-got-scary"]
+isAffiliate: true
 ---
 
 営業、向いてないかもって思ったこと、何回もある。

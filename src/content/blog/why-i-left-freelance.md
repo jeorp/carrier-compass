@@ -7,6 +7,7 @@ tags: ["エンジニア", "フリーランス", "キャリア", "転職"]
 author: kz
 targetKeyword: "フリーランス やめた 理由 チーム"
 related: ["twenties-career-kz", "engineer-career-growth", "first-year-engineer"]
+isAffiliate: true
 ---
 
 フリーランスをやめた理由を一言で言うと、「設計を誰かに教えてもらえる環境に入りたかった」からだ。

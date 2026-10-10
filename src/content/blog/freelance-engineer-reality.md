@@ -7,6 +7,7 @@ tags: ["エンジニア", "フリーランス", "キャリア", "副業"]
 author: kz
 targetKeyword: "フリーランス エンジニア なってわかった"
 related: ["why-i-left-freelance", "solo-dev-failure-lessons", "twenties-career-kz"]
+isAffiliate: true
 ---
 
 フリーランスエンジニアになってわかったことを正直に書く。社員25人のスタートアップを半年で辞め、2022年秋から2024年秋まで2年間フリーランスをやった話だ。

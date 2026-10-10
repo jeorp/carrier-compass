@@ -6,7 +6,7 @@ category: 転職
 tags: ["転職", "人事異動", "職場環境", "キャリア"]
 author: syun
 targetKeyword: "人事異動 辞めたい 転職すべきか"
-isAffiliate: true
+isAffiliate: false
 related: ["fear-of-changing-jobs", "boss-mismatch-should-i-transfer", "mindset-career-change"]
 ---
 

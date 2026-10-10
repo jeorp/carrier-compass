@@ -8,6 +8,7 @@ author: yuki
 targetKeyword: "大手 辞めた 気づき"
 related: ["large-company-to-startup", "when-work-became-fun", "women-in-sales"]
 books: ["LEAN IN"]
+isAffiliate: true
 ---
 
 大手を辞めて、もうすぐ3年になる。

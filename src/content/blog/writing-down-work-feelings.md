@@ -8,6 +8,7 @@ author: yuki
 targetKeyword: "仕事 気持ち 書き出す 整理"
 books: ["9784295405931"]
 related: ["sales-slump-recovery", "work-cant-show-weakness", "weekend-work-thoughts"]
+isAffiliate: true
 ---
 
 営業2年目の春、仕事がしんどかった時期のことを思い出すと、スマホのメモアプリに気持ちを書き出していたことがよく出てくる。

@@ -6,11 +6,14 @@ category: 転職
 tags: ["転職", "不安", "転職前", "キャリア"]
 author: syun
 targetKeyword: "転職前 不安 杞憂"
-isAffiliate: true
+isAffiliate: false
 related: ["fear-of-changing-jobs", "gave-up-high-salary", "mindset-career-change"]
+updatedDate: 2026-10-11
 ---
 
 転職前の不安って、いくつか種類があると思うんだけど、振り返るとそのほとんどが杞憂だった。
+
+転職先が合わなかったときのことが気になるなら、[転職して後悔したときに整理すること](/blog/regret-after-job-change/)も読んでみてほしい。期待と現実を分けて考える記入例を載せている。
 
 「年収が下がったら生活できないかもしれない」「市場価値がなくて採用されないかもしれない」「転職してもまた合わないかもしれない」。コンサルを辞めようかと思っていた26歳のころ、頭の中にあった不安を全部書き出したら、3ページくらいになった。
 

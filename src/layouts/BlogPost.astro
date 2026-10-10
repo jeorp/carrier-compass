@@ -14,17 +14,17 @@ const authors: Record<string, { name: string; bio: string; icon: string }> = {
 	yuki: {
 		name: 'Yuki',
 		icon: '☕',
-		bio: 'このサイトの編集リーダー。アナウンサーを目指した過去を持つ29歳。大手メーカーからスタートアップへ転職した現役営業職。休日はカフェで充電しながらキャリアについて発信中。',
+		bio: '営業や働き方の迷いをテーマにした、編集上の語り手です。人物設定には創作が含まれ、経歴や体験を本人確認済みの事実として紹介するものではありません。',
 	},
 	syun: {
 		name: 'Syun',
 		icon: '💼',
-		bio: '早稲田大学ラグビー部出身。大手外資系コンサルを経て、32歳でフリーランスのキャリアコンサルタントとして独立。サウナとルーティンをこよなく愛する。',
+		bio: '転職やキャリアの迷いを整理する、編集上の語り手です。人物設定には創作が含まれ、資格保有や相談実績を示すものではありません。',
 	},
 	kz: {
 		name: 'kz',
 		icon: '🛠️',
-		bio: '26歳のソフトウェアエンジニア。エンジニア目線でキャリアや副業・フリーランスについて発信する。',
+		bio: 'このサイトの開発・運営を担当。エンジニアのキャリアや、副業・フリーランスをテーマに記事を編集しています。',
 	},
 };
 
@@ -63,7 +63,7 @@ const relatedPosts = candidatePosts.slice(0, MAX_RELATED);
 const shareUrl = `https://x.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(Astro.url.href)}`;
 ---
 
-<html lang="en">
+<html lang="ja">
 	<head>
 		<BaseHead title={title} description={description} />
 		<style>
@@ -80,6 +80,13 @@ const shareUrl = `https://x.com/intent/tweet?text=${encodeURIComponent(title)}&u
 				margin: 0 auto;
 				border-radius: 12px;
 				box-shadow: var(--box-shadow);
+			}
+			.editorial-notice {
+				padding: 1em;
+				border-left: 3px solid rgb(var(--gray));
+				background: rgb(var(--gray-light));
+				font-size: 0.85em;
+				line-height: 1.7;
 			}
 			.prose {
 				width: 720px;
@@ -279,6 +286,9 @@ const shareUrl = `https://x.com/intent/tweet?text=${encodeURIComponent(title)}&u
 					</div>
 					{isAffiliate && (
 						<p class="pr-notice">※ 本記事はアフィリエイト広告を含みます。</p>
+					)}
+					{author && (
+						<p class="editorial-notice">この記事には創作ペルソナによる表現が含まれます。人物の経歴・資格・相談実績や体験談は、本人確認済みの事実を示すものではありません。<a href={`${base}/about/`}>編集方針について</a></p>
 					)}
 					<slot />
 					{author && relatedPosts.length > 0 && (

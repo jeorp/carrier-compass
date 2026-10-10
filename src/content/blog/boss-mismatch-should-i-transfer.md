@@ -6,7 +6,7 @@ category: 転職
 tags: ["転職", "職場環境", "上司", "キャリア"]
 author: yuki
 targetKeyword: "上司 合わない 転職すべきか"
-isAffiliate: true
+isAffiliate: false
 related: ["why-i-continue-sales", "large-company-to-startup", "fear-of-changing-jobs"]
 ---
 
