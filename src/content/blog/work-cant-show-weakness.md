@@ -84,4 +84,6 @@ related: ["too-considerate-exhaustion", "workplace-nice-person-exhaustion", "wor
 
 今の職場で調整するか、別の環境を考えるかは、ここで決めなくていい。まず負担を整理したいなら、[気遣いで引き受けている役割を書き出す方法](/blog/too-considerate-exhaustion/)に戻っても大丈夫。
 
+体調の相談とは別に、これからの働き方を考えたいなら、[転職を決めていない段階で使えるキャリア相談の選び方](/blog/career-consult-no-transfer/)も参考にしてみてください。話す内容が浮かばないときは、[初回相談に持っていくメモと文例](/blog/career-consultation-what-to-say/)から、書けるところだけ使えます。
+
 今日は、相談したい相手を一人決める。送れそうなら、「少し話す時間をもらえますか」とだけ書いてみる。言葉が少ない日も、その少なさのままで始めていいと思う。
