@@ -11,11 +11,12 @@ interface Props {
 	description: string;
 	image?: ImageMetadata;
 	noindex?: boolean;
+	type?: 'website' | 'article';
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = FallbackImage, noindex = false } = Astro.props;
+const { title, description, image = FallbackImage, noindex = false, type = 'website' } = Astro.props;
 const isProd = import.meta.env.PROD;
 ---
 
@@ -43,11 +44,7 @@ const isProd = import.meta.env.PROD;
 />
 <meta name="generator" content={Astro.generator} />
 
-<!-- Japanese Font -->
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
-<noscript><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet" /></noscript>
+<!-- Japanese text uses the device's fonts without an external stylesheet download. -->
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
@@ -61,15 +58,15 @@ const isProd = import.meta.env.PROD;
 <meta name="description" content={description} />
 
 <!-- Open Graph / Facebook -->
-<meta property="og:type" content="website" />
-<meta property="og:url" content={Astro.url} />
+<meta property="og:type" content={type} />
+<meta property="og:url" content={canonicalURL} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta property="og:image" content={new URL(image.src, Astro.url)} />
+<meta property="og:image" content={new URL(image.src, Astro.site)} />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content={Astro.url} />
+<meta property="twitter:url" content={canonicalURL} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={new URL(image.src, Astro.url)} />
+<meta property="twitter:image" content={new URL(image.src, Astro.site)} />

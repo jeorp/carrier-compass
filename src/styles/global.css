@@ -42,8 +42,8 @@ html { scroll-padding-top: 24px; }
 a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px solid var(--accent); outline-offset: 5px; }
 ::selection { background: #dce9dd; }
 body {
-	font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans",
-		"Yu Gothic Medium", "游ゴシック Medium", Meiryo, sans-serif;
+	font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans",
+		"Yu Gothic Medium", "游ゴシック Medium", Meiryo, "Noto Sans JP", sans-serif;
 	margin: 0;
 	padding: 0;
 	text-align: left;
