@@ -5,19 +5,19 @@
  */
 
 :root {
-	--accent: #35665e;
-	--accent-dark: #244b45;
-	--paper: #faf9f5;
-	--surface: #ffffff;
-	--tint: #edf2ee;
+	--accent: #586b55;
+	--accent-dark: #3d513b;
+	--paper: #fcfaf6;
+	--surface: #fffdf9;
+	--tint: #f0f1e9;
 	--lavender: #eef0ed;
 	--ochre: #a07940;
 	--compass-line: #b7c9bc;
 	--serif: "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", serif;
-	--black: 39, 53, 49;
-	--gray: 91, 108, 101;
-	--gray-light: 219, 226, 219;
-	--gray-dark: 51, 65, 59;
+	--black: 66, 66, 55;
+	--gray: 112, 111, 98;
+	--gray-light: 227, 224, 213;
+	--gray-dark: 78, 78, 65;
 	--gray-gradient: rgba(var(--gray-light), 40%), #faf9f8;
 	--box-shadow:
 		0 2px 6px rgba(var(--gray), 20%), 0 8px 24px rgba(var(--gray), 28%),

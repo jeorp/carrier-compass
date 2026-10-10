@@ -2,4 +2,4 @@
 // You can import this data from anywhere in your site by using the `import` keyword.
 
 export const SITE_TITLE = 'キャリアの羅針盤';
-export const SITE_DESCRIPTION = '転職・働き方・仕事のしんどさを考えるブログ。キャリアの迷いを整理し、自分の次の一歩を考えるための文例・ヒントを掲載しています。';
+export const SITE_DESCRIPTION = '働く毎日に、ひと息つける場所。仕事で疲れた日や、自分のペースを見失いそうな日に、そっと寄り添う読みものを。休むこと、日々の気持ち、暮らしと働き方を綴るブログです。';

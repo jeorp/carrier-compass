@@ -18,30 +18,44 @@ const categories = ['転職', 'スキルアップ', '副業', '働き方'];
 
 const moments = [
 	{
-		situation: '人間関係で、疲れている',
-		description: '気を遣いすぎたり、抱え込んだり。今の負担を言葉にするところから。',
-		label: '気持ちを整理する',
+		situation: '今日は、少し疲れたな',
+		description: '休むための予定まで、がんばらなくていい。何かを足す前に、ひとつ減らしてみる。',
+		label: '休むことの読みもの',
+		href: `${base}/blog/tired-day-reset-routine/`,
+		motif: 'cup',
+	},
+	{
+		situation: '人に合わせすぎた日',
+		description: '相手の気持ちを考えてばかりだった日。自分の気持ちにも、そっと目を向ける。',
+		label: '気持ちに寄り添う読みもの',
 		href: `${base}/blog/too-considerate-exhaustion/`,
+		motif: 'leaf',
 	},
 	{
-		situation: 'この仕事を続けるか迷う',
-		description: '悪い会社ではないけれど、何かが違う。その違和感を、一つずつ確かめる。',
-		label: '働き方を見つめ直す',
-		href: `${base}/blog/good-company-feels-wrong/`,
-	},
-	{
-		situation: '次に何をすればいい？',
-		description: '誰かに相談したい。でも、何を話せばいいか分からないときの準備に。',
-		label: '相談の準備をする',
-		href: `${base}/blog/career-consultation-what-to-say/`,
+		situation: '明日のことが気になる夜',
+		description: 'まだ起きていないことを考えてしまう夜に。明日の準備と、今夜の時間を分けてみる。',
+		label: '夜に読む読みもの',
+		href: `${base}/blog/work-night-before-dread/`,
+		motif: 'moon',
 	},
 ];
 
+const restPosts = [
+	{ slug: 'nature-walk-psychological-effects', theme: '自然と過ごす', excerpt: '緑のある場所へ、少し寄り道。散歩と考えごとの研究から。' },
+	{ slug: 'music-relaxation-effects', theme: '音楽を聴く', excerpt: '今夜の一曲は、好きなもので。音楽の効果と、心地よい聴き方。' },
+	{ slug: 'micro-break-psychology', theme: '小さく休む', excerpt: '数分の空白も、そのままに。短い休憩と疲労感のお話。' },
+	{ slug: 'self-compassion-small-practice', theme: '自分への言葉', excerpt: '失敗した日にも、思いやりを。自分に向ける言葉の小さな例。' },
+].map((item) => {
+	const post = posts.find((post) => post.id === item.slug);
+	if (!post) throw new Error(`Rest article not found: ${item.slug}`);
+	return { ...item, title: post.data.title };
+});
+
 const featuredPosts = [
-	{ situation: '抱え込みすぎないために', slug: 'workplace-nice-person-exhaustion' },
-	{ situation: '今の職場でできること', slug: 'work-cant-show-weakness' },
-	{ situation: '転職を決める、その前に', slug: 'career-consult-no-transfer' },
-	{ situation: '環境を変える準備', slug: 'job-change-preparation' },
+	{ situation: '自分のペースを思い出す', slug: 'working-harder-lost-my-style' },
+	{ situation: '休日に、仕事が頭を離れないとき', slug: 'weekend-work-thoughts' },
+	{ situation: '弱音をしまい込んだ日に', slug: 'work-cant-show-weakness' },
+	{ situation: '暮らしと働き方のあいだで', slug: 'work-qol-values' },
 ].map((item) => {
 	const post = posts.find((post) => post.id === item.slug);
 	if (!post) throw new Error(`Featured article not found: ${item.slug}`);
@@ -60,43 +74,32 @@ const featuredPosts = [
 	<body>
 		<Header />
 		<main class="home">
-			<!-- Hero -->
-			<section class="hero">
+			<section class="hero" aria-labelledby="home-title">
 				<div class="hero-copy">
-					<p class="eyebrow">仕事と、自分と、これから。</p>
-					<h1>今の仕事と、<br /><span>これからの自分。</span></h1>
-					<p class="hero-description">仕事がしんどい。でも、辞めるべきかは分からない。<br />気持ちの整理から、働き方の見直しまで。<br />自分に合う次の一歩を、ここから。</p>
-					<a class="hero-cta" href="#moments">今の悩みから記事を探す <span aria-hidden="true">→</span></a>
-					<a class="hero-secondary" href={`${base}/blog/`}>すべての記事を見る <span aria-hidden="true">↗</span></a>
+					<p class="eyebrow">働く毎日に、ひと息つける場所。</p>
+					<h1 id="home-title">今日は、<br /><span>ひと息つくだけでも。</span></h1>
+					<p class="hero-description">あたたかい飲みものと、短い読みもの。<br />仕事のこと、自分のこと。<br />答えを急がず、ゆっくりと。</p>
+					<a class="hero-cta" href="#moments">今の気分で、ひとつ読む <span aria-hidden="true">↓</span></a>
 				</div>
-				<figure class="hero-visual" aria-label="自分のペースで、進む方向を考える羅針盤">
-					<div class="compass-heading"><span>CAREER COMPASS</span><span aria-hidden="true">↗</span></div>
-					<svg class="compass-art" viewBox="0 0 440 290" fill="none" aria-hidden="true">
-						<path d="M-20 235C60 170 81 280 180 206S327 72 460 106" stroke="var(--compass-line)" stroke-width="1.5" stroke-dasharray="5 8" />
-						<path d="M-20 258C62 193 102 300 199 223S344 90 460 125" stroke="var(--compass-line)" opacity=".45" />
-						<circle cx="220" cy="145" r="117" stroke="var(--compass-line)" />
-						<circle cx="220" cy="145" r="99" stroke="var(--compass-line)" stroke-dasharray="1 9" />
-						<circle cx="220" cy="145" r="80" fill="var(--paper)" stroke="var(--compass-line)" />
-						<path d="M220 15V35M220 255V275M90 145H110M330 145H350" stroke="var(--accent)" />
-						<path d="M149 74L158 83M282 207L291 216M149 216L158 207M282 83L291 74" stroke="var(--compass-line)" />
-						<path d="M266 80L236 161L174 210L204 129Z" fill="var(--surface)" stroke="var(--accent)" stroke-width="1.5" />
-						<path d="M266 80L204 129L236 161Z" fill="var(--accent)" />
-						<circle cx="220" cy="145" r="7" fill="var(--paper)" stroke="var(--accent)" stroke-width="2" />
-						<circle cx="55" cy="216" r="5" fill="var(--ochre)" />
-						<circle cx="391" cy="108" r="5" fill="var(--accent)" />
-					</svg>
-					<figcaption>進む方向は、自分のペースで。</figcaption>
-					<div class="compass-steps"><span>01 気持ちを整理する</span><span>02 選択肢を知る</span><span>03 一歩を選ぶ</span></div>
-				</figure>
 			</section>
+
+			<div class="welcome-note">
+				<span class="note-line" aria-hidden="true"></span>
+				<p>がんばった日も、うまくいかなかった日も。<br />ここでは、あなたのペースで。</p>
+				<span class="note-line" aria-hidden="true"></span>
+			</div>
 
 			<!-- Moments -->
 			<section class="moments" id="moments">
-				<div class="section-heading"><div><p class="eyebrow">START HERE</p><h2>今、気になっていることは？</h2></div><span class="section-note">うまく言葉にできなくても、大丈夫。</span></div>
+				<div class="section-heading"><div><p class="eyebrow">FOR YOUR MOOD</p><h2>今の気分に、そっと寄り添う。</h2></div><span class="section-note">気になる読みものから、どうぞ。</span></div>
 				<div class="moment-list">
-					{moments.map((m, index) => (
+					{moments.map((m) => (
 						<a class="moment-card" href={m.href}>
-							<span class="moment-number">0{index + 1}</span><h3 class="moment-situation">{m.situation}</h3>
+							<svg class="moment-motif" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+								{m.motif === 'cup' && <><path d="M12 22h21v9a8 8 0 0 1-8 8h-5a8 8 0 0 1-8-8zM33 24h3a5 5 0 0 1 0 10h-3M8 42h30M19 16c-5-5 5-6 0-11M27 16c-5-5 5-6 0-11" /></>}
+								{m.motif === 'leaf' && <><path d="M13 39c2-13 10-22 23-29M18 29C7 13 21 6 39 7c1 18-5 30-21 22ZM22 24l-1-9m6 5 8 1" /></>}
+								{m.motif === 'moon' && <><path d="M34 32A17 17 0 0 1 17 9a17 17 0 1 0 17 23Z" /><path d="M32 8v8m-4-4h8m4 7v4m-2-2h4" /></>}
+							</svg><h3 class="moment-situation">{m.situation}</h3>
 							<p class="moment-quote">{m.description}</p>
 							<div class="moment-action">{m.label}<span aria-hidden="true">↗</span></div>
 						</a>
@@ -104,9 +107,24 @@ const featuredPosts = [
 				</div>
 			</section>
 
+			<section class="rest-reading" id="rest-reading" aria-labelledby="rest-title">
+				<div class="section-heading"><div><p class="eyebrow">A LITTLE REST</p><h2 id="rest-title">こころの休息、小さな心理学。</h2></div><a class="all-link" href={`${base}/blog/tag/こころの休息/`}>このテーマを読む →</a></div>
+				<p class="rest-intro">自然や音楽、自分への言葉。ほっとする時間を、研究の話といっしょに。</p>
+				<div class="rest-grid">
+					{restPosts.map((post) => (
+						<a class="rest-card" href={`${base}/blog/${post.slug}/`}>
+							<span class="rest-theme">{post.theme}</span>
+							<h3>{post.title}</h3>
+							<p>{post.excerpt}</p>
+							<span class="rest-read">ゆっくり読む <span aria-hidden="true">↗</span></span>
+						</a>
+					))}
+				</div>
+			</section>
+
 			<!-- Featured guides -->
 			<section class="featured-guides">
-				<div class="section-heading"><div><p class="eyebrow">READ & REFLECT</p><h2>自分に合う働き方を考える。</h2></div><span class="section-note">整理や行動に使える、4つのガイド</span></div>
+				<div class="section-heading"><div><p class="eyebrow">SLOW READING</p><h2>ひと息つきながら、読みたいこと。</h2></div><span class="section-note">毎日の気持ちを綴る、読みもの</span></div>
 				<div class="featured-guides-list">
 					{featuredPosts.map((a, index) => (
 						<a class="featured-guides-card" href={`${base}/blog/${a.slug}/`}>
@@ -120,7 +138,7 @@ const featuredPosts = [
 
 
 			<section class="latest">
-        <div class="section-heading"><div><p class="eyebrow">NEW STORIES</p><h2>新しく届いた読みもの</h2></div><a class="all-link" href={`${base}/blog/`}>記事一覧へ →</a></div>
+        <div class="section-heading"><div><p class="eyebrow">NEW STORIES</p><h2>新しく綴ったこと</h2></div><a class="all-link" href={`${base}/blog/`}>記事一覧へ →</a></div>
         <div class="latest-list">{latestPosts.map(post => <a class="latest-card" href={`${base}/blog/${post.id}/`}><div class="latest-meta"><span>{post.data.category}</span><FormattedDate date={post.data.pubDate} /></div><h3>{post.data.title}</h3><span class="latest-read">記事を読む <span aria-hidden="true">↗</span></span></a>)}</div>
       </section>
       <!-- Categories -->
@@ -135,11 +153,11 @@ const featuredPosts = [
 
 			<!-- Coffee advertisement -->
 			<section class="coffee-ad">
-				<h2 class="section-title">コーヒーの広告</h2>
+				<h2 class="section-title">読みもののおともに</h2>
 				<a class="coffee-ad-card" href="https://px.a8.net/svt/ejp?a8mat=4AZJGB+CI4HE+5UFU+5YJRM" rel="nofollow" target="_blank">
 					<div class="coffee-ad-icon">☕</div>
 					<div class="coffee-ad-body">
-						<div class="coffee-ad-label">コーヒーのサービス紹介<span class="coffee-ad-pr">PR</span></div>
+						<div class="coffee-ad-label">コーヒーの広告<span class="coffee-ad-pr">PR</span></div>
 						<p class="coffee-ad-name">ブルーボトルコーヒー 公式オンラインストア</p>
 						<p class="coffee-ad-desc">自宅で飲むコーヒーを探している方へ。商品や購入条件は公式オンラインストアで確認できます。</p>
 					</div>
