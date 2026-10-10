@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import '../../../../styles/archive.css';
 import BaseHead from '../../../../components/BaseHead.astro';
 import Footer from '../../../../components/Footer.astro';
 import FormattedDate from '../../../../components/FormattedDate.astro';
@@ -31,102 +32,12 @@ const readingTime = (body: string) => Math.max(1, Math.ceil(body.length / 500));
 			description={`#${tag}の記事一覧`}
 			noindex={true}
 		/>
-		<style>
-			main { width: 680px; }
-			.feed-header {
-				margin-bottom: 2rem;
-				padding-bottom: 0.5rem;
-				border-bottom: 2px solid rgb(var(--gray-light));
-			}
-			h2.feed-title {
-				font-size: 1rem;
-				font-weight: 700;
-				color: rgb(var(--gray));
-				letter-spacing: 0.1em;
-				margin: 0 0 0.5rem 0;
-			}
-			.tag-label {
-				font-size: 1.1rem;
-				font-weight: 700;
-				color: rgb(var(--black));
-				margin-bottom: 0.25rem;
-			}
-			.back-link {
-				font-size: 0.8rem;
-				color: rgb(var(--gray));
-				text-decoration: none;
-				display: inline-block;
-				margin-top: 0.5rem;
-			}
-			.back-link:hover { color: var(--accent); }
-			ul { list-style-type: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
-			ul li { border-bottom: 1px solid rgb(var(--gray-light)); padding: 1.75rem 0; }
-			ul li:first-child { padding-top: 0; }
-			ul li a { display: block; text-decoration: none; color: inherit; }
-			.card-meta { display: flex; align-items: center; gap: 0.6em; margin-bottom: 0.6rem; font-size: 0.8rem; }
-			.author-chip { font-weight: 700; color: rgb(var(--gray-dark)); }
-			.category-chip {
-				background: var(--accent);
-				color: white;
-				font-size: 0.7rem;
-				padding: 0.15em 0.6em;
-				border-radius: 999px;
-				font-weight: 700;
-			}
-			.date-chip { color: rgb(var(--gray)); margin-left: auto; }
-			.reading-time { color: rgb(var(--gray)); }
-			.title {
-				margin: 0 0 0.4rem 0;
-				font-size: 1.2rem;
-				line-height: 1.4;
-				color: rgb(var(--black));
-				display: inline;
-				background-image: linear-gradient(var(--accent), var(--accent));
-				background-size: 0% 2px;
-				background-repeat: no-repeat;
-				background-position: left bottom;
-				transition: background-size 0.25s ease;
-			}
-			ul li a:hover .title { background-size: 100% 2px; }
-			.description { margin: 0; font-size: 0.9rem; color: rgb(var(--gray)); line-height: 1.6; }
-			.pagination {
-				display: flex;
-				align-items: center;
-				justify-content: space-between;
-				padding: 2rem 0 1rem;
-				gap: 1em;
-			}
-			.pagination a, .pagination span {
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				min-width: 44px;
-				min-height: 44px;
-				padding: 0 1em;
-				border-radius: 999px;
-				font-size: 0.875rem;
-				font-weight: 600;
-				text-decoration: none;
-				border: 1px solid rgb(var(--gray-light));
-				color: rgb(var(--gray-dark));
-				transition: all 0.15s ease;
-			}
-			.pagination a:hover { border-color: var(--accent); color: var(--accent); }
-			.pagination .disabled { opacity: 0.3; pointer-events: none; }
-			.pagination .page-info { border: none; font-size: 0.85rem; color: rgb(var(--gray)); min-width: auto; }
-			@media (max-width: 720px) {
-				main { width: 100%; }
-				.date-chip { display: none; }
-				.title { font-size: 1rem; }
-				.description { font-size: 0.85rem; }
-				ul li { padding: 1.25rem 0; }
-				.pagination { padding: 1.5rem 0 0.5rem; }
-			}
-		</style>
+
 	</head>
 	<body>
 		<Header />
-		<main>
+		<main class="archive">
+      <div class="archive-heading"><p>THE JOURNAL</p><h1>{`#${tag}`}</h1><span>働く毎日と、これからを考える読みもの。</span></div>
 			<section>
 				<div class="feed-header">
 					<h2 class="feed-title">タグ</h2>
@@ -149,7 +60,7 @@ const readingTime = (body: string) => Math.max(1, Math.ceil(body.length / 500));
 									</span>
 									<span class="reading-time">約{readingTime(post.body)}分</span>
 								</div>
-								<h4 class="title">{post.data.title}</h4>
+								<h2 class="title">{post.data.title}</h2>
 								{post.data.description && (
 									<p class="description">{post.data.description}</p>
 								)}
@@ -158,7 +69,7 @@ const readingTime = (body: string) => Math.max(1, Math.ceil(body.length / 500));
 					))}
 				</ul>
 				{page.lastPage > 1 && (
-					<nav class="pagination">
+					<nav class="pagination" aria-label="記事一覧のページ切り替え">
 						{page.url.prev
 							? <a href={page.url.prev}>← 新しい記事</a>
 							: <span class="disabled">← 新しい記事</span>

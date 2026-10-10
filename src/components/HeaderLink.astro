@@ -6,10 +6,12 @@ type Props = HTMLAttributes<'a'>;
 const { href, class: className, ...props } = Astro.props;
 const hrefStr = typeof href === 'string' ? href : href?.toString() ?? '';
 const pathname = Astro.url.pathname;
-const isActive = pathname === hrefStr || pathname.startsWith(hrefStr + '/');
+const normalizedHref = hrefStr.replace(/\/$/, '') || '/';
+const normalizedPath = pathname.replace(/\/$/, '') || '/';
+const isActive = normalizedPath === normalizedHref || (normalizedHref !== '/' && normalizedPath.startsWith(normalizedHref + '/'));
 ---
 
-<a href={hrefStr} class:list={[className, { active: isActive }]} {...props}>
+<a href={hrefStr} aria-current={isActive ? (normalizedPath === normalizedHref ? "page" : "true") : undefined} class:list={[className, { active: isActive }]} {...props}>
 	<slot />
 </a>
 <style>

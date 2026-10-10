@@ -4,7 +4,9 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <footer>
-	<nav class="footer-links">
+	<p class="footer-brand">キャリアの羅針盤</p>
+	<p class="footer-message">わたしの気持ちも、大切に。</p>
+	<nav class="footer-links" aria-label="サイト情報">
 		<a href={`${base}/about/`}>このサイトについて</a>
 		<a href={`${base}/contact/`}>お問い合わせ</a>
 		<a href={`${base}/privacy-policy/`}>プライバシーポリシー</a>
@@ -12,9 +14,12 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 	<p class="copyright">&copy; {today.getFullYear()} キャリアの羅針盤. All rights reserved.</p>
 </footer>
 <style>
+.footer-brand { font-family: var(--serif); font-weight: 700; font-size: 20px; color: rgb(var(--black)); margin: 0; }
+.footer-message { font-size: 12px; margin: 8px 0 28px; }
 	footer {
-		padding: 2em 1em 6em 1em;
-		background: linear-gradient(var(--gray-gradient)) no-repeat;
+		padding: 48px 24px;
+		border-top: 1px solid rgb(var(--gray-light));
+		background: #f7ebef;
 		color: rgb(var(--gray));
 		text-align: center;
 	}

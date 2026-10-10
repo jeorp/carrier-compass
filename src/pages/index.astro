@@ -1,4 +1,9 @@
 ---
+import { Image } from 'astro:assets';
+import JournalIllustration from '../assets/journal-woman-window.png';
+import { getCollection } from 'astro:content';
+import FormattedDate from '../components/FormattedDate.astro';
+import '../styles/home.css';
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
@@ -6,56 +11,45 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
+const posts = await getCollection('blog');
+const latestPosts = [...posts].sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()).slice(0, 3);
+
 const categories = ['転職', 'スキルアップ', '副業', '働き方'];
 
 
 
 const moments = [
 	{
-		situation: '仕事がしんどくて、誰にも言えない',
-		quote: '怖いって言っても、辞めたいとかじゃなくて。ただ、自信がごっそり抜けてる感じ。',
+		situation: '気を遣いすぎて、疲れた日',
+		description: '自分のことは、いつも後回し。抱え込んでいることを、少しずつほどいてみる。',
 		author: 'Yuki',
-		icon: '☕',
-		href: `${base}/blog/when-work-got-scary`,
+		href: `${base}/blog/too-considerate-exhaustion/`,
 	},
 	{
-		situation: 'がんばってるのに、誰にも言えずにいる',
-		quote: 'スランプのとき、全然普通じゃなかったのに、全員に「普通だよ」って答えてた。',
+		situation: '「私でいいのかな」と思う日',
+		description: '新しい役割も、誰かの期待も。自信が持てない気持ちから、一緒に考える。',
 		author: 'Yuki',
-		icon: '☕',
-		href: `${base}/blog/work-cant-show-weakness`,
+		href: `${base}/blog/female-leader-anxiety/`,
 	},
 	{
-		situation: '転職しようか、ずっと迷っている',
-		quote: '辞めていいのか、って8ヶ月考え続けた。答えが出たのは、問いを変えたときだった。',
-		author: 'Syun',
-		icon: '💼',
-		href: `${base}/blog/mindset-career-change`,
+		situation: 'これからの暮らしに迷う日',
+		description: '仕事も、仕事以外の大切なことも。自分が望むこれからを、ゆっくり見つめる。',
+		author: 'Yuki',
+		href: `${base}/blog/women-work-marriage-dilemma/`,
 	},
 ];
 
 const featuredYuki = [
-	{
-		situation: '帰りの電車で泣いた夜があった',
-		slug: 'cried-on-the-train',
-		title: '帰りの電車で泣いたことがある。仕事でミスして立ち直れなかった夜の話',
-	},
-	{
-		situation: '女性リーダーになって、向いてないかもと思った',
-		slug: 'female-leader-anxiety',
-		title: '女性リーダーになって、向いてないかもと思った話',
-	},
-	{
-		situation: '気を遣いすぎて消耗しきっていた',
-		slug: 'too-considerate-exhaustion',
-		title: '仕事で気を遣いすぎて消耗する。それが「優しさ」だと思っていた話',
-	},
-	{
-		situation: '自分を責めるのをやめられなかった',
-		slug: 'self-blame-cant-stop',
-		title: '仕事の自己嫌悪が止まらない。自分を責めるのをやめられなかった話',
-	},
-];
+	{ situation: '職場の人間関係', slug: 'too-considerate-exhaustion' },
+	{ situation: '自分らしいキャリア', slug: 'female-leader-anxiety' },
+	{ situation: '仕事とこれからの暮らし', slug: 'women-work-marriage-dilemma' },
+	{ situation: '自分との向き合い方', slug: 'comparing-with-coworkers' },
+].map((item) => {
+	const post = posts.find((post) => post.id === item.slug);
+	if (!post) throw new Error(`Featured article not found: ${item.slug}`);
+	return { ...item, title: post.data.title };
+});
+
 ---
 
 <!doctype html>
@@ -65,328 +59,35 @@ const featuredYuki = [
 		<link rel="dns-prefetch" href="https://www14.a8.net" />
 		<link rel="dns-prefetch" href="https://www15.a8.net" />
 		<link rel="dns-prefetch" href="https://www12.a8.net" />
-		<style>
-			main {
-				width: min(760px, calc(100% - 2em));
-				margin: 0 auto;
-				padding: 0 1em 4em;
-			}
-			/* Hero */
-			.hero {
-				padding: 3.5em 1.5em 2.5em;
-				margin: 0 -1.5em 2.5em;
-				background: linear-gradient(160deg, rgba(232,113,74,0.06) 0%, rgba(250,249,248,0) 60%);
-				border-bottom: 1px solid rgb(var(--gray-light));
-			}
-			.hero h1 {
-				font-size: 2.2rem;
-				line-height: 1.25;
-				margin: 0 0 0.6em;
-				letter-spacing: -0.01em;
-			}
-			.hero p {
-				color: rgb(var(--gray));
-				margin: 0 0 1.4em;
-				line-height: 1.8;
-				max-width: 520px;
-			}
-			.hero-cta {
-				display: inline-flex;
-				align-items: center;
-				background: var(--accent);
-				color: rgb(var(--gray-dark));
-				text-decoration: none;
-				padding: 0.7em 1.6em;
-				min-height: 44px;
-				border-radius: 999px;
-				font-size: 0.9rem;
-				font-weight: 700;
-				transition: opacity 0.15s ease;
-			}
-			.hero-cta:hover { opacity: 0.85; }
-			/* Section */
-			.section-title {
-				font-size: 0.75rem;
-				font-weight: 700;
-				color: rgb(var(--gray));
-				letter-spacing: 0.12em;
-				text-transform: uppercase;
-				margin: 0 0 1rem;
-				display: flex;
-				align-items: center;
-				gap: 0.6em;
-			}
-			.section-title::after {
-				content: '';
-				flex: 1;
-				height: 1px;
-				background: rgb(var(--gray-light));
-			}
-			/* Moments */
-			.moments { margin-bottom: 2.5em; }
-			.moment-list {
-				display: grid;
-				grid-template-columns: 1fr;
-				gap: 0.75em;
-			}
-			.moment-card {
-				display: block;
-				padding: 1.1em 1.2em 1.1em 1.4em;
-				border-left: 3px solid var(--accent);
-				background: rgba(var(--gray-light), 0.35);
-				border-radius: 0 10px 10px 0;
-				text-decoration: none;
-				color: inherit;
-				transition: background 0.15s ease, border-color 0.15s ease;
-			}
-			.moment-card:hover {
-				background: rgba(var(--gray-light), 0.6);
-			}
-			.moment-situation {
-				font-size: 0.8rem;
-				font-weight: 700;
-				color: var(--accent);
-				margin-bottom: 0.4em;
-				letter-spacing: 0.02em;
-			}
-			.moment-quote {
-				font-size: 0.95rem;
-				line-height: 1.65;
-				margin: 0 0 0.5em;
-				color: rgb(var(--gray-dark));
-			}
-			.moment-attribution {
-				font-size: 0.78rem;
-				color: rgb(var(--gray));
-			}
-			/* Featured Yuki */
-			.featured-yuki { margin-bottom: 2.5em; }
-			.featured-yuki-list {
-				display: grid;
-				grid-template-columns: 1fr 1fr;
-				gap: 0.75em;
-			}
-			.featured-yuki-card {
-				display: block;
-				padding: 1em 1.1em;
-				border: 1px solid rgb(var(--gray-light));
-				border-radius: 12px;
-				text-decoration: none;
-				color: inherit;
-				transition: border-color 0.15s ease;
-			}
-			.featured-yuki-card:hover { border-color: var(--accent); }
-			.featured-yuki-situation {
-				font-size: 0.72rem;
-				font-weight: 700;
-				color: var(--accent);
-				margin-bottom: 0.4em;
-				letter-spacing: 0.02em;
-			}
-			.featured-yuki-title {
-				font-size: 0.88rem;
-				font-weight: 700;
-				line-height: 1.45;
-				margin: 0;
-				color: rgb(var(--black));
-			}
-			/* Categories */
-			.categories { margin-bottom: 2.5em; }
-			.category-list {
-				display: flex;
-				flex-wrap: wrap;
-				gap: 0.5em;
-			}
-			.category-list a {
-				display: inline-block;
-				padding: 0.4em 1.1em;
-				border-radius: 999px;
-				background: rgb(var(--gray-light));
-				font-size: 0.85rem;
-				color: rgb(var(--gray-dark));
-				text-decoration: none;
-				font-weight: 600;
-				transition: all 0.15s ease;
-			}
-			.category-list a:hover {
-				background: var(--accent);
-				color: white;
-			}
-			.all-link {
-				display: inline-block;
-				margin-top: 1.2em;
-				font-size: 0.875rem;
-				color: var(--accent);
-				text-decoration: none;
-				font-weight: 600;
-			}
-			.all-link:hover { text-decoration: underline; }
-			/* Yuki's pick */
-			.yuki-pick {
-				margin-bottom: 2.5em;
-			}
-			.yuki-pick-card {
-				display: flex;
-				align-items: center;
-				gap: 1em;
-				padding: 1.1em 1.3em;
-				border: 1px solid rgb(var(--gray-light));
-				border-radius: 12px;
-				text-decoration: none;
-				color: inherit;
-				transition: border-color 0.15s ease;
-			}
-			.yuki-pick-card:hover { border-color: var(--accent); }
-			.yuki-pick-icon {
-				font-size: 2rem;
-				flex-shrink: 0;
-			}
-			.yuki-pick-body {
-				flex: 1;
-				min-width: 0;
-			}
-			.yuki-pick-label {
-				display: flex;
-				align-items: center;
-				gap: 0.5em;
-				font-size: 0.72rem;
-				font-weight: 700;
-				color: var(--accent);
-				letter-spacing: 0.05em;
-				margin-bottom: 0.3em;
-			}
-			.yuki-pick-pr {
-				font-size: 0.65rem;
-				font-weight: 700;
-				color: rgb(var(--gray-dark));
-				background: rgb(var(--gray-light));
-				padding: 0.1em 0.45em;
-				border-radius: 3px;
-				letter-spacing: 0.03em;
-			}
-			.yuki-pick-name {
-				font-size: 0.95rem;
-				font-weight: 700;
-				margin: 0 0 0.25em;
-				color: rgb(var(--black));
-			}
-			.yuki-pick-desc {
-				font-size: 0.82rem;
-				color: rgb(var(--gray));
-				margin: 0;
-				line-height: 1.55;
-			}
-			.yuki-pick-arrow {
-				font-size: 0.9rem;
-				color: rgb(var(--gray));
-				flex-shrink: 0;
-			}
-			/* kz's pick */
-		.kz-pick {
-			margin-bottom: 2.5em;
-			display: flex;
-			flex-direction: column;
-			gap: 0.75em;
-		}
-		.kz-pick > .section-title {
-			margin-bottom: 0;
-		}
-		.kz-pick-card {
-			display: flex;
-			align-items: center;
-			gap: 1em;
-			padding: 1.1em 1.3em;
-			border: 1px solid rgb(var(--gray-light));
-			border-radius: 12px;
-			text-decoration: none;
-			color: inherit;
-			transition: border-color 0.15s ease;
-		}
-		.kz-pick-card:hover { border-color: var(--accent); }
-		.kz-pick-icon {
-			font-size: 2rem;
-			flex-shrink: 0;
-		}
-		.kz-pick-body {
-			flex: 1;
-			min-width: 0;
-		}
-		.kz-pick-label {
-			display: flex;
-			align-items: center;
-			gap: 0.5em;
-			font-size: 0.72rem;
-			font-weight: 700;
-			color: var(--accent);
-			letter-spacing: 0.05em;
-			margin-bottom: 0.3em;
-		}
-		.kz-pick-pr {
-			font-size: 0.65rem;
-			font-weight: 700;
-			color: rgb(var(--gray));
-			background: rgb(var(--gray-light));
-			padding: 0.1em 0.45em;
-			border-radius: 3px;
-			letter-spacing: 0.03em;
-		}
-		.kz-pick-name {
-			font-size: 0.95rem;
-			font-weight: 700;
-			margin: 0 0 0.25em;
-			color: rgb(var(--black));
-		}
-		.kz-pick-desc {
-			font-size: 0.82rem;
-			color: rgb(var(--gray));
-			margin: 0;
-			line-height: 1.55;
-		}
-		.kz-pick-arrow {
-			font-size: 0.9rem;
-			color: rgb(var(--gray));
-			flex-shrink: 0;
-		}
-		/* Desktop enhancements */
-			@media (min-width: 600px) {
-				.moment-list {
-					grid-template-columns: 1fr 1fr;
-				}
-				.moment-list .moment-card:first-child {
-					grid-column: 1 / -1;
-				}
-			}
-			@media (max-width: 599px) {
-				.hero {
-					padding: 2.5em 1em 2em;
-					margin: 0 -1em 2em;
-				}
-				.hero h1 { font-size: 1.6rem; }
-				.date-chip { display: none; }
-				.featured-yuki-list { grid-template-columns: 1fr; }
-				.writer-list { grid-template-columns: 1fr; }
-			}
-		</style>
+
 	</head>
 	<body>
 		<Header />
-		<main>
+		<main class="home">
 			<!-- Hero -->
 			<section class="hero">
-				<h1>迷いながら進む、それでいい。</h1>
-				<p>転職・働き方・しんどさ——キャリアの迷いを考える読み物と実用的なヒントを届けます。</p>
-				<a class="hero-cta" href={`${base}/blog/author/yuki/`}>☕ Yukiの記事を読む</a>
+				<div class="hero-copy">
+					<p class="eyebrow">わたしと、仕事と、これから。</p>
+					<h1>がんばる毎日に、<br /><span>わたしを想う時間。</span></h1>
+					<p class="hero-description">仕事は大切。でも、わたしの気持ちも大切。<br />人間関係、キャリア、これからの暮らし。<br />迷う日も、自分のペースで考えていこう。</p>
+					<a class="hero-cta" href="#moments">今の気持ちに合う記事を読む <span aria-hidden="true">→</span></a>
+					<a class="hero-secondary" href={`${base}/blog/`}>すべての記事を見る <span aria-hidden="true">↗</span></a>
+				</div>
+				<figure class="hero-visual">
+					<Image src={JournalIllustration} alt="やわらかな日差しの窓辺で、ノートに思いを書く女性のイラスト" widths={[480, 800, 1200]} sizes="(max-width: 720px) calc(100vw - 40px), 50vw" width={900} format="webp" loading="eager" fetchpriority="high" />
+					<figcaption>ひと息ついて、わたしのペースで。</figcaption>
+				</figure>
 			</section>
 
 			<!-- Moments -->
-			<section class="moments">
-				<p class="section-title">こんな時に読んでほしい</p>
+			<section class="moments" id="moments">
+				<div class="section-heading"><div><p class="eyebrow">HOW ARE YOU TODAY?</p><h2>今日は、どんな気持ち？</h2></div><span class="section-note">うまく言葉にできなくても、大丈夫。</span></div>
 				<div class="moment-list">
-					{moments.map((m) => (
+					{moments.map((m, index) => (
 						<a class="moment-card" href={m.href}>
-							<div class="moment-situation">{m.situation}</div>
-							<p class="moment-quote">「{m.quote}」</p>
-							<div class="moment-attribution">{m.icon} {m.author}</div>
+							<span class="moment-number">0{index + 1}</span><h3 class="moment-situation">{m.situation}</h3>
+							<p class="moment-quote">{m.description}</p>
+							<div class="moment-attribution">{m.author}<span aria-hidden="true">↗</span></div>
 						</a>
 					))}
 				</div>
@@ -394,12 +95,12 @@ const featuredYuki = [
 
 			<!-- Featured Yuki -->
 			<section class="featured-yuki">
-				<p class="section-title">☕ Yukiの記事</p>
+				<div class="section-heading"><div><p class="eyebrow">EDITOR’S LETTER</p><h2>わたしらしく働くために。</h2></div><span class="section-note">気持ちに寄り添う、4つの読みもの</span></div>
 				<div class="featured-yuki-list">
-					{featuredYuki.map((a) => (
+					{featuredYuki.map((a, index) => (
 						<a class="featured-yuki-card" href={`${base}/blog/${a.slug}/`}>
-							<div class="featured-yuki-situation">{a.situation}</div>
-							<p class="featured-yuki-title">{a.title}</p>
+							<span class="story-index">0{index + 1}</span><div class="featured-yuki-situation">{a.situation}</div>
+							<h3 class="featured-yuki-title">{a.title}</h3><span class="story-arrow" aria-hidden="true">↗</span>
 						</a>
 					))}
 				</div>
@@ -407,9 +108,13 @@ const featuredYuki = [
 			</section>
 
 
-			<!-- Categories -->
+			<section class="latest">
+        <div class="section-heading"><div><p class="eyebrow">NEW STORIES</p><h2>新しく届いた読みもの</h2></div><a class="all-link" href={`${base}/blog/`}>記事一覧へ →</a></div>
+        <div class="latest-list">{latestPosts.map(post => <a class="latest-card" href={`${base}/blog/${post.id}/`}><div class="latest-meta"><span>{post.data.category}</span><FormattedDate date={post.data.pubDate} /></div><h3>{post.data.title}</h3><span class="latest-read">記事を読む <span aria-hidden="true">↗</span></span></a>)}</div>
+      </section>
+      <!-- Categories -->
 			<section class="categories">
-				<p class="section-title">カテゴリ</p>
+				<h2 class="section-title">テーマから探す</h2>
 				<div class="category-list">
 					{categories.map((cat) => (
 						<a href={`${base}/blog/category/${cat}/`}>{cat}</a>
@@ -419,7 +124,7 @@ const featuredYuki = [
 
 			<!-- Yuki's pick -->
 			<section class="yuki-pick">
-				<p class="section-title">☕ コーヒーの広告</p>
+				<h2 class="section-title">コーヒーの広告</h2>
 				<a class="yuki-pick-card" href="https://px.a8.net/svt/ejp?a8mat=4AZJGB+CI4HE+5UFU+5YJRM" rel="nofollow" target="_blank">
 					<div class="yuki-pick-icon">☕</div>
 					<div class="yuki-pick-body">
@@ -434,7 +139,7 @@ const featuredYuki = [
 
 			<!-- kz's pick -->
 			<section class="kz-pick">
-				<p class="section-title">🛠️ kzのおすすめ</p>
+				<h2 class="section-title">kzのおすすめ</h2>
 				<a class="kz-pick-card" href="https://px.a8.net/svt/ejp?a8mat=4AZJGB+N7XDE+2OM2+ZQ80I" rel="nofollow" target="_blank">
 					<div class="kz-pick-icon">🛠️</div>
 					<div class="kz-pick-body">

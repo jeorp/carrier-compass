@@ -68,9 +68,10 @@ const shareUrl = `https://x.com/intent/tweet?text=${encodeURIComponent(title)}&u
 		<BaseHead title={title} description={description} />
 		<style>
 			main {
-				width: calc(100% - 2em);
+				width: 100%;
 				max-width: 100%;
-				margin: 0;
+				margin: 0 auto;
+				padding: 48px 24px 72px;
 			}
 			.hero-image {
 				width: 100%;
@@ -83,32 +84,39 @@ const shareUrl = `https://x.com/intent/tweet?text=${encodeURIComponent(title)}&u
 			}
 			.prose {
 				width: 720px;
-				max-width: calc(100% - 2em);
+				max-width: 100%;
 				margin: auto;
-				padding: 1em;
+				padding: 0;
 				color: rgb(var(--gray-dark));
 			}
 			.title {
-				margin-bottom: 1em;
-				padding: 1em 0;
-				text-align: center;
-				line-height: 1;
+				margin-bottom: 32px;
+				padding: 24px 0;
+				text-align: left;
+				line-height: 1.8;
+				border-bottom: 1px solid rgb(var(--gray-light));
 			}
 			.title h1 {
-				margin: 0 0 0.5em 0;
+				margin: 0 0 .7em;
+				font-family: var(--serif);
+				font-size: clamp(25px, 3.2vw, 36px);
+				line-height: 1.65;
+				letter-spacing: .03em;
 			}
 			.date {
+				font-size: 12px;
+				line-height: 1.8;
 				margin-bottom: 0.5em;
 				color: rgb(var(--gray));
 			}
 			.last-updated-on {
-				font-style: italic;
+				font-style: normal;
 			}
 			.meta {
 				display: flex;
 				flex-wrap: wrap;
 				gap: 0.5em;
-				justify-content: center;
+				justify-content: flex-start;
 				margin-top: 0.75em;
 			}
 			.category {
@@ -120,7 +128,7 @@ const shareUrl = `https://x.com/intent/tweet?text=${encodeURIComponent(title)}&u
 				font-weight: 700;
 			}
 			.tag {
-				background: rgb(var(--gray-light));
+				background: var(--tint);
 				color: rgb(var(--gray-dark));
 				font-size: 0.75em;
 				padding: 0.25em 0.75em;
@@ -138,7 +146,7 @@ const shareUrl = `https://x.com/intent/tweet?text=${encodeURIComponent(title)}&u
 				gap: 1em;
 				margin-top: 3em;
 				padding: 1.5em;
-				background: rgb(var(--gray-light));
+				background: var(--tint);
 				border-radius: 12px;
 			}
 			.author-icon {
@@ -240,6 +248,8 @@ const shareUrl = `https://x.com/intent/tweet?text=${encodeURIComponent(title)}&u
 				margin: 0 0 1.5em;
 			}
 			@media (max-width: 720px) {
+				main { padding: 24px 20px 48px; }
+				.title { padding-top: 12px; }
 				.author-profile {
 					flex-direction: column;
 					gap: 0.75em;
@@ -275,7 +285,6 @@ const shareUrl = `https://x.com/intent/tweet?text=${encodeURIComponent(title)}&u
 							{category && <span class="category">{category}</span>}
 							{tags && tags.map((tag) => <a href={`${base}/blog/tag/${tag}/`} class="tag">#{tag}</a>)}
 						</div>
-						<hr />
 					</div>
 					{isAffiliate && (
 						<p class="pr-notice">※ 本記事はアフィリエイト広告を含みます。</p>
