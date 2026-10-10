@@ -70,7 +70,8 @@ const breadcrumbs = [
 	{ name: '記事一覧', url: new URL(`${base}/blog/`, Astro.site).href },
 	{ name: title, url: canonicalURL },
 ];
-// Public dates are date-only editorial values; do not invent a publication time.
+// Source dates are date-only. Keep them visible, but omit optional schema DateTime values
+// until publication times and timezones are recorded rather than inventing midnight.
 const articleSchema = {
 	'@context': 'https://schema.org',
 	'@type': 'BlogPosting',
@@ -78,8 +79,6 @@ const articleSchema = {
 	mainEntityOfPage: canonicalURL,
 	headline: title,
 	description,
-	datePublished: pubDate.toISOString().slice(0, 10),
-	...(updatedDate && { dateModified: updatedDate.toISOString().slice(0, 10) }),
 	inLanguage: 'ja',
 	articleSection: category,
 	// Attribute the site's content to the publication and preserve kz's disclosed editorial role.
