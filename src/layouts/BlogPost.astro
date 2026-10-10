@@ -14,12 +14,12 @@ const authors: Record<string, { name: string; bio: string; icon: string }> = {
 	yuki: {
 		name: 'Yuki',
 		icon: '☕',
-		bio: '営業や働き方の迷いをテーマにした、編集上の語り手です。人物設定には創作が含まれ、経歴や体験を本人確認済みの事実として紹介するものではありません。',
+		bio: '職場の人間関係や働き方の迷いをテーマに、気持ちの整理や相談のヒントを届けます。',
 	},
 	syun: {
 		name: 'Syun',
 		icon: '💼',
-		bio: '転職やキャリアの迷いを整理する、編集上の語り手です。人物設定には創作が含まれ、資格保有や相談実績を示すものではありません。',
+		bio: '転職やキャリアの選び方をテーマに、迷いを整理し、次の一歩を考えるヒントを届けます。',
 	},
 	kz: {
 		name: 'kz',
@@ -80,13 +80,6 @@ const shareUrl = `https://x.com/intent/tweet?text=${encodeURIComponent(title)}&u
 				margin: 0 auto;
 				border-radius: 12px;
 				box-shadow: var(--box-shadow);
-			}
-			.editorial-notice {
-				padding: 1em;
-				border-left: 3px solid rgb(var(--gray));
-				background: rgb(var(--gray-light));
-				font-size: 0.85em;
-				line-height: 1.7;
 			}
 			.prose {
 				width: 720px;
@@ -286,9 +279,6 @@ const shareUrl = `https://x.com/intent/tweet?text=${encodeURIComponent(title)}&u
 					</div>
 					{isAffiliate && (
 						<p class="pr-notice">※ 本記事はアフィリエイト広告を含みます。</p>
-					)}
-					{author && (
-						<p class="editorial-notice">この記事には創作ペルソナによる表現が含まれます。人物の経歴・資格・相談実績や体験談は、本人確認済みの事実を示すものではありません。<a href={`${base}/about/`}>編集方針について</a></p>
 					)}
 					<slot />
 					{author && relatedPosts.length > 0 && (

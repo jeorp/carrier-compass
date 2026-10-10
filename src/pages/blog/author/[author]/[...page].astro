@@ -17,26 +17,22 @@ const categories = ['転職', 'スキルアップ', '副業', '働き方'] as co
 type AuthorProfile = {
 	name: string;
 	role: string;
-	age: string;
 	bio: string;
 };
 const authorProfiles: Record<string, AuthorProfile> = {
 	syun: {
 		name: 'Syun',
-		role: '転職・キャリアを扱う語り手（創作を含む）',
-		age: '人物設定',
-		bio: '人物設定には創作が含まれます。経歴や資格、相談実績を本人確認済みの事実として示すものではありません。転職の迷いを整理する記事を掲載しています。',
+		role: '転職・キャリア',
+		bio: '転職やキャリアの選び方をテーマに、迷いを整理し、次の一歩を考えるヒントを届けます。',
 	},
 	yuki: {
 		name: 'Yuki',
-		role: '営業・働き方を扱う語り手（創作を含む）',
-		age: '人物設定',
-		bio: '人物設定には創作が含まれます。実在の個人の職歴や体験談としてではなく、働き方の迷いを考える読み物として掲載しています。',
+		role: '職場の人間関係・働き方',
+		bio: '職場の人間関係や働き方の迷いをテーマに、気持ちの整理や相談のヒントを届けます。',
 	},
 	kz: {
 		name: 'kz',
 		role: '開発・運営',
-		age: '運営者',
 		bio: 'サイトの開発・運営を担当。エンジニアのキャリアや副業をテーマに記事を編集しています。',
 	},
 };
@@ -251,7 +247,7 @@ const readingTime = (body: string) => Math.max(1, Math.ceil(body.length / 500));
 						<div class="author-avatar">{authorLabels[author].split(' ')[0]}</div>
 						<div class="author-info">
 							<p class="author-info-name">{authorProfiles[author].name}</p>
-							<p class="author-info-meta">{authorProfiles[author].age}｜{authorProfiles[author].role}</p>
+							<p class="author-info-meta">{authorProfiles[author].role}</p>
 							<p class="author-info-bio">{authorProfiles[author].bio}</p>
 						</div>
 					</div>
