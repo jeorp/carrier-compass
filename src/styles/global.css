@@ -5,17 +5,19 @@
  */
 
 :root {
-	--accent: #a05268;
-	--accent-dark: #803c50;
-	--paper: #fffbf8;
+	--accent: #35665e;
+	--accent-dark: #244b45;
+	--paper: #faf9f5;
 	--surface: #ffffff;
-	--tint: #faeef1;
-	--lavender: #f0edf6;
+	--tint: #edf2ee;
+	--lavender: #eef0ed;
+	--ochre: #a07940;
+	--compass-line: #b7c9bc;
 	--serif: "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", serif;
-	--black: 66, 49, 53;
-	--gray: 116, 100, 105;
-	--gray-light: 236, 220, 222;
-	--gray-dark: 73, 60, 64;
+	--black: 39, 53, 49;
+	--gray: 91, 108, 101;
+	--gray-light: 219, 226, 219;
+	--gray-dark: 51, 65, 59;
 	--gray-gradient: rgba(var(--gray-light), 40%), #faf9f8;
 	--box-shadow:
 		0 2px 6px rgba(var(--gray), 20%), 0 8px 24px rgba(var(--gray), 28%),
@@ -38,7 +40,7 @@
 * { box-sizing: border-box; }
 html { scroll-padding-top: 24px; }
 a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px solid var(--accent); outline-offset: 5px; }
-::selection { background: #f2dce3; }
+::selection { background: #dce9dd; }
 body {
 	font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans",
 		"Yu Gothic Medium", "游ゴシック Medium", Meiryo, sans-serif;
@@ -196,6 +198,6 @@ hr {
 .prose > p { line-height: 2.05; }
 .prose li { margin-bottom: .5em; }
 .prose a { text-underline-offset: .2em; }
-.prose blockquote { background: #f9edf0; padding: 1em 1.3em; font-size: 1em; }
+.prose blockquote { background: var(--tint); padding: 1em 1.3em; font-size: 1em; }
 .prose blockquote p:last-child { margin-bottom: 0; }
 pre { overflow-x: auto; }
