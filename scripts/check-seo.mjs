@@ -2,6 +2,7 @@
 // Markdown / MDX の広告表示と本文内リンクを、公開前に検査する。
 import fs from 'node:fs';
 import path from 'node:path';
+import { readBlogMetadata } from './blog-metadata.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const directory = path.join(root, 'src/content/blog');
@@ -10,6 +11,15 @@ const slugs = new Set(files.map(file => file.replace(/\.mdx?$/, '')));
 const affiliateHosts = ['a8.net', 'amzn.to', 'af.moshimo.com', 'valuecommerce.com', 'afb.jp', 'hb.afl.rakuten.co.jp'];
 const errors = [];
 let affiliateArticles = 0;
+
+// Validate source dates and manually selected related links, including MDX.
+for (const post of readBlogMetadata()) {
+  for (const id of post.frontmatter.related ?? []) {
+    if (!slugs.has(id) || id === post.id) {
+      errors.push(`${post.id}: 関連記事が存在しないか、自分自身を参照しています: ${id}`);
+    }
+  }
+}
 
 for (const file of files) {
   const source = fs.readFileSync(path.join(directory, file), 'utf8');

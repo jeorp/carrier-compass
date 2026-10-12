@@ -8,7 +8,7 @@ author: yuki
 targetKeyword: "自己嫌悪 仕事 止まらない"
 isAffiliate: false
 related: ["work-mistake-linger", "workplace-others-opinion", "work-mental-limit-signs"]
-updatedDate: 2026-10-11
+updatedDate: 2026-10-13
 ---
 
 仕事の自己嫌悪が止まらない。「あの言い方は違ったかも」から、いつの間にか「自分は何をやってもダメだ」に話が広がってしまう。
@@ -39,6 +39,8 @@ updatedDate: 2026-10-11
 一方で、自分だけでは変えられない条件もある。必要な情報が渡されていなかった、判断できる人が不在だったなど、仕事の進め方も相談できる。全部を自分の気持ちの持ち方に戻さないでほしい。
 
 業務のミスへの対応は[報告・修正・振り返りのメモ](/blog/work-mistake-linger/)に分けてまとめました。
+
+出来事を整理しても、自分に向ける言葉が厳しくなるときは、[セルフコンパッションと小さな声のかけ方](/blog/self-compassion-small-practice/)も読めます。無理に前向きな評価へ変えず、つらい自分をどう扱うかを考える読みものです。
 
 ## 一人で整理し続ける代わりに、確認を頼む
 

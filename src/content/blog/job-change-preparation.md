@@ -8,7 +8,7 @@ author: syun
 targetKeyword: "転職前 やること"
 related: ["before-transfer-fears-unfounded", "transfer-agent-first-time-fear", "career-change-30s-vs-20s", "procrastinating-career-change"]
 isAffiliate: false
-updatedDate: 2026-10-11
+updatedDate: 2026-10-13
 ---
 
 転職前にやることを調べると、履歴書、職務経歴書、自己分析と、次々に準備が増える。まだ応募先も決まっていないなら、まず**希望する働き方と、今まで担当した仕事**を書き出す。そのメモを持って求人を読むと、先に準備すべきものが分かる。
@@ -29,6 +29,8 @@ updatedDate: 2026-10-11
 | まだ決めていないこと | 業界、応募の時期 |
 
 希望が増えたら、欠かせない条件と相談できる条件を分ける。求人の良さに合わせて、最初に困っていたことを忘れないためのメモになる。
+
+人事異動が転職を考え始めたきっかけなら、[異動後の担当や支援を確認するメモ](/blog/personnel-transfer-should-i-quit/)も使える。応募の準備と並行して、今の職場で確認できる条件を残しておこう。
 
 ## 職務経験は、肩書きより担当と工夫で整理する
 

@@ -8,7 +8,7 @@ author: yuki
 targetKeyword: "仕事 行きたくない 朝"
 isAffiliate: false
 related: ["work-mental-limit-signs", "when-work-got-scary", "work-cant-show-weakness"]
-updatedDate: 2026-10-11
+updatedDate: 2026-10-13
 ---
 
 仕事に行きたくない朝。「みんなも同じだから」と思っても、体が動かない、準備をするのもつらい。そんなときまで、自分を説得し続けなくていい。
@@ -45,6 +45,8 @@ updatedDate: 2026-10-11
 | 理由が分からない | いつから、どんな支障があるかを話す |
 
 「会社が合わない」とすぐに結論を出す必要はないけれど、我慢する方に結論を固定する必要もない。
+
+連休明けから仕事の負担を強く感じる場合は、[連休前後で変わったことを整理するメモ](/blog/may-blues-work-motivation/)も使えます。「5月病だから」と原因を決めず、業務や生活の変化を確認するためのものです。
 
 ## 朝のしんどさを、一人で抱え続けない
 

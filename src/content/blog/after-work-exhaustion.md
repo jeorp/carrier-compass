@@ -8,7 +8,7 @@ author: yuki
 targetKeyword: "仕事 帰宅後 何もできない 疲れた"
 isAffiliate: false
 related: ["tired-day-reset-routine", "work-mental-limit-signs", "working-too-hard-burnout"]
-updatedDate: 2026-10-11
+updatedDate: 2026-10-13
 ---
 
 帰宅したら、何もできない。食事を用意することさえ重く感じる夜に、「帰ってからも何かしなきゃ」を足すのはつらい。
@@ -45,6 +45,8 @@ updatedDate: 2026-10-11
 帰宅後の過ごし方を変えても、仕事の量や勤務時間がそのままなら、負担の原因に届いていないこともある。
 
 何時ごろからつらいか、食事や休憩を取れているか、どんな業務が重なるか。分かる範囲の事実を、[業務調整の相談メモ](/blog/working-too-hard-burnout/)に整理できる。体調が悪い日に、長い記録をつける必要はありません。
+
+家事の量より、仕事の考え事が続いて頭を休めにくいなら、[仕事で考えすぎて疲れる日の読みもの](/blog/work-mental-fatigue-overthinking/)もあります。生活に支障がある場合は、読み進めることより相談を優先してください。
 
 ## 「何もしない」で済まないつらさも相談していい
 

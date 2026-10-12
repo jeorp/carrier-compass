@@ -8,7 +8,7 @@ author: yuki
 targetKeyword: "仕事 疲れた 整え方"
 isAffiliate: false
 related: ["after-work-exhaustion", "weekend-work-thoughts", "work-mental-limit-signs"]
-updatedDate: 2026-10-11
+updatedDate: 2026-10-13
 ---
 
 疲れたから、休日こそ散歩して、片づけて、充実させたい。そう考えた予定が、いつの間にか次の宿題になっていることもある。
@@ -45,6 +45,8 @@ updatedDate: 2026-10-11
 少し動けそうになったからといって、先送りした予定を一度に戻さなくていい。次の週に減らしたい負担があれば、仕事の分担や休日の連絡ルールを確認する。
 
 帰宅後の家事に困っているなら[今夜の負担を減らす方法](/blog/after-work-exhaustion/)、休みの日も仕事が気になるなら[休日の仕事を区切る方法](/blog/weekend-work-thoughts/)に具体例があります。
+
+休んだ後、仕事を始める前の小さな区切りを考えたいなら、[朝のコーヒーと仕事の入り口を綴った読みもの](/blog/morning-coffee-work-routine/)もあります。飲み物や習慣を新しく増やすことを、休めたかどうかの基準にしなくて大丈夫。
 
 ## 疲れの理由を、性格や気質だけで説明しない
 
