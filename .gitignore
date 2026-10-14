@@ -14,8 +14,8 @@ pnpm-debug.log*
 
 
 # environment variables
-.env
-.env.production
+.env*
+!.env.example
 
 # macOS-specific files
 .DS_Store
@@ -26,3 +26,10 @@ pnpm-debug.log*
 
 # Claude Code
 .claude/
+
+# Internal editorial and operating materials
+/.internal/
+/CLAUDE.md
+/strategy/
+/writers/
+/src/assets/*.prompt.txt

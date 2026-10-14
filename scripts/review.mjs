@@ -238,7 +238,7 @@ function checkTargetKeywordOverlap(files) {
 
 // authorとkeywords.md管理テーブルの整合チェック（--all時のみ）
 function checkAuthorTableConsistency(files) {
-  const keywordsPath = path.join(root, 'strategy/keywords.md');
+  const keywordsPath = path.join(root, '.internal/strategy/keywords.md');
   if (!fs.existsSync(keywordsPath)) return [];
 
   const kwContent = fs.readFileSync(keywordsPath, 'utf-8');
