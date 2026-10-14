@@ -1,62 +1,22 @@
-# Astro Starter Kit: Blog
+# キャリアの羅針盤
+
+「仕事がしんどい。でも、辞めるべきかは分からない」。そんなときに、ひと息つきながら気持ちや状況を整理し、次の一歩を考えるためのブログです。職場の悩み、働き方や転職の判断、日々の休息を扱います。答えを急がせず、今の場所でできることや相談することも選択肢として届けます。
+
+## このブログについて
+
+このブログは、**生成AIを活用した記事でアフィリエイト広告による収益化が成り立つかを試す実験**でもあります。AIを記事の制作に活用し、広告を含む記事にはその旨を表示します。記事内の人物設定やエピソードには創作が含まれる場合があり、実在の資格・職歴・相談実績を示すものではありません。
+
+読者が自分に合う判断をできるよう、サービスの条件や情報の出典を確認し、広告の有無が分かる形で記事を編集していきます。ブログの説明と広告については、サイトの「このサイトについて」ページにも記載しています。
+
+## 開発
+
+Astro と Markdown / MDX で構築した静的サイトです。記事は `src/content/blog/`、ページは `src/pages/` にあります。
 
 ```sh
-npm create astro@latest -- --template blog
+npm install
+npm run dev
+npm run build
+npm run preview
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-Features:
-
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and Open Graph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-├── public/
-├── src/
-│   ├── components/
-│   ├── content/
-│   ├── layouts/
-│   └── pages/
-├── astro.config.mjs
-├── README.md
-├── package.json
-└── tsconfig.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
-
-## Credit
-
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+`npm run build` は記事の広告表示・リンクの整合性を確認してから、公開用ファイルを `dist/` に生成します。
